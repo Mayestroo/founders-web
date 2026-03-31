@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { AudioMaterialsData } from "@/lib/audioMaterials";
-import audioMaterials from "@/public/audio-materials.json";
 
 type AudioMaterialsResponse =
   | {
@@ -24,6 +23,9 @@ export default function handler(
   }
 
   try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const audioMaterials = require("@/public/audio-materials.json");
+    
     return res.status(200).json({
       success: true,
       data: audioMaterials as AudioMaterialsData,
