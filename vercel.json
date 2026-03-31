@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "src/pages/api/**": {
+      "maxDuration": 60,
+      "includeFiles": "src/**"
+    }
+  },
+  "env": {
+    "NEXT_TELEMETRY_DISABLED": "1"
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next"
+}
