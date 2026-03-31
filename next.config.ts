@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
     ],
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000, // 1 year for cached images
-    unoptimized: false, // Enable Next.js image optimization
+    unoptimized: process.env.VERCEL === "1" ? false : false, // Use Vercel's optimization on Vercel
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Optimized device sizes for mobile-first
