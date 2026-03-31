@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import type { AudioMaterialsData } from "@/lib/audioMaterials";
-import { getAudioMaterialsData } from "@/lib/audioMaterials";
+import audioMaterials from "@/public/audio-materials.json";
 
 type AudioMaterialsResponse =
   | {
@@ -12,7 +12,7 @@ type AudioMaterialsResponse =
       error: string;
     };
 
-export default async function handler(
+export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<AudioMaterialsResponse>,
 ) {
@@ -24,11 +24,9 @@ export default async function handler(
   }
 
   try {
-    const data = await getAudioMaterialsData();
-
     return res.status(200).json({
       success: true,
-      data,
+      data: audioMaterials as AudioMaterialsData,
     });
   } catch (error) {
     console.error("Failed to load audio materials:", error);

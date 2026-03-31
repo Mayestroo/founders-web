@@ -1,0 +1,251 @@
+================================================================================
+IMAGE COMPONENTS AND REFERENCES - DETAILED INVENTORY
+================================================================================
+
+SEARCH RESULTS SUMMARY
+================================================================================
+Total Image Component Usages in src/: 83 instances
+Total Image Files in /public/: 69 files
+File Types: WebP (24), PNG (11), SVG (30+)
+Total Size: ~2.2 MB
+
+================================================================================
+TEACHER IMAGES (FOCUS AREA - User Reported Issue)
+================================================================================
+
+File Locations: /public/teachers/
+Component: src/components/Teachers.tsx (Lines 1-226)
+Status: ALL FILES EXIST ✓
+
+Teachers Defined (Lines 6-95):
+- MUHABBAT TADJIBAEVA → /teachers/Photo.png (40 KB) ✓
+- MAKHLIYO AZIMOVA → /teachers/Photo-1.png (45.6 KB) ✓
+- MUHAMEDOV ABDULLOH → /teachers/Photo-2.png (41.1 KB) ✓
+- RAHIMOVA MADINA → /teachers/Photo-3.png (43.4 KB) ✓
+- RAHMATULLAEVA GAVKHARSHODBEGIM → /teachers/Photo-4.png (44.4 KB) ✓
+- ABDUGAFFOR SHUKUROV → /teachers/Photo-5.png (38.1 KB) ✓
+- ABDUMALIKOVA PARIZODA → /teachers/Photo-6.png (39.5 KB) ✓
+- ASLAMXON JAMOLOV → /teachers/Photo-7.png (38.5 KB) ✓
+- ERKINOVA MUBINA → /teachers/Photo-8.png (41.4 KB) ✓
+- SARVINOZ ZIKRULLAYEVA → /teachers/Photo-9.png (39.3 KB) ✓
+- YUSUPOVA LEYLA → /teachers/Photo-10.png (41.5 KB) ✓
+
+Image Component Implementation (Lines 123-131):
+  <Image
+    src={teacher.image}
+    alt={`${teacher.name} ${teacher.surname}`}
+    width={144}
+    height={144}
+    sizes="(min-width: 768px) 144px, 36vw"
+    quality={70}
+    className="w-full h-full object-cover object-top"
+  />
+
+Assessment: PROPERLY IMPLEMENTED ✓
+- Width/height specified correctly
+- Alt text includes teacher names
+- Responsive sizes configured
+- Quality optimized at 70%
+- Object positioning correct for portrait photos
+
+Rendering Context (Lines 101-177):
+- Cards are 280px wide on desktop, responsive
+- Images displayed in circular containers (144x144px)
+- Pink background (#ffc9c9) for image containers
+- Scrolling animation on both rows
+
+================================================================================
+IMAGE COMPONENTS BY FILE
+================================================================================
+
+1. Hero.tsx (Lines 1-151)
+   - Images: 7 WebP carousel images
+   - Paths: /hero/hero-01.webp through /hero/hero-07.webp
+   - Status: ALL EXIST ✓
+   - Component: Memoized HeroImage with priority management
+   - Implementation: fill, priority, lazy loading, sizes
+   - Quality: 60%
+
+2. Teachers.tsx (Lines 1-226)
+   - Images: 11 PNG teacher photos
+   - Status: ALL EXIST ✓
+   - Component: TeacherCard with scrolling animation
+   - Implementation: width/height, sizes, quality 70%
+   - Rendering: Two scrolling rows with animation
+
+3. JoinTeam.tsx (Lines 1-118)
+   - Images: 4 WebP team member photos
+   - Paths: /team/member1.webp through /team/member4.webp
+   - Status: ALL EXIST ✓
+   - Component: Circular layout with 4 positions
+   - Implementation: fill, lazy loading, priority for first
+   - Quality: 70%
+
+4. Services.tsx (Lines 1-158)
+   - Images: 5 WebP service illustrations
+   - Paths: /services/*.webp (kids-english, general, ielts, corporate, online)
+   - Status: ALL EXIST ✓
+   - Component: Service cards with image fallback
+   - Implementation: fill, resolveServiceImage() fallback
+   - Quality: Not specified (default)
+   - Special: Has fallback to default image if path invalid
+
+5. Materials.tsx (Lines 1-346)
+   - Images: 3 WebP material type images
+   - Paths: /materials/headphones.webp, video.webp, pdf.webp
+   - Status: ALL EXIST ✓
+   - Component: Carousel slider with error handling
+   - Implementation: fill, onError fallback to headphones.webp
+   - Quality: Not specified
+   - Special: Excellent error handling for broken images
+   - Line 56: brokenImages state tracks load errors
+   - Line 207-211: onError handler with fallback
+
+6. Promotions.tsx (Lines 1-60)
+   - Images: 3 WebP promotion cards
+   - Paths: /promotions/promotion-1.webp through /promotions/promotion-3.webp
+   - Status: ALL EXIST ✓
+   - Component: Promotion cards in grid
+   - Implementation: width={300} height={650}
+   - Quality: Not specified
+   - ISSUE: width/height don't match responsive classes (w-56, w-72)
+   - Alt text: Generic "promo" (should be more specific)
+
+7. Header.tsx (Lines 1-386)
+   - Images: Logo + Language flags
+   - Paths: /logo.svg, /hamburger-logo.svg, /icons/uz.svg, /icons/en.svg, /icons/ru.svg
+   - Status: ALL EXIST ✓
+   - Components: LogoMark (line 38), LanguageSwitcher (lines 308-358)
+   - Implementation: SVG assets with width/height/sizes
+   - Language flags: Lines 295-299
+
+8. Footer.tsx (Lines 1-151)
+   - Images: Logo
+   - Paths: /logo.svg
+   - Status: ALL EXIST ✓
+
+9. Stats.tsx (Lines 1-87)
+   - Images: Star and arrow decorations
+   - Paths: /star.svg, /arrow-white.svg
+   - Status: ALL EXIST ✓
+
+10. FAQ.tsx (Lines 1-151)
+    - Images: Decorative elements
+    - Paths: /free-dec.svg
+    - Status: ALL EXIST ✓
+
+11. About.tsx (Lines 1-51)
+    - Images: Decorative elements
+    - Paths: /arrow-white.svg
+    - Status: ALL EXIST ✓
+
+12. Testimonials.tsx (Lines 1-58)
+    - Images: Decorative elements
+    - Paths: /free-dec.svg
+    - Status: ALL EXIST ✓
+
+================================================================================
+IMAGE DIRECTORY STRUCTURE
+================================================================================
+
+/public/
+├── hero/
+│   ├── hero-01.webp (75.7 KB)
+│   ├── hero-02.webp (67.3 KB)
+│   ├── hero-03.webp (67.4 KB)
+│   ├── hero-04.webp (73.1 KB)
+│   ├── hero-05.webp (85.2 KB)
+│   ├── hero-06.webp (100 KB)
+│   └── hero-07.webp (126 KB)
+│   Total: 594 KB
+│
+├── teachers/
+│   ├── Photo.png (40 KB)
+│   ├── Photo-1.png through Photo-10.png
+│   Total: 460 KB
+│
+├── team/
+│   ├── member1.webp (25.3 KB)
+│   ├── member2.webp (27.4 KB)
+│   ├── member3.webp (21.9 KB)
+│   ├── member4.webp (22.1 KB)
+│   Total: 96 KB
+│
+├── services/
+│   ├── kids-english.webp (59 KB)
+│   ├── general.webp (48.4 KB)
+│   ├── ielts.webp (69.1 KB)
+│   ├── corporate.webp (40.2 KB)
+│   ├── online.webp (43.5 KB)
+│   Total: 260 KB
+│
+├── materials/
+│   ├── headphones.webp (19.7 KB)
+│   ├── video.webp (170 KB)
+│   ├── pdf.webp (49.8 KB)
+│   Total: 239 KB
+│
+├── promotions/
+│   ├── promotion-1.webp (66 KB)
+│   ├── promotion-2.webp (117 KB)
+│   ├── promotion-3.webp (78 KB)
+│   Total: 261 KB
+│
+├── icons/
+│   ├── uz.svg (9.7 KB) - Uzbek flag
+│   ├── en.svg (896 B) - English flag
+│   ├── ru.svg (554 B) - Russian flag
+│   ├── community.svg (15.3 KB)
+│   ├── guarantee.svg (24.9 KB)
+│   ├── interactive.svg (110 KB)
+│   ├── speed.svg (71 KB)
+│   ├── teacher.svg (24 KB)
+│   ├── megaphone.svg (1.3 KB)
+│   ├── paint-brush.svg (1 KB)
+│   ├── wallet.svg (584 B)
+│   ├── mail.svg (513 B)
+│   Total: 287 KB
+│
+└── Root SVG/Image Assets:
+    ├── logo.svg (121 KB)
+    ├── hamburger-logo.svg (121 KB)
+    ├── team-1.svg (88.8 KB)
+    ├── team-2.svg (86.3 KB)
+    ├── ielts-dec.svg (80.9 KB)
+    ├── free-dec.svg (82.4 KB)
+    ├── arrow-white.svg (622 B)
+    ├── process.svg (95.9 KB)
+    ├── admin.svg (752 KB)
+    ├── esl.svg (681 KB)
+    ├── frete.svg (670 KB)
+    ├── star.svg (669 B)
+    ├── logo.webp (3.1 KB)
+    ├── favicon.png (16.2 KB)
+
+TOTAL: 69 image assets, ~2.2 MB
+
+================================================================================
+NEXT.JS IMAGE CONFIGURATION (next.config.ts)
+================================================================================
+
+images: {
+  unoptimized: true,              // Correct - static export
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "**",              // Allow any HTTPS
+    },
+    {
+      protocol: "http",
+      hostname: "localhost",       // Allow localhost
+    },
+  ],
+  formats: ["image/webp"],         // Prefer WebP
+  dangerouslyAllowSVG: true,       // SVG support
+  contentSecurityPolicy: "...",    // Security
+}
+
+Assessment: CORRECT CONFIGURATION ✓
+- Image optimization disabled for static export
+- Remote images allowed
+- WebP fo
