@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Image optimization
+  // Image optimization - disabled for Vercel static hosting
   images: {
+    unoptimized: true, // Disable Next.js image optimization for static export
     remotePatterns: [
       {
         protocol: "https",
@@ -13,16 +14,9 @@ const nextConfig: NextConfig = {
         hostname: "localhost",
       },
     ],
-    formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31536000, // 1 year for cached images
-    unoptimized: process.env.VERCEL === "1" ? false : false, // Use Vercel's optimization on Vercel
+    formats: ["image/webp"],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Optimized device sizes for mobile-first
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Configure quality levels used in the app
-    qualities: [50, 60, 65, 70, 75],
   },
   // Enable compression
   compress: true,
