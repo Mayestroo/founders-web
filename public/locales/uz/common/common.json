@@ -1,0 +1,684 @@
+{
+  "common": {
+    "darajangizni_aniqlang": "Darajangizni aniqlang",
+    "kids": "KIDS",
+    "general": "GENERAL",
+    "level_test": "Daraja testi",
+    "kids_description": "Bolalar uchun maxsus o'qitish dasturi",
+    "general_description": "Barcha yoshdagi o'quvchilar uchun",
+    "orqaga": "Orqaga",
+    "davom_etish": "Davom etish",
+    "next": "Keyingi",
+    "finish": "Tugatish",
+    "temperament_test": "Temperament testi",
+    "iq_test": "IQ testi",
+    "test_results": "Test natijasi",
+    "your_score": "Sizning ball",
+    "your_level": "Sizning daraja",
+    "back_to_main": "Asosiy sahifaga qaytish",
+    "open_menu": "Menyuni ochish",
+    "close_menu": "Menyuni yopish",
+    "logo_alt": "Founders logotipi",
+    "cdi_login": "CDI tizimiga kirish",
+    "prev_hero_image": "Oldingi hero rasmi",
+    "next_hero_image": "Keyingi hero rasmi",
+    "loading": "Yuklanmoqda..."
+  },
+  "tests": {
+    "category_selection": "Sizga mos usulda individual yondashuv uchun temperamentingizni tekshirib olsak:",
+    "temperament_intro": "Temperament testi",
+    "temperament_instruction": "*Har bir savolda sizga eng yaqin javobni tanlang.",
+    "iq_intro": "IQ testi",
+    "iq_instruction": "*Har bir savolda sizga eng yaqin javobni tanlang.",
+    "temperament_done": "Temperament testini tugatdingiz!",
+    "temperament_next_notice": "Endigini navbat axborotni qabul qilish testiga. Bu bilan biz sizga qanday usulda ma'lumot yetkazishimiz va so'z boyligingizni eng oson usulda yodlashingizga yordam berishga astoydil harakat qilamiz!",
+    "iq_done": "Sabringizga tassannolar bo'lsin! Eng muhimi qoldi. 20 talik testimizni bir ishlab bersangiz aniq sizga mos keluvchi guruhga qo'yib beramiz!",
+    "incomplete_warning": "Iltimos, barcha savollarga javob bering.",
+    "identify_image": "Rasmni aniqlang",
+    "image_question_prompt": "Bu rasmda nimani ko'ryapsiz?",
+    "image_alt": "Rasm",
+    "temperament_kids_q1": "Men ko'proq o'zimni quyidagicha tutaman:",
+    "temperament_kids_q1_a": "A) Tez harakat qilaman, qizg'inman",
+    "temperament_kids_q1_b": "B) Quvnoqman, hamma bilan tez til topishaman",
+    "temperament_kids_q1_c": "C) Tinch va osoyishta yuraman",
+    "temperament_kids_q1_d": "D) Sokinman, kamgapman, mulohazalim",
+    "temperament_kids_q2": "Yangi vaziyatda odatda qanday bo'lasiz?",
+    "temperament_kids_q2_a": "A) Tashabbuskor, tez javob beraman",
+    "temperament_kids_q2_b": "B) Ko'p kulaman va hazil qilaman",
+    "temperament_kids_q2_c": "C) Avval kuzataman, keyin qatnashaman",
+    "temperament_kids_q2_d": "D) O'zimni tortaman, ehtiyotkor bo'laman",
+    "temperament_kids_q3": "Bo'sh vaqtingizni qanday o'tkazasiz?",
+    "temperament_kids_q3_a": "A) Harakat va musobaqalarni yoqtiraman",
+    "temperament_kids_q3_b": "B) Do'stlar bilan suhbat va o'yinlarni yoqtiraman",
+    "temperament_kids_q3_c": "C) Tinch o'yinlar va kitob o'qishni yoqtiraman",
+    "temperament_kids_q3_d": "D) Yakka holda o'ylab, rasm chizishni yoqtiraman",
+    "temperament_kids_q4": "Qiyin vaziyatda qanday reaksiya qilasiz?",
+    "temperament_kids_q4_a": "A) Tez qaror qabul qilib, harakat qilaman",
+    "temperament_kids_q4_b": "B) Boshqalar bilan maslahatlashaman",
+    "temperament_kids_q4_c": "C) Vaziyatni sokin tahlil qilaman",
+    "temperament_kids_q4_d": "D) Ko'proq tashvishlanaman, o'ylab qolaman",
+    "temperament_kids_q5": "Jamoada o'zingizni qanday tutasiz?",
+    "temperament_kids_q5_a": "A) Yetakchilikni qo'lga olaman",
+    "temperament_kids_q5_b": "B) Barchani ruhlantiraman",
+    "temperament_kids_q5_c": "C) Tinchlikni saqlab, kelishuv topaman",
+    "temperament_kids_q5_d": "D) Vazifani sifatli va sinchiklab bajaraman",
+    "temperament_kids_q6": "Ko'p kutish kerak bo'lsa:",
+    "temperament_kids_q6_a": "A) Sabrsizlanaman",
+    "temperament_kids_q6_b": "B) O'zimni boshqa narsa bilan chalg'itaman",
+    "temperament_kids_q6_c": "C) Sabr qilaman",
+    "temperament_kids_q6_d": "D) Asabiylashaman",
+    "temperament_kids_q7": "Noto'g'ri ish ko'rsangiz:",
+    "temperament_kids_q7_a": "A) Darhol e'tiroz bildiraman",
+    "temperament_kids_q7_b": "B) Yaxshi vaqtni kutib, muloyim gapiraman",
+    "temperament_kids_q7_c": "C) Jim kuzataman",
+    "temperament_kids_q7_d": "D) G'amgin bo'laman, lekin gapirmayman",
+    "temperament_kids_q8": "Tartib-intizom haqida:",
+    "temperament_kids_q8_a": "A) Tez-tez qoidalarni buzib qo'yaman",
+    "temperament_kids_q8_b": "B) Qoidalar mos bo'lsa, zo'r",
+    "temperament_kids_q8_c": "C) Qoidalarga osongina rioya qilaman",
+    "temperament_kids_q8_d": "D) Juda sinchkovman, hammasi reja bo'yicha bo'lsin",
+    "temperament_kids_q9": "Yutqazganingizda",
+    "temperament_kids_q9_a": "A) Qayta urinishni xohlayman",
+    "temperament_kids_q9_b": "B) Hazil bilan qabul qilaman",
+    "temperament_kids_q9_c": "C) Xotirjam qabul qilaman",
+    "temperament_kids_q9_d": "D) Uzoq vaqt xafa bo'lib yuraman",
+    "temperament_kids_q10": "Do'stlaringiz sizni ko'proq qanday ta'riflaydi?",
+    "temperament_kids_q10_a": "A) Dadil va energiyali",
+    "temperament_kids_q10_b": "B) Quvnoq va samimiy",
+    "temperament_kids_q10_c": "C) Tinch va ishonchli",
+    "temperament_kids_q10_d": "D) Mulohazali va sezgir",
+    "level_done": "Siz daraja testini muvaffaqiyatli tugatdingiz!",
+    "very_high_level": "Juda yuqori daraja",
+    "high_level": "Yuqori daraja",
+    "average_level": "O'rtacha daraja",
+    "practice_recommended": "Qo'shimcha mashq tavsiya etiladi",
+    "grading_criteria": "Baholash mezonlari",
+    "select_closest_answer": "Sizga eng yaqin javobni tanlang.",
+    "level_beginner": "Boshlang'ich",
+    "level_elementary": "Elementary",
+    "level_pre_intermediate": "Pre-Intermediate",
+    "level_intermediate": "Intermediate",
+    "level_upper_intermediate": "Upper-Intermediate",
+    "level_advanced": "Advanced",
+    "shape_matrix_logic": "Shakllar ketma-ketligi mantiqi",
+    "shape_pattern": "Shakl naqshi",
+    "shape_analogy": "Shakliy analogiya",
+    "next_pattern": "Keyingi",
+    "arithmetic_sequence": "Aritmetik ketma-ketlik",
+    "iq_general_logic": "Barcha qushlar uchadi. Pingvin uchmaydi. Demak pingvin...",
+    "iq_general_opt_a": "A) qush emas",
+    "iq_general_opt_b": "B) albatta uchadi",
+    "iq_general_opt_c": "C) qush, lekin istisno",
+    "iq_general_opt_d": "D) hayvon emas",
+    "iq_general_count_q": "Qatordagi raqamlar orasida nechta toq son bor?",
+    "iq_general_height_q": "Ali Boburdan baland, Bobur Jamshiddan baland. Eng balandi kim?",
+    "iq_general_vowels_q": "\"EDUCATION\" so'zida nechta unli harf bor?",
+    "iq_general_logical_q": "Agar bugun juma bo'lsa, ertadan keyin qaysi kun bo'ladi?",
+    "iq_general_opt_a2": "A) Shanba",
+    "iq_general_opt_b2": "B) Yakshanba",
+    "iq_general_opt_c2": "C) Dushanba",
+    "iq_general_opt_d2": "D) Seshanba",
+    "circle_angle_analogy": "Doira : 360° = To'g'ri burchak : ?",
+    "iq_general_time_q": "Soat 3:40 ni ko'rsatmoqda. 20 daqiqadan keyin nechchi bo'ladi?",
+    "iq_general_time_opt_a": "A) 3:50",
+    "iq_general_time_opt_b": "B) 4:00",
+    "iq_general_time_opt_c": "C) 4:10",
+    "iq_general_time_opt_d": "D) 4:20",
+    "option_a_1": "A) 1",
+    "option_b_2": "B) 2",
+    "option_c_3": "C) 3",
+    "option_d_4": "D) 4",
+    "option_a_2": "A) 2",
+    "option_b_3": "B) 3",
+    "option_c_4": "C) 4",
+    "option_d_7": "D) 7",
+    "option_a_3": "A) 3",
+    "option_b_4": "B) 4",
+    "option_c_5": "C) 5",
+    "option_d_6": "D) 6",
+    "option_a_16": "A) 16",
+    "option_b_18": "B) 18",
+    "option_c_24": "C) 24",
+    "option_d_36": "D) 36",
+    "option_a_22": "A) 22",
+    "option_b_24": "B) 24",
+    "option_c_26": "C) 26",
+    "option_d_28": "D) 28",
+    "option_a_90": "A) 90°",
+    "option_b_180": "B) 180°",
+    "option_c_270": "C) 270°",
+    "option_d_360": "D) 360°",
+    "temperament_general_title": "Temperament testi - General",
+    "temperament_general_q1": "Yangi jamoaga kirganingizda odatda qanday bo'lasiz?",
+    "temperament_general_q1_a": "A) Tez tashabbus ko'rsataman",
+    "temperament_general_q1_b": "B) Hammaga tez moslashaman",
+    "temperament_general_q1_c": "C) Avval kuzataman",
+    "temperament_general_q1_d": "D) Ehtiyotkor bo'laman",
+    "temperament_general_q2": "Qiyin vazifada siz...",
+    "temperament_general_q2_a": "A) Tez qaror qilasiz",
+    "temperament_general_q2_b": "B) Boshqalar bilan maslahatlashasiz",
+    "temperament_general_q2_c": "C) Reja tuzasiz",
+    "temperament_general_q2_d": "D) Uzoq o'ylaysiz",
+    "temperament_general_q3": "Bo'sh vaqtingizda ko'proq...",
+    "temperament_general_q3_a": "A) Faol dam olishni tanlaysiz",
+    "temperament_general_q3_b": "B) Do'stlar bilan uchrashasiz",
+    "temperament_general_q3_c": "C) Tinch mashg'ulot qilasiz",
+    "temperament_general_q3_d": "D) Yolg'iz qolishni yoqtirasiz",
+    "temperament_general_q4": "Tanqidga munosabatingiz...",
+    "temperament_general_q4_a": "A) Darhol javob beraman",
+    "temperament_general_q4_b": "B) Yumor bilan qabul qilaman",
+    "temperament_general_q4_c": "C) Xotirjam tahlil qilaman",
+    "temperament_general_q4_d": "D) Ichimga olaman",
+    "temperament_general_q5": "Jamoada sizning rolingiz...",
+    "temperament_general_q5_a": "A) Yetakchi",
+    "temperament_general_q5_b": "B) Motivator",
+    "temperament_general_q5_c": "C) Muvozanat saqlovchi",
+    "temperament_general_q5_d": "D) Tahlilchi",
+    "temperament_general_q6": "Kutilmagan o'zgarishda...",
+    "temperament_general_q6_a": "A) Tez moslashaman",
+    "temperament_general_q6_b": "B) Ijobiy qabul qilaman",
+    "temperament_general_q6_c": "C) Bosqichma-bosqich o'taman",
+    "temperament_general_q6_d": "D) Qiyin moslashaman",
+    "temperament_general_q7": "Bahsda odatda...",
+    "temperament_general_q7_a": "A) Qat'iy turaman",
+    "temperament_general_q7_b": "B) Murosaga chaqiraman",
+    "temperament_general_q7_c": "C) Tinch eshitaman",
+    "temperament_general_q7_d": "D) Sukut saqlayman",
+    "temperament_general_q8": "Ish uslubingiz...",
+    "temperament_general_q8_a": "A) Tez va natijaga yo'naltirilgan",
+    "temperament_general_q8_b": "B) Ijodiy va moslashuvchan",
+    "temperament_general_q8_c": "C) Barqaror va tartibli",
+    "temperament_general_q8_d": "D) Sinchkov va puxta",
+    "temperament_general_q9": "Stress holatida...",
+    "temperament_general_q9_a": "A) Tez harakat qilaman",
+    "temperament_general_q9_b": "B) Odamlar bilan gaplashaman",
+    "temperament_general_q9_c": "C) Sokин bo'laman",
+    "temperament_general_q9_d": "D) Tashvishlanaman",
+    "temperament_general_q10": "Sizni boshqalar ko'proq... deb ta'riflaydi",
+    "temperament_general_q10_a": "A) Dadil",
+    "temperament_general_q10_b": "B) Quvnoq",
+    "temperament_general_q10_c": "C) Xotirjam",
+    "temperament_general_q10_d": "D) Mulohazali",
+    "temperament_desc_choleric": "Faol, tashabbuskor va tezkor qaror qabul qiluvchi temperament turi.",
+    "temperament_desc_sanguine": "Quvnoq, ijtimoiy va muloqotga ochiq temperament turi.",
+    "temperament_desc_phlegmatic": "Tinch, barqaror va sabrli temperament turi.",
+    "temperament_desc_melancholic": "Mulohazali, sezgir va tahlilga moyil temperament turi."
+  },
+  "form": {
+    "full_name": "To'liq ism",
+    "birth_date": "Tug'ilgan sana",
+    "phone_number": "Telefon raqami",
+    "where_heard": "Qayerdan eshitdi?",
+    "issue_with_english": "Ingliz tilida nima muammoni boshdan kechiypsi?",
+    "your_region": "Siz qaysi viloyatdasiz?",
+    "submit": "Jo'natish",
+    "regions": [
+      "Toshkent shahar",
+      "Toshkent viloyat",
+      "Samarqand",
+      "Buxoro",
+      "Xorazm",
+      "Navoiy",
+      "Qashqadaryo",
+      "Surxondaryo",
+      "Andijon",
+      "Fargona",
+      "Namangan"
+    ]
+  },
+  "temperament_types": {
+    "choleric": "Xolerik",
+    "sanguine": "Sangvinik",
+    "phlegmatic": "Flegmatik",
+    "melancholic": "Melanxolik"
+  },
+  "registration": {
+    "registration_title": "Ro'yxatdan o'tish",
+    "fill_all_fields": "Iltimos, barcha maydonlarni to'ldiring",
+    "full_name": "To'liq ism",
+    "enter_full_name": "Ismingizni kiriting",
+    "birth_date": "Tug'ilgan sana",
+    "phone_number": "Telefon raqami",
+    "enter_phone": "+998 90 123 45 67",
+    "heard_about": "Qayerdan eshitdingiz?",
+    "heard_placeholder": "Biz haqimizda qanday bilib oldingizni aytib bering...",
+    "english_issue": "Ingliz tilida qanday muammo bor?",
+    "problem_placeholder": "Sizni Ingliz tilida nima qiynaydi?",
+    "your_region": "Sizning viloyatingiz",
+    "select_region": "Viloyatni tanlang",
+    "name_required": "To'liq ism talab etiladi",
+    "birthdate_required": "Tug'ilgan sana talab etiladi",
+    "phone_required": "Telefon raqami talab etiladi",
+    "phone_invalid": "Telefon raqami noto'g'ri",
+    "heard_required": "Iltimos, qayerdan eshitganingizni belgilang",
+    "problem_required": "Iltimos, Ingliz tilida sizni nima qiynaydi aytib bering",
+    "region_required": "Iltimos, viloyatingizni tanlang",
+    "form_submission_error": "Formani yuborishda xato yuz berdi",
+    "submit_button": "Jo'natish"
+  },
+  "results": {
+    "congratulations": "Tabriklaymiz!",
+    "tests_completed": "Siz barcha testlarni muvaffaqiyatli tugatdingiz!",
+    "results_summary": "Sizning test natijalaringiz",
+    "user_information": "Foydalanuvchi ma'lumotlari",
+    "temperament_result_title": "Temperament testi natijasi",
+    "dominant_type": "Dominant turi",
+    "iq_test_results": "IQ testi natijasi",
+    "english_level_results": "Ingliz tili darajasi testi natijasi",
+    "score": "Ball",
+    "level": "Daraja",
+    "submit_results": "Natijalarni jo'natish",
+    "go_home": "Asosiy sahifaga",
+    "submitting": "Jo'natilmoqda..."
+  },
+  "header": {
+    "choose_level": "Darajangizni aniqlang",
+    "about_us": "Biz haqimizda",
+    "teachers": "Ustozlar",
+    "for_parents": "Ota-onalar uchun",
+    "services": "Xizmatlar",
+    "customer_reviews": "Mijoz fikri",
+    "materials": "Materiallar",
+    "vacancies": "Vakansiyalar",
+    "faq": "FAQ",
+    "contact": "Aloqa",
+    "language": "Tili",
+    "uzbek": "O'zbekcha",
+    "russian": "Русский",
+    "english": "English",
+    "phone": "71 205-03-33 / 71 205-53-33",
+    "phone_for_contact": "Aloqa uchun",
+    "address": "Chet tillari kurslari Toshkentda",
+    "public_offer": "Ommaviy oferta"
+  },
+  "footer": {
+    "home": "Bosh sahifa",
+    "school_name": "Founders School",
+    "contact_for": "Aloqa uchun",
+    "cdi": "CDI",
+    "follow_us": "Bizni ijtimoiy tarmoqlarda kuzatib boring:",
+    "phone": "71 205-03-33 / 71 205-53-33"
+  },
+  "hero": {
+    "title": "Kafolatlangan IELTS yoki BEPUL o'qing!",
+    "subtitle": "Founders School shu vaqtgacha 2 000+ o'quvchilarni hayotini o'zgartirishga o'z hissasini qo'shgan!",
+    "cta_button": "Birinchi darsga yozilish"
+  },
+  "stats": {
+    "title": "Founders School",
+    "tagline": "Ishonchli ta'lim",
+    "experience": "4+ yillik tajriba",
+    "students": "2 500+ mamnun o'quvchilar",
+    "results": "200+ Ijobiy IELTS natijalari",
+    "team": "400+ Hodimlar soni"
+  },
+  "about": {
+    "title": "Biz haqimizda",
+    "description": "FOUNDERS SCHOOL - madaniyatimizni qadrlaydiganlar uchun!",
+    "vision_title": "Viziya",
+    "vision_text": "O'rta osiyoda birinchi raqamli ingliz tili o'quv markazi bo'lish.",
+    "mission_title": "Missiya",
+    "mission_text": "Biz o'quvchilarimizga eng yaxshi ustozlar, eng zamonaviy o'qitish usullari, eng qulay muhit va eng yuqori natijalarni taqdim etamiz!",
+    "contact_prompt": "Siz bilan bog'lanishimiz uchun ma'lumotlaringizni qoldiring!",
+    "full_name": "Ism Familiya",
+    "submit": "Tayyor",
+    "get_info": "To'liq ma'lumot olish",
+    "video_school": "INGLIZ TILI MAKTABI",
+    "video_placeholder": "Video joyi"
+  },
+  "teachers": {
+    "title": "Ustozlar:",
+    "certificate": "SERTIFIKAT:",
+    "ielts_score": "IELTS BALI:",
+    "experience": "TAJRIBA:",
+    "results": "NATIJALARI:"
+  },
+  "why_choose": {
+    "title": "Nega aynan bizni tanlashadi?",
+    "subtitle": "Ota-onalar bizni tanlashlari uchun top 5 sabab",
+    "guarantee": {
+      "title": "IELTS 7+ KAFOLATI",
+      "description": "Ingliz tilidagi 5ta darajani to'liq tugatish"
+    },
+    "fast_results": {
+      "title": "TEZ NATIJADORLIK",
+      "description": "O'zing istagandek ingliz tilida burro gapirishini uzoq kutmaysiz"
+    },
+    "demanding_teachers": {
+      "title": "TALABCHAN USTOZLAR",
+      "description": "Uyga vazifa va darslardagi o'zlashtirishni ko'rsatkichlarini doimiy qat'iy nazorati"
+    },
+    "interesting_method": {
+      "title": "QIZIQARLI DARS USLUBI",
+      "description": "Mashg'ulotlarni innovatsion texnologiyalar yordamida interaktiv usulda olib borish"
+    },
+    "friendly_environment": {
+      "title": "DO'STONA MUHIT",
+      "description": "Bir maqsad sari intilayotgan iqtidorli yoshlar bilan birga tahsil olish"
+    }
+  },
+  "testimonials": {
+    "title": "Mijozlar fikri!",
+    "testimonials_list": [
+      {
+        "author": "Asalxon Fayziyeva",
+        "text": "Founders Schoolda o'qib IELTS dan 8 ballni oldim. Ustozlarimga va barcha Founders jamoasizga katta rahmat"
+      },
+      {
+        "author": "Matluba Azizova",
+        "text": "Ustozlarini dars o'tishlari, har bir bolaga alohida e'tibor berishlari yoqadi. Tavsiya qilaman berilar bolalaringizni👍🏻"
+      },
+      {
+        "author": "Safida Akobirova",
+        "text": "O'gillarim Foundersda o'qib juda katta natijalarni qo'lga kiritib kelishyapti..."
+      },
+      {
+        "author": "Azizjon Xamidjonov",
+        "text": "Sifatli va qiziqarli darslari. Qizim shoshib ketadi o'quv markazga. Ko'nglimiz to'q."
+      },
+      {
+        "author": "Nargiza Abdullayevna",
+        "text": "Foundersga gap yo'q, rahmat shunaqa zor bilimlar berayotganilar uchun..."
+      },
+      {
+        "author": "Dilshodbek Mamatqulov",
+        "text": "Natijalari kutganimdan yaxshi, o'g'limga yoqadi..."
+      },
+      {
+        "author": "Lola Tursunova",
+        "text": "3ta farzandim borishadi, o'zaro uyda ham inglizcha gaplashishlarini ko'rib juda xursand bo'lamiz. Rahmat sizlarga!"
+      },
+      {
+        "author": "Komila Abdumalikova",
+        "text": "O'quv markaz xodimlarini muomalasiga 5 baho..."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Materiallar",
+    "tagline": "Bepul va foydali materillar!",
+    "audio_materials": "Audio Materiallar",
+    "audio_subtitle": "Tinglab o'rganing",
+    "video_materials": "Video Materiallar",
+    "video_subtitle": "Ko'rib o'rganing",
+    "pdf_materials": "PDF Materiallar",
+    "pdf_subtitle": "Yuklab oling",
+    "use_materials": "Materiallardan foydalanish",
+    "previous": "Oldingi material",
+    "next": "Keyingi material",
+    "choose_level": "Darajangizni tanlang!",
+    "beginner": "BEGINNER",
+    "elementary": "ELEMENTARY",
+    "pre_intermediate": "PRE-INTERMEDIATE",
+    "intermediate": "INTERMEDIATE",
+    "upper_intermediate": "UPPER-INTERMEDIATE",
+    "advanced": "ADVANCED",
+    "student_books": "STUDENT BOOKS",
+    "work_books": "WORK BOOKS",
+    "audio_name": "Audio nomi",
+    "audio_prev": "Oldingi audio",
+    "audio_pause": "Audioni to'xtatish",
+    "audio_play": "Audioni ijro etish",
+    "audio_download": "Audioni yuklab olish",
+    "audio_volume": "Ovoz boshqaruvi",
+    "audio_loading": "Audio materiallar yuklanmoqda...",
+    "audio_empty": "Tanlangan bo'lim uchun audio material topilmadi"
+  },
+  "services": {
+    "title": "Xizmatlar",
+    "kids_english": {
+      "title": "KIDS ENGLISH",
+      "description": "1-4 darajadan iborat bolib Buyuk Britaniyaning MACMILLAN nashriyoti darsliklaridan foydalanib o'tiladi",
+      "duration": "3 oy",
+      "price": "850 000 UZS"
+    },
+    "general_english": {
+      "title": "GENERAL ENGLISH",
+      "description": "Beginner - Upper-Intermediate darajalarini oz ichiga olib, Buyuk Britaniyaning OXFORD nashriyotining darsliklaridan foydalanib o'tiladi",
+      "duration": "3 oy",
+      "price": "850 000 UZS"
+    },
+    "ielts": {
+      "title": "IELTS",
+      "description": "350 dan oshiq haqiqiy test materiallari yordamida tayyorlangan, IELTS 7+ kafolatlovchi maxsus dastur, bepul CDI mock topshirish",
+      "duration": "3 oy",
+      "price": "850 000 UZS"
+    },
+    "corporate_english": {
+      "title": "KORPORATIV ENGLISH",
+      "description": "Xodimlarining biznes ingliz tilini jamoaviy o'qishlari uchun moljallangan maxsus B2B o'quv dasturi",
+      "duration": "8 oy",
+      "price": "1 000 000 UZS"
+    },
+    "online_english": {
+      "title": "ONLINE ENGLISH",
+      "description": "Ingliz tilini masofadan ZOOM platforma orqali o'rganish kursi",
+      "duration": "Individual yondashiladi",
+      "price": "1 500 000 UZS"
+    },
+    "course_duration": "Daraja davomiyligi:",
+    "register_button": "Birinchi darsga yozilish"
+  },
+  "promotions": {
+    "title": "Aksiyalar:",
+    "description": "2025-yil so'ngida Mega aksiya start olib, 3ta katta sovrinlar qo'yildi.",
+    "prizes": "1- o'rin uchun Umra safari yo'llanmasi | 2- o'rin uchun Sanatoriya yo'llanmasi | 3- o'rin uchun Seven Tree'ga oilaviy yo'llanma"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Savollaringiz javobi shu yerda",
+    "faq_items": [
+      {
+        "question": "Ingliz tilini noldan qancha muddatda o'rganish mumkin?",
+        "answer": "Bu o'quvchining darajasi va mashg'ulotga ajratadigan vaqti, shuningdek, individual qobiliyatiga bog'liq bo'ladi. Odatda, kundalik shug'ullanish bilan 6-12 oy ichida sezilarli natijalarga erishish mumkin."
+      },
+      {
+        "question": "Darslar qanday formatda o'tiladi?",
+        "answer": "Kurslar oflayn va onlayn formatda bo'lishi mumkin. Darslarda gapirish, yozish, tinglab tushunish va grammatikani o'rganish bo'yicha mashg'ulotlar olib boriladi."
+      },
+      {
+        "question": "O'quv markazda kimlar dars beradi?",
+        "answer": "IELTS 8.0 - 8.5, TESOL/TEFL, CELTA kabi xalqaro sertifikatlarga ega, o'rtacha 5 yildan ortiq tajribaga ega ustozlarimiz tomonidan o'tiladi."
+      },
+      {
+        "question": "Darslarga qanday yozilish mumkin?",
+        "answer": "Markazga kelib ro'yxatdan o'tish yoki onlayn tarzda anketa to'ldirish orqali kursga yozilish mumkin."
+      },
+      {
+        "question": "Darslar nechta kishilik guruhlarda o'tiladi?",
+        "answer": "Darslarimizda 12 ta o'quvchigacha mavjud bo'ladi"
+      },
+      {
+        "question": "Boshlang'ich darajadan boshlab o'qiy olamanmi?",
+        "answer": "Ha, kurslar barcha darajalar uchun moslashtirilgan va boshlang'ich darajadan o'qishni boshlashingiz mumkin."
+      },
+      {
+        "question": "Necha yoshdan kurslarga yozilsa bo'ladi?",
+        "answer": "Kurslarimizga 8 yoshdan 30 yoshgacha yozilsa bo'ladi."
+      }
+    ]
+  },
+  "parents_solutions": {
+    "hero_title": "Nega aynan bizni tanlashadi?",
+    "hero_subtitle": "Ota-onalar bizni tanlashlari uchun top 5 sabab",
+    "challenges_title": "Farzandingizni Ingliz tilini o'rganishdagi qiyinchiliklari haqida bilasizmi?",
+    "challenges": [
+      {
+        "title": "SO'Z YODLASH",
+        "description": "Ingliz tilida yodlangan so'zlarni nutqda faol qo'llay olmaslik"
+      },
+      {
+        "title": "RAVON SO'ZLAY OLMASLIK",
+        "description": "O'ziga ishonchlik tufayli omma oldida ingliz tilida erkin gapirishdan qo'rqish"
+      },
+      {
+        "title": "ESHITIB ANGLAY OLMASLIK",
+        "description": "Bir eshitishdayoq ingliz tilidan tarjima qilishdagi to'siqlar"
+      },
+      {
+        "title": "O'QIB TUSHUNA OLMASLIK",
+        "description": "Ingliz tilidagi matn manosini asl mohiyatini ochib berishdagi qiyinchiliklar"
+      },
+      {
+        "title": "MATN TUZA OLMASLIK",
+        "description": "Fikrini ingliz tilida grammatik va strukturaviy xato ifodalash"
+      }
+    ],
+    "solutions_title": "Biz qanday yechim beramiz!",
+    "solutions_intro": "Biz aynan sizning muammolaringizga yechim beramiz!",
+    "solutions": [
+      {
+        "title": "So'zlashish",
+        "description": "Inglizlar kabi sof gapirish"
+      },
+      {
+        "title": "Tinglash",
+        "description": "IELTS Listeningni 9.0 darajada tushunish"
+      },
+      {
+        "title": "O'qish",
+        "description": "Hatto Shekspir asarlari sodda tuyula boshlaydi"
+      },
+      {
+        "title": "Yozish",
+        "description": "Ingliz tilida maqola yoza olish darajasiga chiqish"
+      },
+      {
+        "title": "Grant asosida o'qish",
+        "description": "O'zbekistondagi nufuzli oliygohlar bilan hamkorlikda 100% grant imkoniyati"
+      }
+    ],
+    "question": "Sizning ham farzandingizda shunday muammolar bormi?",
+    "info_button": "To'liq ma'lumot olish uchun"
+  },
+  "join_team": {
+    "main_title": "Jamoamizning bir bo'lagiga aylaning!",
+    "passion_text": "Ko'zi yonib ishlaydiganlar safida bo'ling!",
+    "join_button": "Jamoaga qo'shilish",
+    "vacancies_title": "Founders School'dagi bo'sh ish o'rinlari",
+    "vacancies_intro": "Aynan sizni jamoamizda ko'rishdan mamnun bo'lamiz!",
+    "positions": [
+      {
+        "title": "Administrator",
+        "description": "Yangi mijozlarni iliq kutib olish, prezentatsiya qilish va o'quvchilarning muammolarini hal qilish"
+      },
+      {
+        "title": "Academic Support",
+        "description": "O'quvchilar to'liq mavzularni tushunishida katta yordam berish"
+      },
+      {
+        "title": "ESL / IELTS instructor",
+        "description": "General English va IELTS talabalaridan yuqori natijalar chiqara olish"
+      },
+      {
+        "title": "Grafik dizayner",
+        "description": "Korxona brendini ommaga vizuallar orqali tanita olish"
+      },
+      {
+        "title": "Kassir",
+        "description": "Har kunlik kirim chiqimni nazorat qilish"
+      },
+      {
+        "title": "Ambassador",
+        "description": "Ingliz va rus tillarida erkin muloqot qilish, kameradan qo'rqmasdan gapira olish"
+      }
+    ],
+    "submit_application": "Ariza topshirish",
+    "hiring_process_title": "Ishga qabul qilish jarayoni",
+    "hiring_process_intro": "Ishga qabul qilish jarayoni quyidagicha amalga oshiriladi:",
+    "hiring_steps": [
+      {
+        "title": "Rezyumelarni saralash",
+        "description": "Arizalar orasidan eng maqbul nomzod tanlanadi."
+      },
+      {
+        "title": "Suhbat jarayoni",
+        "description": "Tanlangan nomzod HR rahbari bilan og'zaki suhbatdan o'tkaziladi."
+      },
+      {
+        "title": "HR mashg'ulotlari",
+        "description": "Tegishli bo'lim ish boshqaruvchilari tomonidan amaliy ko'nikmalar o'rgatilinadi."
+      },
+      {
+        "title": "O'z mahoratini ko'rsatish",
+        "description": "Nomzod ish amaliyotida lavozimiga oid o'z kasbiy mahoratlarini namoyish etishi kerak."
+      },
+      {
+        "title": "Sinov muddati",
+        "description": "1 oy davomida ishga moslashish va jamoada o'z o'rnini egallash bosqichi."
+      }
+    ],
+    "who_we_seek_title": "Biz kimlarni izlayapmiz!",
+    "who_we_seek_intro": "Aynan sizni jamoamizda ko'rishdan mamnun bo'lamiz!",
+    "qualities": [
+      "O'sishni istaydigan",
+      "O'z ishini ustasi bo'lgan",
+      "Chin dildan yondashadigan",
+      "Natija uchun qayg'uradigan xodimlari"
+    ],
+     "why_founders": {
+       "title": "Nega aynan Founders School'da ishlash kerak?",
+       "subtitle": "Kasbiy va moliyaviy o'sish",
+       "positions_info": [
+         {
+           "title": "Administrator",
+           "salary": "4,000,000 - 8,000,000 so'm oylik",
+           "benefit": "sotuv va menejment kurslarida o'qitish"
+         },
+         {
+           "title": "Academic Support",
+           "salary": "3,000,000 - 5,000,000 so'm oylik",
+           "benefit": "1 yil ESL ustozlikka ko'tarilish"
+         },
+         {
+           "title": "ESL / Teacher",
+           "salary": "8,000,000 - 25,000,000 so'm oylik",
+           "benefit": "bepul TESOL, IELTS yangilashga yordam"
+         },
+         {
+           "title": "Grafik dizayner",
+           "salary": "5,000,000 - 8,000,000 so'm oylik",
+           "benefit": "ijodkorlikni oshirishuvchi kurslarda o'qitish"
+         },
+         {
+           "title": "Kassir",
+           "salary": "3,000,000 - 5,000,000 so'm oylik",
+           "benefit": "bosh kassir lavozimigacha ko'tarilish imkoniyati"
+         },
+         {
+           "title": "Ambassador",
+           "salary": "3,000,000 - 5,000,000 so'm oylik",
+           "benefit": "moslashuvchan grafikda ishlash"
+         }
+       ]
+     },
+    "faq_title": "Ko'p berilgan savollar",
+    "faq_subtitle": "Savollaringiz javobi shu yerda",
+    "faq_items": [
+      {
+        "question": "Ish vaqti qanday?",
+        "answer": "Biz ikkita smenadagi ishga taklif qilamiz. 08:00 - 14:00 va 14:00 - 20:00."
+      },
+      {
+        "question": "Sinov muddati bormi?",
+        "answer": "Ha, albatta. Lavozimga qarab bu 1 haftadan 2 haftagacha, 1 oydan 2 oygacha bo'lishi mumkin."
+      },
+      {
+        "question": "Ish tajribasi bo'lmasa ham ishga qabul qilasizlarmi?",
+        "answer": "Afsuski, yo'q. Lavozimga qarab bu 6 oydan 2 yilgacha bo'lgan ish tajribasini talab qilinishi mumkin."
+      },
+      {
+        "question": "Ish davomida o'qitish, kurslar, treninglar tashkil etiladimi?",
+        "answer": "Ha, albatta. Bir yilda 4 marta jamoa ruhini ko'taruvchi treyninglar tashkil qilamiz. Top menejerlarga esa, malakasini oshiruvchi kurslarda o'qitamiz."
+      },
+      {
+        "question": "Mehnat ta'tili beriladimi?",
+        "answer": "Mehnat ta'tilni bir yilda 20 kungacha berilishi mumkin."
+      },
+      {
+        "question": "Moslashuvchan ish jadvali mavjudmi?",
+        "answer": "Lavozimga qarab bu o'zgaruvchan. Marketing jamoada moslashuvchan grafiklar mavjud. Boshqa lavozimlarda esa belgilangan ish vaqtlari bo'ladi."
+      }
+    ]
+  }
+}

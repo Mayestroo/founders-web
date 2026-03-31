@@ -1,0 +1,563 @@
+{
+  "common": {
+    "darajangizni_aniqlang": "Choose Your Level",
+    "kids": "KIDS",
+    "general": "GENERAL",
+    "level_test": "Level Test",
+    "kids_description": "Special teaching program for children",
+    "general_description": "For learners of all ages",
+    "orqaga": "Back",
+    "davom_etish": "Continue",
+    "next": "Next",
+    "finish": "Finish",
+    "temperament_test": "Temperament Test",
+    "iq_test": "IQ Test",
+    "test_results": "Test Results",
+    "your_score": "Your Score",
+    "your_level": "Your Level",
+    "back_to_main": "Back to Main Page",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "logo_alt": "Founders logo",
+    "cdi_login": "CDI login",
+    "prev_hero_image": "Previous hero image",
+    "next_hero_image": "Next hero image",
+    "loading": "Loading..."
+  },
+  "tests": {
+    "category_selection": "Let's check your temperament for a personalized approach:",
+    "temperament_intro": "Temperament Test",
+    "temperament_instruction": "*Select the answer that best describes you.",
+    "iq_intro": "IQ Test",
+    "iq_instruction": "*Select the answer that best describes you.",
+    "temperament_done": "You've completed the temperament test!",
+    "temperament_next_notice": "Next is the information perception test. This helps us choose the best way to deliver information and support you in memorizing vocabulary in the easiest way.",
+    "iq_done": "Thank you for your patience! The most important part remains. Complete our 20-question test and we'll place you in the perfect group!",
+    "incomplete_warning": "Please answer all questions.",
+    "identify_image": "Identify the Image",
+    "image_question_prompt": "What do you see in this picture?",
+    "image_alt": "Image"
+    ,"temperament_kids_q1": "I usually behave like this:"
+    ,"temperament_kids_q1_a": "A) I act quickly and energetically"
+    ,"temperament_kids_q1_b": "B) I am cheerful and connect with everyone quickly"
+    ,"temperament_kids_q1_c": "C) I am calm and steady"
+    ,"temperament_kids_q1_d": "D) I am quiet, reserved, and thoughtful"
+    ,"temperament_kids_q2": "How do you usually act in a new situation?"
+    ,"temperament_kids_q2_a": "A) I take initiative and respond quickly"
+    ,"temperament_kids_q2_b": "B) I laugh a lot and make jokes"
+    ,"temperament_kids_q2_c": "C) I observe first, then participate"
+    ,"temperament_kids_q2_d": "D) I hold back and stay careful"
+    ,"temperament_kids_q3": "How do you spend your free time?"
+    ,"temperament_kids_q3_a": "A) I like activity and competitions"
+    ,"temperament_kids_q3_b": "B) I like chatting and playing with friends"
+    ,"temperament_kids_q3_c": "C) I like calm games and reading books"
+    ,"temperament_kids_q3_d": "D) I like being alone, thinking, and drawing"
+    ,"temperament_kids_q4": "How do you react in a difficult situation?"
+    ,"temperament_kids_q4_a": "A) I decide quickly and take action"
+    ,"temperament_kids_q4_b": "B) I consult with others"
+    ,"temperament_kids_q4_c": "C) I analyze the situation calmly"
+    ,"temperament_kids_q4_d": "D) I worry more and overthink"
+    ,"temperament_kids_q5": "How do you behave in a team?"
+    ,"temperament_kids_q5_a": "A) I take leadership"
+    ,"temperament_kids_q5_b": "B) I motivate everyone"
+    ,"temperament_kids_q5_c": "C) I keep peace and find agreement"
+    ,"temperament_kids_q5_d": "D) I do tasks carefully and with quality"
+    ,"temperament_kids_q6": "If you have to wait for a long time:"
+    ,"temperament_kids_q6_a": "A) I get impatient"
+    ,"temperament_kids_q6_b": "B) I distract myself with something else"
+    ,"temperament_kids_q6_c": "C) I stay patient"
+    ,"temperament_kids_q6_d": "D) I get nervous"
+    ,"temperament_kids_q7": "If you see something wrong:"
+    ,"temperament_kids_q7_a": "A) I object immediately"
+    ,"temperament_kids_q7_b": "B) I wait for the right time and speak gently"
+    ,"temperament_kids_q7_c": "C) I observe silently"
+    ,"temperament_kids_q7_d": "D) I feel sad but stay silent"
+    ,"temperament_kids_q8": "About discipline:"
+    ,"temperament_kids_q8_a": "A) I often break rules"
+    ,"temperament_kids_q8_b": "B) Rules are good if they fit"
+    ,"temperament_kids_q8_c": "C) I follow rules easily"
+    ,"temperament_kids_q8_d": "D) I am very meticulous, everything should follow the plan"
+    ,"temperament_kids_q9": "When you lose:"
+    ,"temperament_kids_q9_a": "A) I want to try again"
+    ,"temperament_kids_q9_b": "B) I take it with humor"
+    ,"temperament_kids_q9_c": "C) I accept it calmly"
+    ,"temperament_kids_q9_d": "D) I stay upset for a long time"
+    ,"temperament_kids_q10": "How do your friends describe you most often?"
+    ,"temperament_kids_q10_a": "A) Brave and energetic"
+    ,"temperament_kids_q10_b": "B) Cheerful and sincere"
+    ,"temperament_kids_q10_c": "C) Calm and reliable"
+    ,"temperament_kids_q10_d": "D) Thoughtful and sensitive"
+    ,"level_done": "You have successfully completed the level test!"
+    ,"very_high_level": "Very high level"
+    ,"high_level": "High level"
+    ,"average_level": "Average level"
+    ,"practice_recommended": "Additional practice is recommended"
+    ,"grading_criteria": "Grading criteria"
+    ,"temperament_desc_choleric": "An active, initiative-taking temperament type that makes quick decisions."
+    ,"temperament_desc_sanguine": "A cheerful, sociable temperament type open to communication."
+    ,"temperament_desc_phlegmatic": "A calm, stable, and patient temperament type."
+    ,"temperament_desc_melancholic": "A thoughtful, sensitive temperament type inclined to analysis."
+  },
+  "form": {
+    "full_name": "Full Name",
+    "birth_date": "Date of Birth",
+    "phone_number": "Phone Number",
+    "where_heard": "Where did you hear about us?",
+    "issue_with_english": "What is your issue with English?",
+    "your_region": "Your Region?",
+    "submit": "Submit",
+    "regions": [
+      "Tashkent City",
+      "Tashkent Region",
+      "Samarkand",
+      "Bukhara",
+      "Khorezm",
+      "Navoi",
+      "Kashkadarya",
+      "Surkhandarya",
+      "Andijan",
+      "Fergana",
+      "Namangan"
+    ]
+  },
+  "temperament_types": {
+    "choleric": "Choleric",
+    "sanguine": "Sanguine",
+    "phlegmatic": "Phlegmatic",
+    "melancholic": "Melancholic"
+  },
+  "registration": {
+    "registration_title": "User Registration",
+    "fill_all_fields": "Please fill in all fields",
+    "full_name": "Full Name",
+    "enter_full_name": "Enter your full name",
+    "birth_date": "Date of Birth",
+    "phone_number": "Phone Number",
+    "enter_phone": "+998 90 123 45 67",
+    "heard_about": "Where did you hear about us?",
+    "heard_placeholder": "Tell us how you found out about us...",
+    "english_issue": "What is your issue with English?",
+    "problem_placeholder": "What challenges do you face with English?",
+    "your_region": "Your Region",
+    "select_region": "Select your region",
+    "name_required": "Full name is required",
+    "birthdate_required": "Date of birth is required",
+    "phone_required": "Phone number is required",
+    "phone_invalid": "Phone number is invalid",
+    "heard_required": "Please specify where you heard about us",
+    "problem_required": "Please describe your issue with English",
+    "region_required": "Please select your region",
+    "form_submission_error": "Error submitting form",
+    "submit_button": "Submit"
+  },
+  "results": {
+    "congratulations": "Congratulations!",
+    "tests_completed": "You have successfully completed all tests!",
+    "results_summary": "Your Test Results",
+    "user_information": "User Information",
+    "temperament_result_title": "Temperament Test Results",
+    "dominant_type": "Dominant Type",
+    "iq_test_results": "IQ Test Results",
+    "english_level_results": "English Level Test Results",
+    "score": "Score",
+    "level": "Level",
+    "submit_results": "Submit Results",
+    "go_home": "Go Home",
+    "submitting": "Submitting..."
+  },
+  "header": {
+    "choose_level": "Choose Your Level",
+    "about_us": "About Us",
+    "teachers": "Teachers",
+    "for_parents": "For Parents",
+    "services": "Services",
+    "customer_reviews": "Customer Reviews",
+    "materials": "Materials",
+    "vacancies": "Vacancies",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "language": "Language",
+    "uzbek": "O'zbekcha",
+    "russian": "Русский",
+    "english": "English",
+    "phone": "71 205-03-33 / 71 205-53-33",
+    "phone_for_contact": "For Contact",
+    "address": "Foreign Language Courses in Tashkent",
+    "public_offer": "Public Offer"
+  },
+  "footer": {
+    "home": "Home",
+    "school_name": "Founders School",
+    "contact_for": "For Contact",
+    "cdi": "CDI",
+    "follow_us": "Follow us on social media:",
+    "phone": "71 205-03-33 / 71 205-53-33"
+  },
+  "hero": {
+    "title": "Guaranteed IELTS or FREE Study!",
+    "subtitle": "Founders School has contributed to changing the lives of 2000+ students so far!",
+    "cta_button": "Register for first lesson"
+  },
+  "stats": {
+    "title": "Founders School",
+    "tagline": "Reliable education",
+    "experience": "4+ years experience",
+    "students": "2500+ satisfied students",
+    "results": "200+ positive IELTS results",
+    "team": "400+ team members"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "FOUNDERS SCHOOL - for those who appreciate our culture!",
+    "vision_title": "Vision",
+    "vision_text": "To be the leading English learning center in Central Asia.",
+    "mission_title": "Mission",
+    "mission_text": "We provide our students with the best teachers, the most modern teaching methods, the most comfortable environment and the highest results!",
+    "contact_prompt": "Leave your information for us to contact you!",
+    "full_name": "Full Name",
+    "submit": "Submit",
+    "get_info": "Get full information",
+    "video_school": "ENGLISH SCHOOL",
+    "video_placeholder": "Video placeholder"
+  },
+  "teachers": {
+    "title": "Teachers:",
+    "certificate": "CERTIFICATE:",
+    "ielts_score": "IELTS SCORE:",
+    "experience": "EXPERIENCE:",
+    "results": "RESULTS:"
+  },
+  "why_choose": {
+    "title": "Why choose us exactly?",
+    "subtitle": "Top 5 reasons parents choose us",
+    "guarantee": {
+      "title": "IELTS 7+ GUARANTEE",
+      "description": "Complete all 5 levels of English"
+    },
+    "fast_results": {
+      "title": "FAST RESULTS",
+      "description": "You won't wait long to speak English fluently as you wish"
+    },
+    "demanding_teachers": {
+      "title": "DEMANDING TEACHERS",
+      "description": "Constant strict monitoring of homework and lesson comprehension indicators"
+    },
+    "interesting_method": {
+      "title": "INTERESTING TEACHING METHOD",
+      "description": "Conducting classes interactively with modern technologies"
+    },
+    "friendly_environment": {
+      "title": "FRIENDLY ENVIRONMENT",
+      "description": "Studying together with talented youth striving for the same goal"
+    }
+  },
+  "testimonials": {
+    "title": "Customer Reviews!",
+    "testimonials_list": [
+      {
+        "author": "Asalkhon Fayziyeva",
+        "text": "Studied at Founders School and got 8 band in IELTS. Big thanks to my teachers and the entire Founders team"
+      },
+      {
+        "author": "Matluba Azizova",
+        "text": "I like how the teachers conduct classes, they pay attention to each child. I recommend sending your children👍🏻"
+      },
+      {
+        "author": "Safida Akobirova",
+        "text": "My sons study at Founders and are achieving great results..."
+      },
+      {
+        "author": "Azizjon Hamidjonov",
+        "text": "Quality and interesting lessons. My daughter rushes to the learning center. We're satisfied."
+      },
+      {
+        "author": "Nargiza Abdullaevna",
+        "text": "Nothing to say about Founders, thanks for such great education..."
+      },
+      {
+        "author": "Dilshodbek Mamatkulov",
+        "text": "Results are better than expected, my son likes it..."
+      },
+      {
+        "author": "Lola Tursunova",
+        "text": "3 of my children study there, we're very happy seeing them speak English at home. Thanks to you!"
+      },
+      {
+        "author": "Kamila Abdumalikova",
+        "text": "Give the staff of the learning center 5 stars..."
+      }
+    ]
+  },
+  "materials": {
+    "title": "Materials",
+    "tagline": "Free and useful materials!",
+    "audio_materials": "Audio Materials",
+    "audio_subtitle": "Learn by listening",
+    "video_materials": "Video Materials",
+    "video_subtitle": "Learn by watching",
+    "pdf_materials": "PDF Materials",
+    "pdf_subtitle": "Download",
+    "use_materials": "Use materials",
+    "previous": "Previous material",
+    "next": "Next material",
+    "choose_level": "Choose your level!",
+    "beginner": "BEGINNER",
+    "elementary": "ELEMENTARY",
+    "pre_intermediate": "PRE-INTERMEDIATE",
+    "intermediate": "INTERMEDIATE",
+    "upper_intermediate": "UPPER-INTERMEDIATE",
+    "advanced": "ADVANCED",
+    "student_books": "STUDENT BOOKS",
+    "work_books": "WORK BOOKS",
+    "audio_name": "Audio name",
+    "audio_prev": "Previous audio",
+    "audio_pause": "Pause audio",
+    "audio_play": "Play audio",
+    "audio_download": "Download audio",
+    "audio_volume": "Volume control",
+    "audio_loading": "Loading audio materials...",
+    "audio_empty": "No audio materials found for this selection"
+  },
+  "services": {
+    "title": "Services",
+    "kids_english": {
+      "title": "KIDS ENGLISH",
+      "description": "Consists of 1-4 levels using textbooks from British MACMILLAN publishing house",
+      "duration": "3 months",
+      "price": "850,000 UZS"
+    },
+    "general_english": {
+      "title": "GENERAL ENGLISH",
+      "description": "Beginner - Upper-Intermediate levels using OXFORD publishing house textbooks",
+      "duration": "3 months",
+      "price": "850,000 UZS"
+    },
+    "ielts": {
+      "title": "IELTS",
+      "description": "Prepared with over 350 authentic test materials, special program guaranteeing IELTS 7+, free CDI mock exams",
+      "duration": "3 months",
+      "price": "850,000 UZS"
+    },
+    "corporate_english": {
+      "title": "CORPORATE ENGLISH",
+      "description": "Special B2B training program designed for collective employee business English study",
+      "duration": "8 months",
+      "price": "1,000,000 UZS"
+    },
+    "online_english": {
+      "title": "ONLINE ENGLISH",
+      "description": "Online English learning course via ZOOM platform",
+      "duration": "Individual approach",
+      "price": "1,500,000 UZS"
+    },
+    "course_duration": "Course duration:",
+    "register_button": "Register for first lesson"
+  },
+  "promotions": {
+    "title": "Promotions:",
+    "description": "At the end of 2025, a mega promotion starts with 3 major prizes.",
+    "prizes": "1st place: Umrah travel package | 2nd place: Sanatorium travel package | 3rd place: Family trip to Seven Tree"
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Answers to your questions are here",
+    "faq_items": [
+      {
+        "question": "How long does it take to learn English from scratch?",
+        "answer": "It depends on the student's level, time devoted to classes, and individual abilities. Usually, with daily practice, noticeable results can be achieved within 6-12 months."
+      },
+      {
+        "question": "What format are the lessons in?",
+        "answer": "Courses can be in offline and online format. Classes include speaking, writing, listening and grammar exercises."
+      },
+      {
+        "question": "Who teaches at the study center?",
+        "answer": "Taught by our teachers with international certificates like IELTS 8.0-8.5, TESOL/TEFL, CELTA and average experience of over 5 years."
+      },
+      {
+        "question": "How to register for classes?",
+        "answer": "You can register by visiting the center or by filling out an online form."
+      },
+      {
+        "question": "How many people are in the groups?",
+        "answer": "Our classes have up to 12 students"
+      },
+      {
+        "question": "Can I start from beginner level?",
+        "answer": "Yes, courses are adapted for all levels and you can start from beginner level."
+      },
+      {
+        "question": "What age can enroll in courses?",
+        "answer": "Our courses are open from age 8 to 30."
+      }
+    ]
+  },
+  "parents_solutions": {
+    "hero_title": "Why choose us exactly?",
+    "hero_subtitle": "Top 5 reasons parents choose us",
+    "challenges_title": "Do you know the difficulties your child faces in learning English?",
+    "challenges": [
+      {
+        "title": "MEMORIZING WORDS",
+        "description": "Unable to actively use memorized English words in speech"
+      },
+      {
+        "title": "UNABLE TO SPEAK FLUENTLY",
+        "description": "Fear of speaking English freely in public due to lack of confidence"
+      },
+      {
+        "title": "UNABLE TO UNDERSTAND BY LISTENING",
+        "description": "Difficulties translating English after hearing just once"
+      },
+      {
+        "title": "UNABLE TO UNDERSTAND BY READING",
+        "description": "Difficulties understanding the meaning and essence of English texts"
+      },
+      {
+        "title": "UNABLE TO WRITE TEXT",
+        "description": "Expressing thoughts in English with grammatical and structural errors"
+      }
+    ],
+    "solutions_title": "What solutions do we provide!",
+    "solutions_intro": "We provide solutions to your exact problems!",
+    "solutions": [
+      {
+        "title": "Speaking",
+        "description": "Speak pure English like English people"
+      },
+      {
+        "title": "Listening",
+        "description": "Understand IELTS Listening at level 9.0"
+      },
+      {
+        "title": "Reading",
+        "description": "Even Shakespeare's works start to seem simple"
+      },
+      {
+        "title": "Writing",
+        "description": "Reach the level of writing articles in English"
+      },
+      {
+        "title": "Study on scholarship",
+        "description": "Opportunity to study on a 100% scholarship in partnership with top universities in Uzbekistan"
+      }
+    ],
+    "question": "Does your child have such problems too?",
+    "info_button": "For full information"
+  },
+  "join_team": {
+    "main_title": "Join our team!",
+    "passion_text": "Be among those working with passion!",
+    "join_button": "Join the team",
+    "vacancies_title": "Open positions at Founders School",
+    "vacancies_intro": "We would be happy to see you in our team!",
+    "positions": [
+      {
+        "title": "Administrator",
+        "description": "Welcome new customers, present, and solve student problems"
+      },
+      {
+        "title": "Academic Support",
+        "description": "Help students understand topics completely"
+      },
+      {
+        "title": "ESL / IELTS instructor",
+        "description": "Achieve high results with General English and IELTS students"
+      },
+      {
+        "title": "Graphic designer",
+        "description": "Promote company brand to public through visuals"
+      },
+      {
+        "title": "Cashier",
+        "description": "Monitor daily income and expenses"
+      },
+      {
+        "title": "Ambassador",
+        "description": "Speak freely in English and Russian, speak confidently in front of camera"
+      }
+    ],
+    "submit_application": "Submit application",
+    "hiring_process_title": "Hiring process",
+    "hiring_process_intro": "The hiring process is carried out as follows:",
+    "hiring_steps": [
+      {
+        "title": "Resume screening",
+        "description": "The most suitable candidate is selected from applications."
+      },
+      {
+        "title": "Interview process",
+        "description": "Selected candidate goes through an oral interview with HR manager."
+      },
+      {
+        "title": "HR training",
+        "description": "Practical skills are taught by department managers."
+      },
+      {
+        "title": "Show skills",
+        "description": "Candidate must demonstrate professional skills related to the position in practice."
+      },
+      {
+        "title": "Trial period",
+        "description": "Period for adapting to work and finding your place in the team within 1 month."
+      }
+    ],
+    "who_we_seek_title": "Who are we looking for!",
+    "who_we_seek_intro": "We would be happy to see you in our team!",
+    "qualities": [
+      "Those who want to grow",
+      "Masters of their craft",
+      "Those who approach sincerely",
+      "Those who care about results"
+    ],
+    "why_founders": {
+      "title": "Why should you work at Founders School?",
+      "subtitle": "Professional and financial growth",
+      "positions_info": [
+        {
+          "title": "Administrator",
+          "salary": "4,000,000 - 8,000,000 som monthly",
+          "benefit": "teaching sales and management courses"
+        },
+        {
+          "title": "Academic Support",
+          "salary": "3,000,000 - 5,000,000 som monthly",
+          "benefit": "promotion to ESL teacher in 1 year"
+        },
+        {
+          "title": "ESL / Teacher",
+          "salary": "8,000,000 - 25,000,000 som monthly",
+          "benefit": "free TESOL, IELTS updates"
+        }
+      ]
+    },
+    "faq_title": "Frequently asked questions",
+    "faq_subtitle": "Answers to your questions are here",
+    "faq_items": [
+      {
+        "question": "What is the work schedule?",
+        "answer": "We offer work in two shifts. 08:00 - 14:00 and 14:00 - 20:00."
+      },
+      {
+        "question": "Is there a trial period?",
+        "answer": "Yes, of course. Depending on position, it can be 1 to 2 weeks, 1 to 2 months."
+      },
+      {
+        "question": "Will you hire without work experience?",
+        "answer": "Unfortunately, no. Depending on position, 6 months to 2 years of experience may be required."
+      },
+      {
+        "question": "Are there trainings and courses during work?",
+        "answer": "Yes, of course. We organize team spirit training 4 times a year. Top managers receive skills enhancement courses."
+      },
+      {
+        "question": "Is vacation given?",
+        "answer": "Annual vacation up to 20 days may be given."
+      },
+      {
+        "question": "Is flexible schedule available?",
+        "answer": "It depends on position. Marketing team has flexible schedules. Other positions have fixed hours."
+      }
+    ]
+  }
+}
