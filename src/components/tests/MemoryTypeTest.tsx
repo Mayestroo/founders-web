@@ -228,6 +228,7 @@ export default function MemoryTypeTest({
       score: resultPayload.score,
       total: resultPayload.total,
       level: resultPayload.level,
+      counts: resultPayload.counts,
     });
 
     router.push(nextPath);

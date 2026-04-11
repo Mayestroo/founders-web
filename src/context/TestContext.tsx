@@ -10,6 +10,11 @@ export interface TestState {
     score: number;
     total: number;
     level: string;
+    counts?: {
+      A: number;
+      B: number;
+      C: number;
+    };
   } | null;
   levelResult: {
     score: number;

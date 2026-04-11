@@ -23,7 +23,7 @@ const uzbekRegions = [
 
 export default function RegistrationForm() {
   const router = useRouter();
-  const { setRegistrationData } = useTestContext();
+  const { state, setRegistrationData } = useTestContext();
   const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
@@ -73,32 +73,75 @@ export default function RegistrationForm() {
 
     setIsSubmitting(true);
 
-      try {
-       // Store registration data in context
-       setRegistrationData({
-         name: formData.name,
-         phone: formData.phone,
-         region: formData.region,
-       });
+    try {
+      const registrationData = {
+        name: formData.name,
+        phone: formData.phone,
+        region: formData.region,
+      };
 
-       // Store in localStorage as backup
-       localStorage.setItem(
-         'registrationData',
-         JSON.stringify({
-           name: formData.name,
-           phone: formData.phone,
-           region: formData.region,
-         })
-       );
+      const category = state.category || (localStorage.getItem('testCategory') as 'kids' | 'general' | null);
 
-       // Navigate to results page
-       router.push('/tests/results');
-     } catch (error) {
-       console.error('Error submitting form:', error);
-       setErrors({ submit: t('registration.form_submission_error') || 'Error submitting form' });
-     } finally {
-       setIsSubmitting(false);
-     }
+      const readJson = (key: string) => {
+        try {
+          const raw = localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : null;
+        } catch {
+          return null;
+        }
+      };
+
+      const levelResult =
+        state.levelResult ||
+        (category === 'kids' ? readJson('levelKidsResult') : readJson('levelGeneralResult')) ||
+        readJson('levelKidsResult') ||
+        readJson('levelGeneralResult');
+
+      const temperamentResult =
+        state.temperamentResult ||
+        (category === 'kids' ? readJson('temperamentResult') : readJson('temperamentGeneralResult')) ||
+        readJson('temperamentResult') ||
+        readJson('temperamentKidsResult') ||
+        readJson('temperamentGeneralResult');
+
+      const memoryResult =
+        state.memoryResult ||
+        (category === 'kids' ? readJson('memoryKidsResult') : readJson('memoryGeneralResult')) ||
+        readJson('memoryKidsResult') ||
+        readJson('memoryGeneralResult');
+
+      const response = await fetch('/api/submit-test', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          registrationData,
+          category,
+          testResults: {
+            level: levelResult,
+            temperament: temperamentResult,
+            memory: memoryResult,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+
+      // Store registration data in context and localStorage after successful send
+      setRegistrationData(registrationData);
+      localStorage.setItem('registrationData', JSON.stringify(registrationData));
+
+      // Navigate to results page
+      router.push('/tests/results');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrors({ submit: t('registration.form_submission_error') || 'Error submitting form' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

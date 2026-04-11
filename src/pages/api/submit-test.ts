@@ -12,6 +12,15 @@ type TelegramTestResult = {
   total?: number;
   level?: string;
   dominant?: string;
+  counts?: {
+    A?: number;
+    B?: number;
+    C?: number;
+    choleric?: number;
+    sanguine?: number;
+    phlegmatic?: number;
+    melancholic?: number;
+  };
 };
 
 type SubmitPayload = {
@@ -45,37 +54,77 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const chat_id = process.env.TELEGRAM_CHAT_ID || '-1002585473961';
     const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
-    // Format message content
-    let messageContent = `📝 New Registration Submission\n\n`;
-    messageContent += `👥 Category: ${category || '-'}\n`;
-    messageContent += `👤 Name: ${registrationData.name}\n`;
-    messageContent += `📞 Phone: ${registrationData.phone}\n`;
-    messageContent += `📍 Region: ${registrationData.region}\n\n`;
+    const formatTemperamentName = (dominant?: string) => {
+      if (!dominant) return '-';
+      const map: Record<string, string> = {
+        choleric: 'Xolerik',
+        sanguine: 'Sangvinik',
+        phlegmatic: 'Flegmatik',
+        melancholic: 'Melanxolik',
+      };
+      return map[dominant] || dominant;
+    };
 
-    messageContent += `🧪 Test Results (order: Level -> Temperament -> Memory)\n`;
+    const formatLevelLabel = (level?: string) => {
+      if (!level) return '-';
+      const map: Record<string, string> = {
+        'tests.level_beginner': 'Beginner',
+        'tests.level_elementary': 'Elementary',
+        'tests.level_pre_intermediate': 'Pre-Intermediate',
+        'tests.level_intermediate': 'Intermediate',
+        'tests.level_upper_intermediate': 'Upper-Intermediate',
+        'tests.level_advanced': 'Advanced',
+      };
+      return map[level] || level;
+    };
 
     const level = testResults?.level;
-    if (level) {
-      messageContent += `1) Level: ${level.score ?? '-'} / ${level.total ?? '-'} (${level.level ?? '-'})\n`;
-    } else {
-      messageContent += `1) Level: -\n`;
-    }
-
     const temperament = testResults?.temperament;
-    if (temperament) {
-      messageContent += `2) Temperament: dominant ${temperament.dominant ?? '-'}\n`;
-    } else {
-      messageContent += `2) Temperament: -\n`;
-    }
-
     const memory = testResults?.memory;
-    if (memory) {
-      messageContent += `3) Memory Type: ${memory.score ?? '-'} / ${memory.total ?? '-'} (${memory.level ?? '-'})\n\n`;
-    } else {
-      messageContent += `3) Memory Type: -\n\n`;
-    }
 
-    messageContent += `✅ Submission completed on: ${new Date().toLocaleString()}\n`;
+    const memoryLabel = memory?.level || '-';
+    const memoryStyles: Record<string, 'A' | 'B' | 'C'> = {
+      "Vizual (ko'ruv orqali)": 'A',
+      "Audial (eshitish orqali)": 'B',
+      "Kinestetik (harakat va his orqali)": 'C',
+    };
+    const memoryChoiceCounts = memory?.counts;
+
+    const temperamentCounts = (temperament as any)?.counts as
+      | { choleric?: number; sanguine?: number; phlegmatic?: number; melancholic?: number }
+      | undefined;
+
+    // Human-readable Telegram format (same style as before), keeping order: Level -> Temperament -> Memory
+    let messageContent = `📝 Yangi test topshirig'i\n\n`;
+    messageContent += `👤 Ism: ${registrationData.name || '-'}\n`;
+    messageContent += `📞 Telefon: ${registrationData.phone || '-'}\n`;
+    messageContent += `📍 Hudud: ${registrationData.region || '-'}\n`;
+    messageContent += `👥 Toifa: ${category || '-'}\n\n`;
+
+    messageContent += `📘 Level test natijasi:\n`;
+    messageContent += `🧮 Ball: ${level?.score ?? '-'} / ${level?.total ?? '-'}\n`;
+    messageContent += `⭐ Daraja: ${formatLevelLabel(level?.level)}\n\n`;
+
+    messageContent += `📊 Temperament testi natijasi:\n`;
+    messageContent += `🔥 Xolerik: ${temperamentCounts?.choleric ?? '-'}\n`;
+    messageContent += `😊 Sangvinik: ${temperamentCounts?.sanguine ?? '-'}\n`;
+    messageContent += `🌿 Flegmatik: ${temperamentCounts?.phlegmatic ?? '-'}\n`;
+    messageContent += `☁️ Melanxolik: ${temperamentCounts?.melancholic ?? '-'}\n`;
+    messageContent += `⭐ Temperament: ${formatTemperamentName(temperament?.dominant)}\n\n`;
+
+    messageContent += `👁️ Axborotni qabul qilish uslubi testi:\n`;
+    if (memoryChoiceCounts) {
+      messageContent += `👁️ Vizual: ${memoryChoiceCounts.A ?? '-'}\n`;
+      messageContent += `🎧 Audial: ${memoryChoiceCounts.B ?? '-'}\n`;
+      messageContent += `✋ Kinestetik: ${memoryChoiceCounts.C ?? '-'}\n`;
+    } else {
+      messageContent += `👁️ Vizual: -\n`;
+      messageContent += `🎧 Audial: -\n`;
+      messageContent += `✋ Kinestetik: -\n`;
+    }
+    messageContent += `⭐ Dominant uslub: ${memoryLabel}\n\n`;
+
+    messageContent += `✅ Yuborilgan vaqt: ${new Date().toLocaleString()}\n`;
 
     // Send to Telegram
     try {
