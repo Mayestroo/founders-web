@@ -6,7 +6,7 @@ export interface TestState {
     counts: { choleric: number; sanguine: number; phlegmatic: number; melancholic: number };
     dominant: string;
   } | null;
-  iqResult: {
+  memoryResult: {
     score: number;
     total: number;
     level: string;
@@ -18,21 +18,18 @@ export interface TestState {
   } | null;
   registrationData: {
     name: string;
-    birthdate: string;
     phone: string;
-    heard: string;
-    problem: string;
     region: string;
     district?: string;
   } | null;
-  currentStep: "category" | "temperament" | "iq" | "level" | "form" | "results";
+  currentStep: "category" | "level" | "temperament" | "memory" | "form" | "results";
 }
 
 interface TestContextType {
   state: TestState;
   setCategory: (category: "kids" | "general") => void;
   setTemperamentResult: (result: TestState["temperamentResult"]) => void;
-  setIQResult: (result: TestState["iqResult"]) => void;
+  setMemoryResult: (result: TestState["memoryResult"]) => void;
   setLevelResult: (result: TestState["levelResult"]) => void;
   setRegistrationData: (data: TestState["registrationData"]) => void;
   setCurrentStep: (step: TestState["currentStep"]) => void;
@@ -45,26 +42,26 @@ export const TestProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [state, setState] = useState<TestState>({
     category: null,
     temperamentResult: null,
-    iqResult: null,
+    memoryResult: null,
     levelResult: null,
     registrationData: null,
     currentStep: "category",
   });
 
   const setCategory = (category: "kids" | "general") => {
-    setState((prev) => ({ ...prev, category, currentStep: "temperament" }));
+    setState((prev) => ({ ...prev, category, currentStep: "level" }));
   };
 
   const setTemperamentResult = (result: TestState["temperamentResult"]) => {
-    setState((prev) => ({ ...prev, temperamentResult: result, currentStep: "iq" }));
+    setState((prev) => ({ ...prev, temperamentResult: result, currentStep: "memory" }));
   };
 
-  const setIQResult = (result: TestState["iqResult"]) => {
-    setState((prev) => ({ ...prev, iqResult: result, currentStep: "level" }));
+  const setMemoryResult = (result: TestState["memoryResult"]) => {
+    setState((prev) => ({ ...prev, memoryResult: result, currentStep: "form" }));
   };
 
   const setLevelResult = (result: TestState["levelResult"]) => {
-    setState((prev) => ({ ...prev, levelResult: result, currentStep: "form" }));
+    setState((prev) => ({ ...prev, levelResult: result, currentStep: "temperament" }));
   };
 
   const setRegistrationData = (data: TestState["registrationData"]) => {
@@ -79,7 +76,7 @@ export const TestProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setState({
       category: null,
       temperamentResult: null,
-      iqResult: null,
+      memoryResult: null,
       levelResult: null,
       registrationData: null,
       currentStep: "category",
@@ -92,7 +89,7 @@ export const TestProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         state,
         setCategory,
         setTemperamentResult,
-        setIQResult,
+        setMemoryResult,
         setLevelResult,
         setRegistrationData,
         setCurrentStep,

@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Confetti from 'react-confetti';
-import { useWindowSize } from 'react-use';
 import { useRouter } from 'next/router';
 import { useTestContext } from '@/context/TestContext';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -60,13 +58,10 @@ export default function LevelTestGeneral() {
   const router = useRouter();
   const { setLevelResult } = useTestContext();
   const { t } = useTranslation();
-  const { width, height } = useWindowSize();
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
-  const [showResult, setShowResult] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showConfetti, setShowConfetti] = useState(false);
   const levelGeneralProgressKey = 'levelGeneralProgressState';
 
   const formatQuestionText = (text: string): string => {
@@ -103,36 +98,21 @@ export default function LevelTestGeneral() {
       const state = JSON.parse(savedState);
       setCurrentQuestion(state.currentQuestion);
       setScore(state.score);
-      setShowResult(state.showResult);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(levelGeneralProgressKey, JSON.stringify({ currentQuestion, score, showResult }));
-  }, [currentQuestion, score, showResult]);
-
-  useEffect(() => {
-    if (showResult) {
-      sendFinalResult(score);
-    }
-  }, [showResult]);
-
-  useEffect(() => {
-    if (showResult) {
-      const startTimer = setTimeout(() => {
-        setShowConfetti(true);
-        const stopTimer = setTimeout(() => setShowConfetti(false), 20000);
-        return () => clearTimeout(stopTimer);
-      }, 100);
-      return () => clearTimeout(startTimer);
-    }
-  }, [showResult]);
+    localStorage.setItem(levelGeneralProgressKey, JSON.stringify({ currentQuestion, score }));
+  }, [currentQuestion, score]);
 
   const handleAnswer = (option: string | null = null) => {
+    let nextScore = score;
+
     if (option) {
       setSelectedOption(option);
       if (option === questions[currentQuestion].answer) {
-        setScore((prev) => prev + 1);
+        nextScore = score + 1;
+        setScore(nextScore);
       }
     }
 
@@ -142,7 +122,8 @@ export default function LevelTestGeneral() {
         setCurrentQuestion(nextQuestion);
         setSelectedOption(null);
       } else {
-        setShowResult(true);
+        sendFinalResult(nextScore);
+        router.push('/tests/temperament-general');
       }
     }, 500);
   };
@@ -157,61 +138,33 @@ export default function LevelTestGeneral() {
         className="flex flex-col items-center justify-center w-[90%] max-w-5xl kids m-auto py-11 px-3 xl:px-10 min-[400px]:w-[80%] md:w-[70%] xl:w-[60%] h-auto rounded-2xl border-2 text-center border-[#EC0000]"
         style={{ boxShadow: '15px 15px 40px 0px #FF00004D' }}
       >
-        {showResult ? (
-          <>
-            {showConfetti && <Confetti width={width} height={height} />}
-            <div className="flex flex-col items-center justify-center">
-              <h2 className="font-monserat font-medium text-3xl text-gray-800 mb-4">
-                {t('common.your_score')}:
-              </h2>
-              <p className="font-monserat font-semibold text-2xl text-center mb-2">
-                {score} / {questions.length}
-              </p>
-              <p className="font-monserat text-xl font-semibold text-gray-700 mb-6">
-                {t('common.your_level')}: <span className="font-semibold text-red-600">{t(getLevelKey(score))}</span>
-              </p>
-              <p className="font-monserat text-lg font-semibold text-gray-700 mb-6 px-8">
-                {t('tests.level_done')}
-              </p>
+        <div className="w-full">
+          <h2 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-semibold mb-6 text-gray-900 pl-4">
+            <span>{currentQuestion + 1}.</span>{' '}
+            <span className="whitespace-pre-line">{formatQuestionText(questions[currentQuestion].question)}</span>
+          </h2>
+          <div className="space-y-4">
+            {questions[currentQuestion].options.map((option, index) => (
               <button
-                onClick={() => {
-                  router.push('/tests/form');
-                }}
-                className="w-auto m-auto mt-6 bg-red-500 text-white py-2 px-6 rounded-lg hover:bg-red-600 transition duration-300"
+                key={index}
+                onClick={() => handleAnswer(option)}
+                disabled={selectedOption !== null}
+                className={`block w-full py-3 rounded-xl text-lg font-medium transition-all shadow-md ${
+                  selectedOption === option ? 'bg-red-500 text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                }`}
               >
-                {t('common.next')}
+                {option}
               </button>
-            </div>
-          </>
-        ) : (
-          <div className="w-full">
-            <h2 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-semibold mb-6 text-gray-900 pl-4">
-              <span>{currentQuestion + 1}.</span>{' '}
-              <span className="whitespace-pre-line">{formatQuestionText(questions[currentQuestion].question)}</span>
-            </h2>
-            <div className="space-y-4">
-              {questions[currentQuestion].options.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswer(option)}
-                  disabled={selectedOption !== null}
-                  className={`block w-full py-3 rounded-xl text-lg font-medium transition-all shadow-md ${
-                    selectedOption === option ? 'bg-red-500 text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                  }`}
-                >
-                  {option}
-                </button>
-              ))}
-            </div>
-            <button
-              onClick={handleNext}
-              disabled={selectedOption !== null}
-              className="w-full mt-6 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition duration-300"
-            >
-              {t('common.next')}
-            </button>
+            ))}
           </div>
-        )}
+          <button
+            onClick={handleNext}
+            disabled={selectedOption !== null}
+            className="w-full mt-6 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition duration-300"
+          >
+            {t('common.next')}
+          </button>
+        </div>
       </div>
     </div>
   );

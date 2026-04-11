@@ -5,20 +5,20 @@ import { TestProvider } from "@/context/TestContext";
 import Spinner from "@/components/Spinner";
 
 // Lazy load test component to improve initial page load
-const IQTestKids = dynamic(
-  () => import("@/components/tests/IQTestKids"),
+const MemoryTestKids = dynamic(
+  () => import("@/components/tests/MemoryTestKids"),
   {
     loading: () => <Spinner />,
     ssr: false,
   }
 );
 
-export default function IQKidsPage() {
+export default function MemoryKidsPage() {
   return (
     <TestProvider>
       <Header />
       <main className="min-h-screen bg-white py-8">
-        <IQTestKids />
+        <MemoryTestKids />
       </main>
       <Footer />
     </TestProvider>

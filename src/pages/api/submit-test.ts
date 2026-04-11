@@ -7,13 +7,34 @@ type ResponseData = {
   error?: string;
 };
 
+type TelegramTestResult = {
+  score?: number;
+  total?: number;
+  level?: string;
+  dominant?: string;
+};
+
+type SubmitPayload = {
+  registrationData?: {
+    name?: string;
+    phone?: string;
+    region?: string;
+  };
+  category?: 'kids' | 'general' | null;
+  testResults?: {
+    level?: TelegramTestResult | null;
+    temperament?: TelegramTestResult | null;
+    memory?: TelegramTestResult | null;
+  };
+};
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse<ResponseData>) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
   try {
-    const { registrationData } = req.body;
+    const { registrationData, category, testResults } = req.body as SubmitPayload;
 
     if (!registrationData) {
       return res.status(400).json({ error: 'Registration data is required' });
@@ -26,12 +47,33 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     // Format message content
     let messageContent = `📝 New Registration Submission\n\n`;
+    messageContent += `👥 Category: ${category || '-'}\n`;
     messageContent += `👤 Name: ${registrationData.name}\n`;
-    messageContent += `🎂 Birth Date: ${registrationData.birthdate}\n`;
     messageContent += `📞 Phone: ${registrationData.phone}\n`;
-    messageContent += `📢 Where Heard: ${registrationData.heard}\n`;
-    messageContent += `❓ English Issue: ${registrationData.problem}\n`;
     messageContent += `📍 Region: ${registrationData.region}\n\n`;
+
+    messageContent += `🧪 Test Results (order: Level -> Temperament -> Memory)\n`;
+
+    const level = testResults?.level;
+    if (level) {
+      messageContent += `1) Level: ${level.score ?? '-'} / ${level.total ?? '-'} (${level.level ?? '-'})\n`;
+    } else {
+      messageContent += `1) Level: -\n`;
+    }
+
+    const temperament = testResults?.temperament;
+    if (temperament) {
+      messageContent += `2) Temperament: dominant ${temperament.dominant ?? '-'}\n`;
+    } else {
+      messageContent += `2) Temperament: -\n`;
+    }
+
+    const memory = testResults?.memory;
+    if (memory) {
+      messageContent += `3) Memory Type: ${memory.score ?? '-'} / ${memory.total ?? '-'} (${memory.level ?? '-'})\n\n`;
+    } else {
+      messageContent += `3) Memory Type: -\n\n`;
+    }
 
     messageContent += `✅ Submission completed on: ${new Date().toLocaleString()}\n`;
 

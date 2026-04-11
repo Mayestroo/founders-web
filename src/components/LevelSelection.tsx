@@ -37,8 +37,8 @@ export default function LevelSelection() {
       // Store in localStorage as backup
       localStorage.setItem("testCategory", selectedLevel);
       
-      // Navigate to appropriate temperament test
-      const testPath = selectedLevel === "kids" ? "/tests/temperament-kids" : "/tests/temperament-general";
+      // Navigate to appropriate level test
+      const testPath = selectedLevel === "kids" ? "/tests/level-kids" : "/tests/level-general";
       router.push(testPath);
     }
   };

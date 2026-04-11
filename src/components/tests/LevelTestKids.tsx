@@ -131,7 +131,6 @@ export default function LevelTestKids() {
 
   const [step, setStep] = useState(0);
   const [answersByStep, setAnswersByStep] = useState<string[][]>(createEmptyAnswers());
-  const [showResult, setShowResult] = useState(false);
   const questionRefs = useRef<Array<HTMLDivElement | null>>([]);
 
   const currentPart = parts[step];
@@ -155,7 +154,6 @@ export default function LevelTestKids() {
     try {
       const parsed = JSON.parse(saved) as {
         step?: number;
-        showResult?: boolean;
         answersByStep?: string[][];
       };
 
@@ -173,9 +171,6 @@ export default function LevelTestKids() {
         setStep(parsed.step);
       }
 
-      if (parsed.showResult) {
-        setShowResult(true);
-      }
     } catch {
       localStorage.removeItem(levelKidsStateKey);
     }
@@ -186,11 +181,10 @@ export default function LevelTestKids() {
       levelKidsStateKey,
       JSON.stringify({
         step,
-        showResult,
         answersByStep,
       })
     );
-  }, [step, showResult, answersByStep]);
+  }, [step, answersByStep]);
 
   if (loading) {
     return <div className="py-12 text-center">{t("common.loading")}</div>;
@@ -226,30 +220,8 @@ export default function LevelTestKids() {
     const result = { score, total: totalQuestions, level };
     localStorage.setItem("levelKidsResult", JSON.stringify(result));
     setLevelResult(result);
-    setShowResult(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push("/tests/temperament-kids");
   };
-
-  if (showResult) {
-    return (
-      <div className="kids-main pb-12 pt-28">
-        <div
-          className="m-auto flex h-auto w-[90%] max-w-5xl flex-col items-center justify-center rounded-2xl border-2 border-[#EC0000] px-3 py-11 text-center min-[400px]:w-[80%] md:w-[70%] xl:w-[60%] xl:px-10"
-          style={{ boxShadow: "15px 15px 40px 0px #FF00004D" }}
-        >
-          <h2 className="mb-4 text-3xl font-medium text-gray-800">{t("common.level_test")}</h2>
-          <p className="mb-6 px-8 text-lg font-semibold text-gray-700">{t("tests.level_done")}</p>
-          <button
-            type="button"
-            onClick={() => router.push("/tests/form")}
-            className="m-auto mt-6 w-auto rounded-lg bg-red-500 px-6 py-2 text-white transition duration-300 hover:bg-red-600"
-          >
-            {t("common.next")}
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   const globalQuestionOffset = parts.slice(0, step).reduce((sum, part) => sum + part.questions.length, 0);
 
@@ -316,7 +288,7 @@ export default function LevelTestKids() {
             onClick={handleNext}
             className="w-full rounded-lg bg-[#EC0000] px-6 py-3 text-white transition-all hover:bg-red-600"
           >
-            {step === parts.length - 1 ? t("results.submit_results") : t("common.next")}
+            {t("common.next")}
           </button>
         </div>
       </div>

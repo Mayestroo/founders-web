@@ -28,10 +28,7 @@ export default function RegistrationForm() {
 
   const [formData, setFormData] = useState({
     name: '',
-    birthdate: '',
     phone: '',
-    heard: '',
-    problem: '',
     region: '',
   });
 
@@ -45,22 +42,10 @@ export default function RegistrationForm() {
       newErrors.name = t('registration.name_required') || 'Full name is required';
     }
 
-    if (!formData.birthdate) {
-      newErrors.birthdate = t('registration.birthdate_required') || 'Birth date is required';
-    }
-
     if (!formData.phone) {
       newErrors.phone = t('registration.phone_required') || 'Phone number is required';
     } else if (!/^\d{10,}$/.test(formData.phone.replace(/\D/g, ''))) {
       newErrors.phone = t('registration.phone_invalid') || 'Phone number must be valid';
-    }
-
-    if (!formData.heard.trim()) {
-      newErrors.heard = t('registration.heard_required') || 'Please specify where you heard about us';
-    }
-
-    if (!formData.problem.trim()) {
-      newErrors.problem = t('registration.problem_required') || 'Please describe your issue with English';
     }
 
     if (!formData.region) {
@@ -92,10 +77,7 @@ export default function RegistrationForm() {
        // Store registration data in context
        setRegistrationData({
          name: formData.name,
-         birthdate: formData.birthdate,
          phone: formData.phone,
-         heard: formData.heard,
-         problem: formData.problem,
          region: formData.region,
        });
 
@@ -104,10 +86,7 @@ export default function RegistrationForm() {
          'registrationData',
          JSON.stringify({
            name: formData.name,
-           birthdate: formData.birthdate,
            phone: formData.phone,
-           heard: formData.heard,
-           problem: formData.problem,
            region: formData.region,
          })
        );
@@ -151,23 +130,6 @@ export default function RegistrationForm() {
            {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
          </div>
 
-         {/* Birth Date */}
-         <div>
-           <label className="block text-sm font-medium text-gray-700 mb-1">
-             {t('registration.birth_date') || 'Birth Date'} <span className="text-red-600">*</span>
-           </label>
-           <input
-             type="date"
-             name="birthdate"
-             value={formData.birthdate}
-             onChange={handleChange}
-             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${
-               errors.birthdate ? 'border-red-500' : 'border-gray-300'
-             }`}
-           />
-           {errors.birthdate && <p className="text-red-600 text-sm mt-1">{errors.birthdate}</p>}
-         </div>
-
          {/* Phone Number */}
          <div>
            <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -183,44 +145,8 @@ export default function RegistrationForm() {
              }`}
              placeholder={t('registration.enter_phone') || '+998 90 123 45 67'}
            />
-           {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
-         </div>
-
-         {/* Where did you hear about us */}
-         <div>
-           <label className="block text-sm font-medium text-gray-700 mb-1">
-             {t('registration.heard_about') || 'Where did you hear about us?'} <span className="text-red-600">*</span>
-           </label>
-           <textarea
-             name="heard"
-             value={formData.heard}
-             onChange={handleChange}
-             rows={2}
-             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 resize-none ${
-               errors.heard ? 'border-red-500' : 'border-gray-300'
-             }`}
-             placeholder={t('registration.heard_placeholder') || 'Tell us how you found out about us...'}
-           />
-           {errors.heard && <p className="text-red-600 text-sm mt-1">{errors.heard}</p>}
-         </div>
-
-         {/* What is your issue with English */}
-         <div>
-           <label className="block text-sm font-medium text-gray-700 mb-1">
-             {t('registration.english_issue') || 'What is your main issue with English?'} <span className="text-red-600">*</span>
-           </label>
-           <textarea
-             name="problem"
-             value={formData.problem}
-             onChange={handleChange}
-             rows={2}
-             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 resize-none ${
-               errors.problem ? 'border-red-500' : 'border-gray-300'
-             }`}
-             placeholder={t('registration.problem_placeholder') || 'Describe what you find most challenging...'}
-           />
-           {errors.problem && <p className="text-red-600 text-sm mt-1">{errors.problem}</p>}
-         </div>
+            {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
+          </div>
 
          {/* Region */}
          <div>

@@ -13,12 +13,9 @@ export default function ResultsPage() {
   const { t } = useTranslation();
   const { width, height } = useWindowSize();
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState('');
   const [showConfetti, setShowConfetti] = useState(true);
-  const [persistedRegistration, setPersistedRegistration] = useState<any>(null);
   const [persistedTemperament, setPersistedTemperament] = useState<any>(null);
-  const [persistedIQ, setPersistedIQ] = useState<any>(null);
+  const [persistedMemory, setPersistedMemory] = useState<any>(null);
   const [persistedLevel, setPersistedLevel] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -39,20 +36,18 @@ export default function ResultsPage() {
 
   useEffect(() => {
     try {
-      const registration = localStorage.getItem('registrationData');
       const temperamentGeneral = localStorage.getItem('temperamentGeneralResult');
       const temperamentKids = localStorage.getItem('temperamentResult') || localStorage.getItem('temperamentKidsResult');
-      const iqGeneral = localStorage.getItem('iqGeneralResult');
-      const iqKids = localStorage.getItem('iqKidsResult');
+      const memoryGeneral = localStorage.getItem('memoryGeneralResult');
+      const memoryKids = localStorage.getItem('memoryKidsResult');
       const levelGeneral = localStorage.getItem('levelGeneralResult');
       const levelKids = localStorage.getItem('levelKidsResult');
 
-      if (registration) setPersistedRegistration(JSON.parse(registration));
       if (temperamentGeneral || temperamentKids) {
         setPersistedTemperament(JSON.parse(temperamentGeneral || temperamentKids || 'null'));
       }
-      if (iqGeneral || iqKids) {
-        setPersistedIQ(JSON.parse(iqGeneral || iqKids || 'null'));
+      if (memoryGeneral || memoryKids) {
+        setPersistedMemory(JSON.parse(memoryGeneral || memoryKids || 'null'));
       }
       if (levelGeneral || levelKids) {
         setPersistedLevel(JSON.parse(levelGeneral || levelKids || 'null'));
@@ -62,9 +57,8 @@ export default function ResultsPage() {
     }
   }, []);
 
-  const registrationData = state.registrationData || persistedRegistration;
   const temperamentResult = state.temperamentResult || persistedTemperament;
-  const iqResult = state.iqResult || persistedIQ;
+  const memoryResult = state.memoryResult || persistedMemory;
   const levelResult = state.levelResult || persistedLevel;
 
   const temperamentLabels: Record<string, string> = {
@@ -74,75 +68,42 @@ export default function ResultsPage() {
     melancholic: t('temperament_types.melancholic') || 'Melancholic',
   };
 
-  const handleSubmitResults = async () => {
-    setIsSubmitting(true);
-    setSubmitError('');
+  const handleFinish = () => {
+    localStorage.removeItem('registrationData');
+    localStorage.removeItem('temperamentGeneralResult');
+    localStorage.removeItem('temperamentKidsResult');
+    localStorage.removeItem('temperamentResult');
+    localStorage.removeItem('temperamentGeneralAnswersState');
+    localStorage.removeItem('temperamentKidsAnswersState');
+    localStorage.removeItem('memoryGeneralResult');
+    localStorage.removeItem('memoryKidsResult');
+    localStorage.removeItem('memoryGeneralAnswersState');
+    localStorage.removeItem('memoryKidsAnswersState');
+    localStorage.removeItem('levelGeneralResult');
+    localStorage.removeItem('levelKidsResult');
+    localStorage.removeItem('levelGeneralAnswersState');
+    localStorage.removeItem('levelKidsAnswersState');
+    localStorage.removeItem('quizState');
+    localStorage.removeItem('quizGeneralState');
+    localStorage.removeItem('levelGeneralProgressState');
+    localStorage.removeItem('userAnswers');
+    localStorage.removeItem('step1Answers');
+    localStorage.removeItem('step2Answers');
+    localStorage.removeItem('step3Answers');
+    localStorage.removeItem('step4Answers');
+    localStorage.removeItem('step5Answers');
+    localStorage.removeItem('step6Answers');
+    localStorage.removeItem('wrongAnswers');
+    localStorage.removeItem('currentStep');
+    localStorage.removeItem('score');
+    localStorage.removeItem('totalCorrect');
+    localStorage.removeItem('testCompleted');
+    localStorage.removeItem('testFlow');
+    localStorage.removeItem('kidsResult');
+    localStorage.removeItem('testCategory');
 
-    try {
-      const response = await fetch('/api/submit-test', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          registrationData,
-          temperamentResult,
-          iqResult,
-          levelResult,
-          category: state.category,
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit results');
-      }
-
-       // Clear all test data and redirect
-       localStorage.removeItem('registrationData');
-       localStorage.removeItem('temperamentGeneralResult');
-       localStorage.removeItem('temperamentKidsResult');
-       localStorage.removeItem('temperamentResult');
-       localStorage.removeItem('temperamentGeneralAnswersState');
-       localStorage.removeItem('temperamentKidsAnswersState');
-       localStorage.removeItem('iqGeneralResult');
-       localStorage.removeItem('iqKidsResult');
-       localStorage.removeItem('iqGeneralAnswersState');
-       localStorage.removeItem('iqKidsAnswersState');
-       localStorage.removeItem('levelGeneralResult');
-       localStorage.removeItem('levelKidsResult');
-       localStorage.removeItem('levelGeneralAnswersState');
-       localStorage.removeItem('levelKidsAnswersState');
-       localStorage.removeItem('quizState');
-       localStorage.removeItem('quizGeneralState');
-       localStorage.removeItem('levelGeneralProgressState');
-       localStorage.removeItem('userAnswers');
-       localStorage.removeItem('step1Answers');
-       localStorage.removeItem('step2Answers');
-       localStorage.removeItem('step3Answers');
-       localStorage.removeItem('step4Answers');
-       localStorage.removeItem('step5Answers');
-       localStorage.removeItem('step6Answers');
-       localStorage.removeItem('wrongAnswers');
-       localStorage.removeItem('currentStep');
-       localStorage.removeItem('score');
-       localStorage.removeItem('totalCorrect');
-       localStorage.removeItem('testCompleted');
-       localStorage.removeItem('testFlow');
-       localStorage.removeItem('kidsResult');
-       localStorage.removeItem('testCategory');
-
-      resetTest();
-
-      // Redirect to home after a delay
-      setTimeout(() => {
-        router.push('/');
-      }, 2000);
-    } catch (error) {
-       console.error('Error submitting results:', error);
-       setSubmitError(t('registration.form_submission_error'));
-    } finally {
-      setIsSubmitting(false);
-    }
+    resetTest();
+    router.push('/');
   };
 
   return (
@@ -169,6 +130,27 @@ export default function ResultsPage() {
             style={{ boxShadow: '15px 15px 40px 0px #FF00004D' }}
           >
             <h2 className="text-2xl font-bold text-gray-800 text-center">{t('results.results_summary') || 'Your Test Results'}</h2>
+
+            {/* Level Test Results */}
+            {levelResult && (
+              <div className="mt-8 mb-8 pb-8 border-b-2 border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">
+                  {t('results.english_level_results') || 'English Level Test Results'}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="bg-orange-50 rounded-lg p-4">
+                    <p className="text-gray-600 text-sm mb-1">{t('results.score') || 'Score'}</p>
+                    <p className="text-3xl font-bold text-orange-600">
+                      {levelResult.score}/{levelResult.total}
+                    </p>
+                  </div>
+                  <div className="bg-red-50 rounded-lg p-4 md:col-span-2">
+                    <p className="text-gray-600 text-sm mb-1">{t('results.level') || 'Level'}</p>
+                    <p className="text-2xl font-bold text-red-600">{t(levelResult.level) || levelResult.level}</p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Temperament Results */}
             {temperamentResult && (
@@ -203,75 +185,36 @@ export default function ResultsPage() {
               </div>
             )}
 
-            {/* IQ Test Results */}
-            {iqResult && (
+            {/* Memory Type Test Results */}
+            {memoryResult && (
               <div className="mb-8 pb-8 border-b-2 border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('results.iq_test_results') || 'IQ Test Results'}</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('results.memory_test_results') || 'Memory Type Test Results'}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-blue-50 rounded-lg p-4">
                     <p className="text-gray-600 text-sm mb-1">{t('results.score') || 'Score'}</p>
                     <p className="text-3xl font-bold text-blue-600">
-                      {iqResult.score}/{iqResult.total}
+                      {memoryResult.score}/{memoryResult.total}
                     </p>
                   </div>
                   <div className="bg-green-50 rounded-lg p-4 md:col-span-2">
                     <p className="text-gray-600 text-sm mb-1">{t('results.level') || 'Level'}</p>
-                    <p className="text-2xl font-bold text-green-600">{t(iqResult.level) || iqResult.level}</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Level Test Results */}
-            {levelResult && (
-              <div className="mb-2">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">
-                  {t('results.english_level_results') || 'English Level Test Results'}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-orange-50 rounded-lg p-4">
-                    <p className="text-gray-600 text-sm mb-1">{t('results.score') || 'Score'}</p>
-                    <p className="text-3xl font-bold text-orange-600">
-                      {levelResult.score}/{levelResult.total}
-                    </p>
-                  </div>
-                  <div className="bg-red-50 rounded-lg p-4 md:col-span-2">
-                    <p className="text-gray-600 text-sm mb-1">{t('results.level') || 'Level'}</p>
-                    <p className="text-2xl font-bold text-red-600">{t(levelResult.level) || levelResult.level}</p>
+                    <p className="text-2xl font-bold text-green-600">{t(memoryResult.level) || memoryResult.level}</p>
                   </div>
                 </div>
               </div>
             )}
           </div>
 
-         {/* Error Message */}
-         {submitError && (
-            <div className="mb-8 p-4 rounded-lg bg-red-50 border-l-4 border-red-600 text-red-700">
-              {submitError}
-            </div>
-          )}
-
-         {/* Action Buttons */}
-         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-           <button
-             onClick={handleSubmitResults}
-             disabled={isSubmitting}
-             className={`px-8 py-3 rounded-lg font-semibold text-white transition-all ${
-               isSubmitting
-                 ? 'bg-gray-400 cursor-not-allowed'
-                 : 'bg-[#EC0000] hover:bg-red-600 transform hover:scale-105'
-             }`}
-           >
-             {isSubmitting ? t('results.submitting') || 'Submitting...' : t('results.submit_results') || 'Submit Results'}
-           </button>
-           <button
-             onClick={() => router.push('/')}
-             className="px-8 py-3 rounded-lg font-semibold text-[#EC0000] border-2 border-[#EC0000] hover:bg-red-50 transition-all"
-           >
-             {t('results.go_home') || 'Go Home'}
-           </button>
-          </div>
-       </div>
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={handleFinish}
+              className="px-8 py-3 rounded-lg font-semibold text-white transition-all bg-[#EC0000] hover:bg-red-600 transform hover:scale-105"
+            >
+              {t('results.go_home') || 'Go Home'}
+            </button>
+           </div>
+        </div>
         </>
       )}
     </div>
