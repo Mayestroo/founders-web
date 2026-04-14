@@ -1,24 +1,24 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { useTestContext } from '@/context/TestContext';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 const uzbekRegions = [
   'Andijon',
-  'Bukhoro',
+  'Buxoro',
   'Jizzax',
   'Qashqadaryo',
-  'Navoi',
+  'Navoiy',
   'Namangan',
   'Samarqand',
   'Sirdaryo',
   'Surxondaryo',
-  'Tashkent',
-  'Fergona',
+  'Toshkent',
+  "Farg'ona",
   'Xorazm',
-  'Karakalpakstan',
+  "Qoraqalpog'iston",
 ];
 
 export default function RegistrationForm() {
@@ -35,7 +35,7 @@ export default function RegistrationForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const validateForm = (): boolean => {
+  const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
@@ -156,74 +156,70 @@ export default function RegistrationForm() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Full Name */}
-         <div>
-           <label className="block text-sm font-medium text-gray-700 mb-1">
-             {t('registration.full_name') || 'Full Name'} <span className="text-red-600">*</span>
-           </label>
-           <input
-             type="text"
-             name="name"
-             value={formData.name}
-             onChange={handleChange}
-             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${
-               errors.name ? 'border-red-500' : 'border-gray-300'
-             }`}
-             placeholder={t('registration.enter_full_name') || 'John Doe'}
-           />
-           {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
-         </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            {t('registration.full_name') || 'Full Name'} <span className="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${errors.name ? 'border-red-500' : 'border-gray-300'
+              }`}
+            placeholder={t('registration.enter_full_name') || 'John Doe'}
+          />
+          {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
+        </div>
 
-         {/* Phone Number */}
-         <div>
-           <label className="block text-sm font-medium text-gray-700 mb-1">
-             {t('registration.phone_number') || 'Phone Number'} <span className="text-red-600">*</span>
-           </label>
-           <input
-             type="tel"
-             name="phone"
-             value={formData.phone}
-             onChange={handleChange}
-             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${
-               errors.phone ? 'border-red-500' : 'border-gray-300'
-             }`}
-             placeholder={t('registration.enter_phone') || '+998 90 123 45 67'}
-           />
-            {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
-          </div>
+        {/* Phone Number */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            {t('registration.phone_number') || 'Phone Number'} <span className="text-red-600">*</span>
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+              }`}
+            placeholder={t('registration.enter_phone') || '+998 90 123 45 67'}
+          />
+          {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
+        </div>
 
-         {/* Region */}
-         <div>
-           <label className="block text-sm font-medium text-gray-700 mb-1">
-             {t('registration.your_region') || 'Your Region'} <span className="text-red-600">*</span>
-           </label>
-           <select
-             name="region"
-             value={formData.region}
-             onChange={handleChange}
-             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${
-               errors.region ? 'border-red-500' : 'border-gray-300'
-             }`}
-           >
-             <option value="">{t('registration.select_region') || 'Select your region...'}</option>
-             {uzbekRegions.map((region) => (
-               <option key={region} value={region}>
-                 {region}
-               </option>
-             ))}
-           </select>
-           {errors.region && <p className="text-red-600 text-sm mt-1">{errors.region}</p>}
-         </div>
+        {/* Region */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">
+            {t('registration.your_region') || 'Your Region'} <span className="text-red-600">*</span>
+          </label>
+          <select
+            name="region"
+            value={formData.region}
+            onChange={handleChange}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 ${errors.region ? 'border-red-500' : 'border-gray-300'
+              }`}
+          >
+            <option value="">{t('registration.select_region') || 'Select your region...'}</option>
+            {uzbekRegions.map((region) => (
+              <option key={region} value={region}>
+                {region}
+              </option>
+            ))}
+          </select>
+          {errors.region && <p className="text-red-600 text-sm mt-1">{errors.region}</p>}
+        </div>
 
-         {/* Submit Button */}
-         <button
-           type="submit"
-           disabled={isSubmitting}
-           className={`w-full h-auto bg-[#EC0000] px-6 py-3 text-white rounded-lg font-semibold transition-all ${
-             isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-red-600'
-           }`}
-         >
-            {isSubmitting ? t('results.submitting') : t('registration.submit_button') || 'Submit'}
-          </button>
+        {/* Submit Button */}
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className={`w-full h-auto bg-[#EC0000] px-6 py-3 text-white rounded-lg font-semibold transition-all ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-red-600'
+            }`}
+        >
+          {isSubmitting ? t('results.submitting') : t('registration.submit_button') || 'Submit'}
+        </button>
       </form>
     </div>
   );

@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import { useState } from "react";
-import { useRouter } from "next/router";
 import { useTestContext } from "@/context/TestContext";
 import { useTranslation } from "@/hooks/useTranslation";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function LevelSelection() {
   const router = useRouter();
@@ -17,14 +17,14 @@ export default function LevelSelection() {
       id: "kids",
       title: t("common.kids"),
       description: t("common.kids_description"),
-      image: "/services/kids-english.png",
+      image: "/level/kids.png",
       color: "from-blue-500 to-blue-600",
     },
     {
       id: "general",
       title: t("common.general"),
       description: t("common.general_description"),
-      image: "/services/general.png",
+      image: "/level/general.png",
       color: "from-purple-500 to-purple-600",
     },
   ];
@@ -33,10 +33,10 @@ export default function LevelSelection() {
     if (selectedLevel) {
       // Set category in context
       setCategory(selectedLevel as "kids" | "general");
-      
+
       // Store in localStorage as backup
       localStorage.setItem("testCategory", selectedLevel);
-      
+
       // Navigate to appropriate level test
       const testPath = selectedLevel === "kids" ? "/tests/level-kids" : "/tests/level-general";
       router.push(testPath);
@@ -66,14 +66,14 @@ export default function LevelSelection() {
               >
                 {/* Background Image */}
                 <div className="relative h-80 md:h-96 w-full">
-                   <Image
-                     src={level.image}
-                     alt={level.title}
-                     fill
-                     className="object-cover"
-                     sizes="(min-width: 768px) 50vw, 100vw"
-                     priority
-                   />
+                  <Image
+                    src={level.image}
+                    alt={level.title}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    priority
+                  />
 
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/40" />
@@ -111,29 +111,29 @@ export default function LevelSelection() {
             ))}
           </div>
 
-           {/* Action Buttons */}
-           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                type="button"
-                onClick={() => {
-                  window.location.href = "/";
-                }}
-                className="px-8 py-3 rounded-full bg-(--brand-red) text-white font-bold text-base transition-all hover:bg-(--brand-red)/90 active:scale-95"
-               >
-                 {t("common.orqaga")}
-               </button>
-             <button
-               type="button"
-               onClick={handleContinue}
-               disabled={!selectedLevel}
-               className={`px-8 py-3 rounded-full font-bold text-base transition-all active:scale-95 ${selectedLevel
-                   ? "bg-(--brand-red) text-white hover:bg-(--brand-red)/90 cursor-pointer"
-                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                 }`}
-             >
-               {t("common.davom_etish")}
-             </button>
-           </div>
+          {/* Action Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                window.location.href = "/";
+              }}
+              className="px-8 py-3 rounded-full bg-(--brand-red) text-white font-bold text-base transition-all hover:bg-(--brand-red)/90 active:scale-95"
+            >
+              {t("common.orqaga")}
+            </button>
+            <button
+              type="button"
+              onClick={handleContinue}
+              disabled={!selectedLevel}
+              className={`px-8 py-3 rounded-full font-bold text-base transition-all active:scale-95 ${selectedLevel
+                ? "bg-(--brand-red) text-white hover:bg-(--brand-red)/90 cursor-pointer"
+                : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                }`}
+            >
+              {t("common.davom_etish")}
+            </button>
+          </div>
         </div>
       </div>
     </div>

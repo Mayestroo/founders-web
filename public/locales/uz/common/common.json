@@ -275,18 +275,18 @@
     "melancholic": "Melanxolik"
   },
   "registration": {
-    "registration_title": "Ro'yxatdan o'tish",
+    "registration_title": "Natijalarni bilish uchun ma’lumotlaringizni kiriting",
     "fill_all_fields": "Iltimos, barcha maydonlarni to'ldiring",
     "full_name": "To'liq ism",
     "enter_full_name": "Ismingizni kiriting",
     "phone_number": "Telefon raqami",
     "enter_phone": "+998 90 123 45 67",
-    "your_region": "Sizning viloyatingiz",
-    "select_region": "Viloyatni tanlang",
+    "your_region": "Yashash hududingiz",
+    "select_region": "Manzilingiz",
     "name_required": "To'liq ism talab etiladi",
     "phone_required": "Telefon raqami talab etiladi",
     "phone_invalid": "Telefon raqami noto'g'ri",
-    "region_required": "Iltimos, viloyatingizni tanlang",
+    "region_required": "Iltimos, hududingizni tanlang",
     "form_submission_error": "Formani yuborishda xato yuz berdi",
     "submit_button": "Jo'natish"
   },
