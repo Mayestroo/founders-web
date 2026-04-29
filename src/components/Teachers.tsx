@@ -1,30 +1,14 @@
-import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
+import Image from "next/image";
 
 export default function Teachers() {
   const { t } = useTranslation();
   const teachers = [
     {
-      name: "MUHABBAT",
-      surname: "TADJIBAEVA",
-      ielts: "8.0",
-      experience: "24 YIL",
-      students: "300+ IELTS",
-      image: "/teachers/Photo.png",
-    },
-    {
-      name: "MAKHLIYO",
-      surname: "AZIMOVA",
-      ielts: "8.0",
-      experience: "3+ YIL",
-      students: "20+ IELTS",
-      image: "/teachers/Photo-1.png",
-    },
-    {
       name: "MUHAMEDOV",
       surname: "ABDULLOH",
       ielts: "8.0",
-      experience: "3+ YIL",
+      experience: "3+",
       students: "20+ IELTS",
       image: "/teachers/Photo-2.png",
     },
@@ -32,64 +16,96 @@ export default function Teachers() {
       name: "RAHIMOVA",
       surname: "MADINA",
       specialty: "Webster MA TESOL",
-      experience: "23+ YIL",
+      experience: "23+",
       students: "500+ IELTS",
       image: "/teachers/Photo-3.png",
     },
     {
       name: "RAHMATULLAEVA",
-      surname: " GAVKHARSHODBEGIM",
+      surname: "GAVKHARSHODBEGIM",
       ielts: "8.0",
-      experience: "4+ YIL",
-      students: "300+ IELTS",
+      experience: "4+",
+      students: "300+ students/30+ IELTS",
       image: "/teachers/Photo-4.png",
     },
     {
-      name: "ABDUGAFFOR",
-      surname: "SHUKUROV",
+      name: "SHUKUROV",
+      surname: "ABDUGAFFOR",
       ielts: "8.5",
-      experience: "4+ YIL",
+      experience: "4+",
       students: "100+ IELTS",
       image: "/teachers/Photo-5.png",
-    },
-    {
-      name: "ABDUMALIKOVA",
-      surname: "PARIZODA",
-      speciality: "TESOL",
-      experience: "8+ YIL",
-      students: "400+ IELTS",
-      image: "/teachers/Photo-6.png",
-    },
-    {
-      name: "ASLAMXON",
-      surname: "JAMOLOV",
-      ielts: "7.0",
-      experience: "2+ YIL",
-      students: "150+ IELTS",
-      image: "/teachers/Photo-7.png",
     },
     {
       name: "ERKINOVA",
       surname: "MUBINA",
       ielts: "7.5",
-      experience: "2+ YIL",
-      students: "200+ IELTS",
+      experience: "2+",
+      students: "200+ students",
       image: "/teachers/Photo-8.png",
     },
     {
-      name: "SARVINOZ",
-      surname: "ZIKRULLAYEVA",
+      name: "ZIKRULLAYEVA",
+      surname: "SARVINOZ",
       ielts: "7.5",
-      experience: "3+ YIL",
-      students: "250+ IELTS",
+      experience: "3+",
+      students: "250+ students",
       image: "/teachers/Photo-9.png",
+    },
+    {
+      name: "ABDUMALIKOVA",
+      surname: "PARIZODA",
+      specialty: "TESOL certified ESL teacher",
+      experience: "8+",
+      students: "400+ IELTS",
+      image: "/teachers/Photo-6.png",
+    },
+    {
+      name: "QUTLIBOYEVA",
+      surname: "DILNAVOZ",
+      ielts: "8.0",
+      experience: "3+",
+      students: "20+ IELTS",
+      image: "/teachers/placeholder.png",
+    },
+    {
+      name: "ODILJONOVA",
+      surname: "MUHAYYO",
+      ielts: "7.0",
+      experience: "3+",
+      students: "150+ students",
+      image: "/teachers/placeholder.png",
+    },
+    {
+      name: "HAYITBOYEVA",
+      surname: "ZEBOXON",
+      ielts: "8.5",
+      experience: "3+",
+      students: "100+ students/15+ IELTS",
+      image: "/teachers/placeholder.png",
+    },
+    {
+      name: "TADJIBAEVA",
+      surname: "MUHABBAT",
+      ielts: "8.0",
+      experience: "24",
+      students: "300+ IELTS",
+      image: "/teachers/Photo.png",
+    },
+    {
+      name: "JAMOLOV",
+      surname: "ASLAMXON",
+      ielts: "7.0",
+      experience: "2+",
+      students: "150+ IELTS",
+      image: "/teachers/Photo-7.png",
     },
     {
       name: "YUSUPOVA",
       surname: "LEYLA",
       specialty: "TESOL",
-      experience: "8+ YIL",
-      students: "500+ IELTS",
+      experience: "8+",
+      students: "500+ students",
       image: "/teachers/Photo-10.png",
     },
   ];
@@ -162,7 +178,7 @@ export default function Teachers() {
         <p className="text-xs sm:text-sm leading-relaxed">
           <span className="text-black">{t("teachers.experience")}:</span>{" "}
           <span className="font-bold text-(--brand-dark)">
-            {teacher.experience}
+            {teacher.experience} {t("teachers.years")}
           </span>
         </p>
 

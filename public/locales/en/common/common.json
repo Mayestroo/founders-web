@@ -260,7 +260,8 @@
     "certificate": "CERTIFICATE:",
     "ielts_score": "IELTS SCORE:",
     "experience": "EXPERIENCE:",
-    "results": "RESULTS:"
+    "results": "RESULTS:",
+    "years": "years"
   },
   "why_choose": {
     "title": "Why choose us exactly?",
