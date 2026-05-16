@@ -59,12 +59,14 @@ export default function JoinTeamVacancies() {
                 </p>
               </div>
 
-              <button
-                type="button"
+              <a
+                href="https://t.me/foundersschoolrecruiter"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 flex h-10 w-full items-center justify-center self-start rounded-full bg-(--brand-red) px-7 text-[17px] leading-none font-medium text-white transition-all hover:scale-[1.02] active:scale-[0.98] sm:mt-2.5 sm:h-11.5 sm:max-w-68 sm:px-11 sm:text-[19px]"
               >
                 {t("join_team.submit_application")}
-              </button>
+              </a>
             </article>
           ))}
         </div>

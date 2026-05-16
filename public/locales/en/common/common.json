@@ -94,67 +94,67 @@
     "temperament_unified_q10_g": "g) I am sensitive and easily hurt.",
     "identify_image": "Identify the Image",
     "image_question_prompt": "What do you see in this picture?",
-    "image_alt": "Image"
-    ,"temperament_kids_q1": "I usually behave like this:"
-    ,"temperament_kids_q1_a": "A) I act quickly and energetically"
-    ,"temperament_kids_q1_b": "B) I am cheerful and connect with everyone quickly"
-    ,"temperament_kids_q1_c": "C) I am calm and steady"
-    ,"temperament_kids_q1_d": "D) I am quiet, reserved, and thoughtful"
-    ,"temperament_kids_q2": "How do you usually act in a new situation?"
-    ,"temperament_kids_q2_a": "A) I take initiative and respond quickly"
-    ,"temperament_kids_q2_b": "B) I laugh a lot and make jokes"
-    ,"temperament_kids_q2_c": "C) I observe first, then participate"
-    ,"temperament_kids_q2_d": "D) I hold back and stay careful"
-    ,"temperament_kids_q3": "How do you spend your free time?"
-    ,"temperament_kids_q3_a": "A) I like activity and competitions"
-    ,"temperament_kids_q3_b": "B) I like chatting and playing with friends"
-    ,"temperament_kids_q3_c": "C) I like calm games and reading books"
-    ,"temperament_kids_q3_d": "D) I like being alone, thinking, and drawing"
-    ,"temperament_kids_q4": "How do you react in a difficult situation?"
-    ,"temperament_kids_q4_a": "A) I decide quickly and take action"
-    ,"temperament_kids_q4_b": "B) I consult with others"
-    ,"temperament_kids_q4_c": "C) I analyze the situation calmly"
-    ,"temperament_kids_q4_d": "D) I worry more and overthink"
-    ,"temperament_kids_q5": "How do you behave in a team?"
-    ,"temperament_kids_q5_a": "A) I take leadership"
-    ,"temperament_kids_q5_b": "B) I motivate everyone"
-    ,"temperament_kids_q5_c": "C) I keep peace and find agreement"
-    ,"temperament_kids_q5_d": "D) I do tasks carefully and with quality"
-    ,"temperament_kids_q6": "If you have to wait for a long time:"
-    ,"temperament_kids_q6_a": "A) I get impatient"
-    ,"temperament_kids_q6_b": "B) I distract myself with something else"
-    ,"temperament_kids_q6_c": "C) I stay patient"
-    ,"temperament_kids_q6_d": "D) I get nervous"
-    ,"temperament_kids_q7": "If you see something wrong:"
-    ,"temperament_kids_q7_a": "A) I object immediately"
-    ,"temperament_kids_q7_b": "B) I wait for the right time and speak gently"
-    ,"temperament_kids_q7_c": "C) I observe silently"
-    ,"temperament_kids_q7_d": "D) I feel sad but stay silent"
-    ,"temperament_kids_q8": "About discipline:"
-    ,"temperament_kids_q8_a": "A) I often break rules"
-    ,"temperament_kids_q8_b": "B) Rules are good if they fit"
-    ,"temperament_kids_q8_c": "C) I follow rules easily"
-    ,"temperament_kids_q8_d": "D) I am very meticulous, everything should follow the plan"
-    ,"temperament_kids_q9": "When you lose:"
-    ,"temperament_kids_q9_a": "A) I want to try again"
-    ,"temperament_kids_q9_b": "B) I take it with humor"
-    ,"temperament_kids_q9_c": "C) I accept it calmly"
-    ,"temperament_kids_q9_d": "D) I stay upset for a long time"
-    ,"temperament_kids_q10": "How do your friends describe you most often?"
-    ,"temperament_kids_q10_a": "A) Brave and energetic"
-    ,"temperament_kids_q10_b": "B) Cheerful and sincere"
-    ,"temperament_kids_q10_c": "C) Calm and reliable"
-    ,"temperament_kids_q10_d": "D) Thoughtful and sensitive"
-    ,"level_done": "You have successfully completed the level test!"
-    ,"very_high_level": "Very high level"
-    ,"high_level": "High level"
-    ,"average_level": "Average level"
-    ,"practice_recommended": "Additional practice is recommended"
-    ,"grading_criteria": "Grading criteria"
-    ,"temperament_desc_choleric": "An active, initiative-taking temperament type that makes quick decisions."
-    ,"temperament_desc_sanguine": "A cheerful, sociable temperament type open to communication."
-    ,"temperament_desc_phlegmatic": "A calm, stable, and patient temperament type."
-    ,"temperament_desc_melancholic": "A thoughtful, sensitive temperament type inclined to analysis."
+    "image_alt": "Image",
+    "temperament_kids_q1": "I usually behave like this:",
+    "temperament_kids_q1_a": "A) I act quickly and energetically",
+    "temperament_kids_q1_b": "B) I am cheerful and connect with everyone quickly",
+    "temperament_kids_q1_c": "C) I am calm and steady",
+    "temperament_kids_q1_d": "D) I am quiet, reserved, and thoughtful",
+    "temperament_kids_q2": "How do you usually act in a new situation?",
+    "temperament_kids_q2_a": "A) I take initiative and respond quickly",
+    "temperament_kids_q2_b": "B) I laugh a lot and make jokes",
+    "temperament_kids_q2_c": "C) I observe first, then participate",
+    "temperament_kids_q2_d": "D) I hold back and stay careful",
+    "temperament_kids_q3": "How do you spend your free time?",
+    "temperament_kids_q3_a": "A) I like activity and competitions",
+    "temperament_kids_q3_b": "B) I like chatting and playing with friends",
+    "temperament_kids_q3_c": "C) I like calm games and reading books",
+    "temperament_kids_q3_d": "D) I like being alone, thinking, and drawing",
+    "temperament_kids_q4": "How do you react in a difficult situation?",
+    "temperament_kids_q4_a": "A) I decide quickly and take action",
+    "temperament_kids_q4_b": "B) I consult with others",
+    "temperament_kids_q4_c": "C) I analyze the situation calmly",
+    "temperament_kids_q4_d": "D) I worry more and overthink",
+    "temperament_kids_q5": "How do you behave in a team?",
+    "temperament_kids_q5_a": "A) I take leadership",
+    "temperament_kids_q5_b": "B) I motivate everyone",
+    "temperament_kids_q5_c": "C) I keep peace and find agreement",
+    "temperament_kids_q5_d": "D) I do tasks carefully and with quality",
+    "temperament_kids_q6": "If you have to wait for a long time:",
+    "temperament_kids_q6_a": "A) I get impatient",
+    "temperament_kids_q6_b": "B) I distract myself with something else",
+    "temperament_kids_q6_c": "C) I stay patient",
+    "temperament_kids_q6_d": "D) I get nervous",
+    "temperament_kids_q7": "If you see something wrong:",
+    "temperament_kids_q7_a": "A) I object immediately",
+    "temperament_kids_q7_b": "B) I wait for the right time and speak gently",
+    "temperament_kids_q7_c": "C) I observe silently",
+    "temperament_kids_q7_d": "D) I feel sad but stay silent",
+    "temperament_kids_q8": "About discipline:",
+    "temperament_kids_q8_a": "A) I often break rules",
+    "temperament_kids_q8_b": "B) Rules are good if they fit",
+    "temperament_kids_q8_c": "C) I follow rules easily",
+    "temperament_kids_q8_d": "D) I am very meticulous, everything should follow the plan",
+    "temperament_kids_q9": "When you lose:",
+    "temperament_kids_q9_a": "A) I want to try again",
+    "temperament_kids_q9_b": "B) I take it with humor",
+    "temperament_kids_q9_c": "C) I accept it calmly",
+    "temperament_kids_q9_d": "D) I stay upset for a long time",
+    "temperament_kids_q10": "How do your friends describe you most often?",
+    "temperament_kids_q10_a": "A) Brave and energetic",
+    "temperament_kids_q10_b": "B) Cheerful and sincere",
+    "temperament_kids_q10_c": "C) Calm and reliable",
+    "temperament_kids_q10_d": "D) Thoughtful and sensitive",
+    "level_done": "You have successfully completed the level test!",
+    "very_high_level": "Very high level",
+    "high_level": "High level",
+    "average_level": "Average level",
+    "practice_recommended": "Additional practice is recommended",
+    "grading_criteria": "Grading criteria",
+    "temperament_desc_choleric": "An active, initiative-taking temperament type that makes quick decisions.",
+    "temperament_desc_sanguine": "A cheerful, sociable temperament type open to communication.",
+    "temperament_desc_phlegmatic": "A calm, stable, and patient temperament type.",
+    "temperament_desc_melancholic": "A thoughtful, sensitive temperament type inclined to analysis."
   },
   "form": {
     "full_name": "Full Name",
@@ -235,11 +235,14 @@
   },
   "stats": {
     "title": "Founders School",
-    "tagline": "Reliable education",
+    "tagline1": "Reliable education",
+    "tagline2": "Expert teachers",
+    "tagline3": "Memorable lessons",
+    "tagline4": "Clear results",
     "experience": "4+ years experience",
     "students": "2500+ satisfied students",
     "results": "200+ positive IELTS results",
-    "team": "400+ team members"
+    "team": "40+ team members"
   },
   "about": {
     "title": "About Us",

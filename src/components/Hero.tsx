@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useState, memo } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useContactForm } from "@/context/ContactFormContext";
 
 const heroImages = [
   "/hero/hero-01.webp",
@@ -39,6 +40,7 @@ export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHydrated, setIsHydrated] = useState(false);
   const { t } = useTranslation();
+  const { openForm } = useContactForm();
 
   // Only start carousel after hydration to reduce initial JS work
   useEffect(() => {
@@ -139,6 +141,7 @@ export default function Hero() {
             </div>
             <button
               type="button"
+              onClick={openForm}
               className="rounded-full bg-(--brand-red) px-6 py-3 text-lg font-semibold text-white transition-all hover:scale-105 active:scale-95 sm:px-8 sm:py-4 sm:text-xl"
             >
               {t("hero.cta_button")}

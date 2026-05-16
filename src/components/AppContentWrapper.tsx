@@ -2,6 +2,7 @@
 
 import FloatingContactWidget from "@/components/FloatingContactWidget";
 import { AppProps } from "next/app";
+import { ContactFormProvider } from "@/context/ContactFormContext";
 
 export default function AppContentWrapper({
   Component,
@@ -13,11 +14,11 @@ export default function AppContentWrapper({
   inter: any;
 }) {
   return (
-    <>
+    <ContactFormProvider>
       <div className={`${inter.className} antialiased`}>
         <Component {...pageProps} />
         <FloatingContactWidget />
       </div>
-    </>
+    </ContactFormProvider>
   );
 }

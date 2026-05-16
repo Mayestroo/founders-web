@@ -36,8 +36,10 @@ const TranslationContext = createContext<TranslationContextType | undefined>(und
 
 export function TranslationProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState(DEFAULT_LOCALE);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     if (typeof window === "undefined") {
       return;
     }
@@ -47,17 +49,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
       setLocale(savedLocale);
     }
 
-    const handlePageShow = (event: PageTransitionEvent) => {
-      if (event.persisted) {
-        window.location.reload();
-      }
-    };
-
-    window.addEventListener("pageshow", handlePageShow);
-
-    return () => {
-      window.removeEventListener("pageshow", handlePageShow);
-    };
+    return () => {};
   }, []);
 
   const changeLanguage = useCallback((lng: string) => {
@@ -105,7 +97,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
     () => ({
       translations,
       locale,
-      loading: false,
+      loading: !mounted,
       t,
       changeLanguage,
     }),

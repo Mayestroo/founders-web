@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useContactForm } from "@/context/ContactFormContext";
 
 export default function FloatingContactWidget() {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, closeForm, openForm } = useContactForm();
 
   useEffect(() => {
     if (!isOpen) {
@@ -15,7 +16,7 @@ export default function FloatingContactWidget() {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeForm();
       }
     };
 
@@ -24,11 +25,11 @@ export default function FloatingContactWidget() {
     return () => {
       window.removeEventListener("keydown", handleEscape);
     };
-  }, [isOpen]);
+  }, [isOpen, closeForm]);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setIsOpen(false);
+    closeForm();
   };
 
   return (
@@ -45,7 +46,7 @@ export default function FloatingContactWidget() {
             </h2>
             <button
               type="button"
-              onClick={() => setIsOpen(false)}
+              onClick={closeForm}
               className="rounded-full p-1 transition-transform hover:scale-110 active:scale-95"
               aria-label="Yopish"
             >
@@ -129,7 +130,7 @@ export default function FloatingContactWidget() {
       {!isOpen && (
         <button
           type="button"
-          onClick={() => setIsOpen(true)}
+          onClick={openForm}
           aria-label="Bog'lanish oynasini ochish"
           className="pointer-events-auto grid h-16 w-16 place-items-center rounded-full bg-(--brand-red) shadow-[0_14px_24px_-14px_rgba(0,0,0,0.6)] transition-transform hover:scale-105 active:scale-95"
         >

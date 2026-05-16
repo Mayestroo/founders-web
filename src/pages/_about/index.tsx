@@ -5,10 +5,9 @@ import {
   ArrowLongRightIcon,
   CloseIcon,
   InstagramIcon,
-  LinkedInIcon,
+  GmailIcon,
   PhoneIcon,
   TelegramIcon,
-  TikTokIcon,
   type SvgIconComponent,
   YouTubeIcon,
 } from "@/components/InlineIcons";
@@ -59,11 +58,10 @@ export default function AboutPage() {
       icon: InstagramIcon,
     },
     {
-      label: "LinkedIn",
-      href: "https://linkedin.com/company/your_company",
-      icon: LinkedInIcon,
+      label: "Gmail",
+      href: "mailto:founderslanguageschool@gmail.com",
+      icon: GmailIcon,
     },
-    { label: "TikTok", href: "https://tiktok.com/@your_account", icon: TikTokIcon },
     {
       label: "YouTube",
       href: "https://youtube.com/@your_channel",

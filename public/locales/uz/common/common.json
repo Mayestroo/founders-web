@@ -265,7 +265,7 @@
   "form": {
     "full_name": "To'liq ism",
     "phone_number": "Telefon raqami",
-    "issue_with_english": "Ingliz tilida nima muammoni boshdan kechiypsi?",
+    "issue_with_english": "Ingliz tilida nima muammoni boshdan kechiryapsiz?",
     "submit": "Jo'natish"
   },
   "temperament_types": {
@@ -341,11 +341,14 @@
   },
   "stats": {
     "title": "Founders School",
-    "tagline": "Ishonchli ta'lim",
+    "tagline1": "Ishonchli ta'lim",
+    "tagline2": "Malakali ustozlar",
+    "tagline3": "Unutilmas Darslar",
+    "tagline4": "Aniq Natijalar",
     "experience": "4+ yillik tajriba",
     "students": "2 500+ mamnun o'quvchilar",
     "results": "200+ Ijobiy IELTS natijalari",
-    "team": "400+ Hodimlar soni"
+    "team": "40+ xodimlar soni"
   },
   "about": {
     "title": "Biz haqimizda",
@@ -652,42 +655,42 @@
       "Chin dildan yondashadigan",
       "Natija uchun qayg'uradigan xodimlari"
     ],
-     "why_founders": {
-       "title": "Nega aynan Founders School'da ishlash kerak?",
-       "subtitle": "Kasbiy va moliyaviy o'sish",
-       "positions_info": [
-         {
-           "title": "Administrator",
-           "salary": "4,000,000 - 8,000,000 so'm oylik",
-           "benefit": "sotuv va menejment kurslarida o'qitish"
-         },
-         {
-           "title": "Academic Support",
-           "salary": "3,000,000 - 5,000,000 so'm oylik",
-           "benefit": "1 yil ESL ustozlikka ko'tarilish"
-         },
-         {
-           "title": "ESL / Teacher",
-           "salary": "8,000,000 - 25,000,000 so'm oylik",
-           "benefit": "bepul TESOL, IELTS yangilashga yordam"
-         },
-         {
-           "title": "Grafik dizayner",
-           "salary": "5,000,000 - 8,000,000 so'm oylik",
-           "benefit": "ijodkorlikni oshirishuvchi kurslarda o'qitish"
-         },
-         {
-           "title": "Kassir",
-           "salary": "3,000,000 - 5,000,000 so'm oylik",
-           "benefit": "bosh kassir lavozimigacha ko'tarilish imkoniyati"
-         },
-         {
-           "title": "Ambassador",
-           "salary": "3,000,000 - 5,000,000 so'm oylik",
-           "benefit": "moslashuvchan grafikda ishlash"
-         }
-       ]
-     },
+    "why_founders": {
+      "title": "Nega aynan Founders School'da ishlash kerak?",
+      "subtitle": "Kasbiy va moliyaviy o'sish",
+      "positions_info": [
+        {
+          "title": "Administrator",
+          "salary": "4,000,000 - 8,000,000 so'm oylik",
+          "benefit": "sotuv va menejment kurslarida o'qitish"
+        },
+        {
+          "title": "Academic Support",
+          "salary": "3,000,000 - 5,000,000 so'm oylik",
+          "benefit": "1 yil ESL ustozlikka ko'tarilish"
+        },
+        {
+          "title": "ESL / Teacher",
+          "salary": "8,000,000 - 25,000,000 so'm oylik",
+          "benefit": "bepul TESOL, IELTS yangilashga yordam"
+        },
+        {
+          "title": "Grafik dizayner",
+          "salary": "5,000,000 - 8,000,000 so'm oylik",
+          "benefit": "ijodkorlikni oshirishuvchi kurslarda o'qitish"
+        },
+        {
+          "title": "Kassir",
+          "salary": "3,000,000 - 5,000,000 so'm oylik",
+          "benefit": "bosh kassir lavozimigacha ko'tarilish imkoniyati"
+        },
+        {
+          "title": "Ambassador",
+          "salary": "3,000,000 - 5,000,000 so'm oylik",
+          "benefit": "moslashuvchan grafikda ishlash"
+        }
+      ]
+    },
     "faq_title": "Ko'p berilgan savollar",
     "faq_subtitle": "Savollaringiz javobi shu yerda",
     "faq_items": [

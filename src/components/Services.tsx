@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useContactForm } from "@/context/ContactFormContext";
 
 interface Service {
   title: string;
@@ -64,6 +65,7 @@ const getServices = (t: (key: string) => string): Service[] => [
 
 export default function Services() {
   const { t } = useTranslation();
+  const { openForm } = useContactForm();
   const services = getServices(t);
   return (
     <section id="services" className="bg-white py-10 sm:py-12 md:py-16">
@@ -128,6 +130,7 @@ export default function Services() {
 
                     <button
                       type="button"
+                      onClick={openForm}
                       className="rounded-full bg-(--brand-red) px-5 py-2.5 text-base font-semibold text-white transition-colors active:bg-red-600 hover:bg-red-600 sm:px-6 sm:py-3 sm:text-lg"
                     >
                       {t("services.register_button")}

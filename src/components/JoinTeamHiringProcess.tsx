@@ -126,12 +126,14 @@ export default function JoinTeamHiringProcess() {
           </div>
         </div>
 
-        <button
-          type="button"
+        <a
+          href="https://t.me/foundersschoolrecruiter"
+          target="_blank"
+          rel="noopener noreferrer"
           className="mx-auto mt-10 flex h-11 w-full max-w-105 items-center justify-center rounded-full bg-(--brand-red) px-7 text-xl font-medium text-white transition-all hover:scale-[1.02] active:scale-[0.98] sm:mt-12 sm:h-12 sm:text-2xl lg:text-3xl"
         >
           {t("join_team.join_button")}
-        </button>
+        </a>
       </div>
     </section>
   );

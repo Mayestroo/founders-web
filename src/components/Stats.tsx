@@ -51,7 +51,7 @@ const Stats = () => {
             />
 
             {/* Repeated Items */}
-            <span className="opacity-90 hidden sm:inline">{t("stats.tagline")}</span>
+            <span className="opacity-90 hidden sm:inline">{t("stats.tagline1")}</span>
             <Image
               src="/arrow-white.svg"
               alt=""
@@ -59,9 +59,9 @@ const Stats = () => {
               height={23}
               className="w-8 h-auto hidden sm:block"
             />
-
+ 
             <span className="opacity-90 hidden sm:inline">
-              {t("stats.tagline")}
+              {t("stats.tagline2")}
             </span>
             <Image
               src="/arrow-white.svg"
@@ -70,9 +70,9 @@ const Stats = () => {
               height={23}
               className="w-8 h-auto hidden sm:block"
             />
-
+ 
             <span className="opacity-90 hidden md:inline">
-              {t("stats.tagline")}
+              {t("stats.tagline3")}
             </span>
             <Image
               src="/arrow-white.svg"
@@ -81,8 +81,8 @@ const Stats = () => {
               height={23}
               className="w-8 h-auto hidden md:block"
             />
-
-            <span className="opacity-90 hidden lg:inline">{t("stats.tagline")}</span>
+ 
+            <span className="opacity-90 hidden lg:inline">{t("stats.tagline4")}</span>
           </div>
 
           {/* Subtle Horizontal Divider Line */}

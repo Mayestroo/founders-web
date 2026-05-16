@@ -2,6 +2,7 @@ import {
   type SvgIconComponent
 } from "@/components/InlineIcons";
 import { useTranslation } from "@/hooks/useTranslation";
+import { useContactForm } from "@/context/ContactFormContext";
 
 const HeadphonesIcon: SvgIconComponent = ({ className, ...props }) => (
   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
@@ -68,6 +69,7 @@ const getSolutionTraits = (t: (key: string) => string): SolutionTrait[] => [
 
 export default function ParentsSolutionsSolution() {
   const { t } = useTranslation();
+  const { openForm } = useContactForm();
   const solutionTraits = getSolutionTraits(t);
   return (
     <section className="w-full bg-white px-5 pb-16 pt-6 sm:px-8 sm:pb-20 sm:pt-8 lg:pb-24">
@@ -122,9 +124,10 @@ export default function ParentsSolutionsSolution() {
         <div className="sm:flex sm:basis-1/2 sm:justify-end">
           <button
             type="button"
+            onClick={openForm}
             className="inline-flex h-12 w-full items-center justify-center rounded-full bg-(--brand-red) px-6 text-lg font-semibold text-white transition-all hover:scale-[1.01] active:scale-[0.99] sm:w-auto sm:min-w-[320px] sm:px-10"
           >
-            To&apos;liq ma&apos;lumot olish uchun
+            {t("parents_solutions.info_button")}
           </button>
         </div>
       </div>

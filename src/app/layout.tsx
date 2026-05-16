@@ -1,5 +1,6 @@
 import ContactWidgetWrapper from "@/app/ContactWidgetWrapper";
 import TranslationProviderWrapper from "@/app/TranslationProviderWrapper";
+import { ContactFormProvider } from "@/context/ContactFormContext";
 import { StructuredData } from "@/components/StructuredData";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -111,8 +112,10 @@ export default function RootLayout({
         {/* Structured Data for SEO */}
         <StructuredData />
         <TranslationProviderWrapper>
-          {children}
-          <ContactWidgetWrapper />
+          <ContactFormProvider>
+            {children}
+            <ContactWidgetWrapper />
+          </ContactFormProvider>
         </TranslationProviderWrapper>
       </body>
     </html>

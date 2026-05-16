@@ -7,7 +7,7 @@ export default function Teachers() {
     {
       name: "MUHAMEDOV",
       surname: "ABDULLOH",
-      ielts: "8.0",
+      ielts: "8.5",
       experience: "3+",
       students: "20+ IELTS",
       image: "/teachers/Photo-2.png",
@@ -66,15 +66,15 @@ export default function Teachers() {
       ielts: "8.0",
       experience: "3+",
       students: "20+ IELTS",
-      image: "/teachers/placeholder.png",
+      image: "/teachers/Photo-1.png",
     },
     {
       name: "ODILJONOVA",
       surname: "MUHAYYO",
-      ielts: "7.0",
+      ielts: "7.5",
       experience: "3+",
       students: "150+ students",
-      image: "/teachers/placeholder.png",
+      image: "/teachers/Photo-1.png",
     },
     {
       name: "HAYITBOYEVA",
@@ -82,7 +82,7 @@ export default function Teachers() {
       ielts: "8.5",
       experience: "3+",
       students: "100+ students/15+ IELTS",
-      image: "/teachers/placeholder.png",
+      image: "/teachers/Photo-1.png",
     },
     {
       name: "TADJIBAEVA",
@@ -159,7 +159,7 @@ export default function Teachers() {
 
         {teacher.specialty && (
           <p className="text-xs sm:text-sm leading-relaxed">
-            <span className=" text-black">{t("teachers.certificate")}:</span>{" "}
+            <span className=" text-black">{t("teachers.certificate")}</span>{" "}
             <span className="font-bold text-(--brand-dark)">
               {teacher.specialty}
             </span>
@@ -168,7 +168,7 @@ export default function Teachers() {
 
         {teacher.ielts && (
           <p className="text-xs sm:text-sm leading-relaxed">
-            <span className="text-black">{t("teachers.ielts_score")}:</span>{" "}
+            <span className="text-black">{t("teachers.ielts_score")}</span>{" "}
             <span className="font-bold text-(--brand-dark)">
               {teacher.ielts}
             </span>
@@ -176,14 +176,14 @@ export default function Teachers() {
         )}
 
         <p className="text-xs sm:text-sm leading-relaxed">
-          <span className="text-black">{t("teachers.experience")}:</span>{" "}
+          <span className="text-black">{t("teachers.experience")}</span>{" "}
           <span className="font-bold text-(--brand-dark)">
             {teacher.experience} {t("teachers.years")}
           </span>
         </p>
 
         <p className="text-xs sm:text-sm leading-relaxed">
-          <span className=" text-black">{t("teachers.results")}:</span>{" "}
+          <span className=" text-black">{t("teachers.results")}</span>{" "}
           <span className="font-bold text-(--brand-dark)">
             {teacher.students}
           </span>

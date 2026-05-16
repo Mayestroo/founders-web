@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
@@ -32,10 +33,12 @@ export default function Header() {
          tabIndex={-1}
          className="peer fixed -left-[9999px] -top-[9999px] h-px w-px opacity-0"
        />
-       <header className="pointer-events-auto sticky top-0 z-[120] isolate w-full bg-(--brand-red)">
+       <header className="pointer-events-auto sticky top-0 z-120 isolate w-full bg-(--brand-red)">
         <div className="mx-auto flex max-w-360 items-center justify-between gap-4 px-6 py-3.5 sm:px-8 sm:py-4">
-          <div className="shrink-0">
-            <LogoMark alt={t("common.logo_alt")} />
+          <div className="flex-1 max-w-[150px] sm:max-w-[200px]">
+            <Link href="/" className="block w-full">
+              <LogoMark alt={t("common.logo_alt")} />
+            </Link>
           </div>
           <div className="flex items-center gap-4 sm:gap-3">
             <div className="hidden items-center gap-4 md:flex">
@@ -77,12 +80,12 @@ export default function Header() {
       </header>
 
        {/* Mobile Menu */}
-       <div className="pointer-events-none fixed inset-0 z-[119] bg-black/50 opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-100">
+       <div className="pointer-events-none fixed inset-0 z-119 bg-black/50 opacity-0 transition-opacity duration-300 peer-checked:pointer-events-auto peer-checked:opacity-100">
          <label htmlFor={menuToggleId} className="block h-full w-full" aria-label={t("common.close_menu")} />
        </div>
 
        {/* Menu Drawer */}
-       <div className="fixed right-0 top-0 z-[130] h-full w-full max-w-80 sm:max-w-100 translate-x-full bg-white shadow-xl transition-transform duration-300 peer-checked:translate-x-0">
+       <div className="fixed right-0 top-0 z-130 h-full w-full max-w-80 sm:max-w-100 translate-x-full bg-white shadow-xl transition-transform duration-300 peer-checked:translate-x-0">
          <div className="flex h-full flex-col">
            {/* Close Button */}
            <div className="flex justify-end p-6">
@@ -97,14 +100,16 @@ export default function Header() {
 
             {/* Logo */}
             <div className="px-12 pb-8">
-              <Image
-                src="/hamburger-logo.svg"
-                alt={t("common.logo_alt")}
-                width={160}
-                height={40}
-                className="h-auto w-full"
-                style={{ height: 'auto' }}
-              />
+              <Link href="/" onClick={closeMenu}>
+                <Image
+                  src="/hamburger-logo.svg"
+                  alt={t("common.logo_alt")}
+                  width={160}
+                  height={40}
+                  className="h-auto w-full"
+                  style={{ height: 'auto' }}
+                />
+              </Link>
             </div>
 
            {/* Menu Items */}
@@ -177,7 +182,8 @@ const LogoMark = ({ alt }: { alt: string }) => (
     alt={alt}
     width={199}
     height={59}
-    className="h-auto sm:h-full w-auto"
+    className="h-auto w-full"
+    style={{ height: 'auto' }}
     priority
   />
 );
@@ -186,7 +192,7 @@ const MenuButton = ({ toggleId, ariaLabel }: { toggleId: string; ariaLabel: stri
   <label
     htmlFor={toggleId}
     aria-label={ariaLabel}
-    className="pointer-events-auto relative z-[121] grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-white text-(--brand-red) transition-all duration-200 hover:scale-110 active:scale-95 sm:h-11 sm:w-11"
+    className="pointer-events-auto relative z-121 grid h-10 w-10 cursor-pointer place-items-center rounded-full bg-white text-(--brand-red) transition-all duration-200 hover:scale-110 active:scale-95 sm:h-11 sm:w-11"
   >
     <MenuIcon className="h-5 w-5 sm:h-6 sm:w-6" />
   </label>
@@ -238,15 +244,9 @@ const InstagramIcon = ({ className }: IconProps) => (
   </svg>
 );
 
-const LinkedInIcon = ({ className }: IconProps) => (
+const GmailIcon = ({ className }: IconProps) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-  </svg>
-);
-
-const TikTokIcon = ({ className }: IconProps) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.07A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
   </svg>
 );
 
@@ -275,7 +275,6 @@ const PcIcon = ({ className }: IconProps) => (
 );
 
 const menuItems = (t: (key: string) => string) => [
-  { label: t("header.about_us"), href: "/about" },
   { label: t("header.teachers"), href: "/#teachers" },
   { label: t("header.for_parents"), href: "/parents-solutions" },
   { label: t("header.services"), href: "/#services" },
@@ -369,14 +368,9 @@ const socialButtons = [
     icon: <InstagramIcon className="h-8 w-8" />,
   },
   {
-    label: "LinkedIn",
-    href: "",
-    icon: <LinkedInIcon className="h-8 w-8" />,
-  },
-  {
-    label: "TikTok",
-    href: "",
-    icon: <TikTokIcon className="h-6 w-8" />,
+    label: "Gmail",
+    href: "mailto:founderslanguageschool@gmail.com",
+    icon: <GmailIcon className="h-8 w-8" />,
   },
   {
     label: "YouTube",
