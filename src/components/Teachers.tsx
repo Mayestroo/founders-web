@@ -66,7 +66,7 @@ export default function Teachers() {
       ielts: "8.0",
       experience: "3+",
       students: "20+ IELTS",
-      image: "/teachers/Photo-1.png",
+      image: "/teachers/Photo-13.png",
     },
     {
       name: "ODILJONOVA",
@@ -74,7 +74,7 @@ export default function Teachers() {
       ielts: "7.5",
       experience: "3+",
       students: "150+ students",
-      image: "/teachers/Photo-1.png",
+      image: "/teachers/Photo-12.png",
     },
     {
       name: "HAYITBOYEVA",
@@ -82,7 +82,7 @@ export default function Teachers() {
       ielts: "8.5",
       experience: "3+",
       students: "100+ students/15+ IELTS",
-      image: "/teachers/Photo-1.png",
+      image: "/teachers/Photo-11.png",
     },
     {
       name: "TADJIBAEVA",

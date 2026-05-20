@@ -101,7 +101,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
       t,
       changeLanguage,
     }),
-    [translations, locale, t, changeLanguage],
+    [translations, locale, t, changeLanguage, mounted],
   );
 
   return <TranslationContext.Provider value={contextValue}>{children}</TranslationContext.Provider>;
