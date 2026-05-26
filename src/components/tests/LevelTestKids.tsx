@@ -198,7 +198,7 @@ export default function LevelTestKids() {
     });
   };
 
-  const allCurrentAnswered = answersByStep[step].every((v) => v);
+  const allCurrentAnswered = true;
 
   const handleNext = () => {
     if (!allCurrentAnswered) {
