@@ -1,6 +1,10 @@
 "use client";
 
+import { useTranslation } from "@/hooks/useTranslation";
+
 export default function Spinner() {
+  const { t } = useTranslation();
+
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-95 z-50">
       <div className="flex flex-col items-center gap-4">
@@ -16,7 +20,7 @@ export default function Spinner() {
         </div>
 
         {/* Loading Text */}
-        <p className="text-gray-700 text-sm font-medium">Loading...</p>
+        <p className="text-gray-700 text-sm font-medium">{t("common.loading")}</p>
       </div>
     </div>
   );

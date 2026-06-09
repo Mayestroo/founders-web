@@ -55,20 +55,17 @@ export default function JoinTeamWhyFounders() {
       <div className="mx-auto max-w-360 px-6 sm:px-8">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-4xl font-bold leading-[1.05] text-(--brand-dark) md:text-5xl lg:text-5xl">
-             Nega aynan{" "}
              <span className="relative inline-block">
-               <span className="relative z-1">Founders School&apos;da</span>
-                <Image
-                  src="/team-2.svg"
-                  alt="Why Founders highlight"
+               <span className="relative z-1">{t("join_team.why_founders.title")}</span>
+                 <Image
+                   src="/team-2.svg"
+                   alt=""
                   width={640}
                   height={12}
                   className="absolute left-0 top-full -mt-4 w-full"
                   style={{ height: 'auto', width: '100%' }}
                 />
              </span>
-             <br />
-             ishlash kerak?
            </h2>
 
            <p className="mt-4 text-sm text-(--brand-dark) sm:text-lg lg:text-2xl">

@@ -57,7 +57,7 @@ export default function JoinTeamHiringProcess() {
               <span className="relative z-1">{t("join_team.hiring_process_title")}</span>
               <Image
                 src="/process.svg"
-                alt="Hiring process highlight"
+                alt=""
                 width={760}
                 height={24}
                 className="absolute left-0 top-full -mt-3 h-auto w-full z-0"

@@ -4,15 +4,6 @@ import { useTranslation } from "@/hooks/useTranslation";
 
 export default function WhyChooseUs() {
   const { t } = useTranslation();
-  const title = t("why_choose.title");
-  const highlightText = "bizni tanlashadi?";
-  const highlightIndex = title.toLowerCase().indexOf(highlightText);
-  const titlePrefix =
-    highlightIndex >= 0 ? title.slice(0, highlightIndex) : title;
-  const titleHighlight =
-    highlightIndex >= 0
-      ? title.slice(highlightIndex, highlightIndex + highlightText.length)
-      : "";
   const reasons = [
     {
       icon: "/icons/guarantee.svg",
@@ -46,21 +37,16 @@ export default function WhyChooseUs() {
       <div className="mx-auto max-w-360 px-6 sm:px-8">
         {/* Title */}
         <div className="text-center mb-4">
-          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-(--brand-dark) inline-block relative z-0">
-            <span>{titlePrefix}</span>
-            {titleHighlight && (
-              <span className="relative inline-block">
-                <span className="relative z-1">{titleHighlight}</span>
-                <Image
-                  src="/whychooseus.svg"
-                  alt="Why choose us highlight"
-                  width={320}
-                  height={14}
-                  className="absolute left-0 top-full -mt-3 h-auto w-full"
-                  style={{ height: 'auto' }}
-                />
-              </span>
-            )}
+          <h2 className="relative z-0 inline-block text-4xl font-bold text-(--brand-dark) md:text-5xl lg:text-5xl">
+            <span className="relative z-1">{t("why_choose.title")}</span>
+            <Image
+              src="/whychooseus.svg"
+              alt=""
+              width={320}
+              height={14}
+              className="absolute left-0 top-full -mt-3 h-auto w-full"
+              style={{ height: 'auto' }}
+            />
           </h2>
         </div>
         <p className="text-center text-gray-600 text-lg mb-12">

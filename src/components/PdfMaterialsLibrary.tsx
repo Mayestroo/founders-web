@@ -39,6 +39,17 @@ const pdfData: Record<string, Record<string, { name: string; file: string }[]>> 
 
 export default function PdfMaterialsLibrary() {
   const { t } = useTranslation();
+  const levelLabels: Record<string, string> = {
+    BEGINNER: t("materials.beginner"),
+    ELEMENTARY: t("materials.elementary"),
+    "PRE-INTERMEDIATE": t("materials.pre_intermediate"),
+    INTERMEDIATE: t("materials.intermediate"),
+    "UPPER-INTERMEDIATE": t("materials.upper_intermediate"),
+  };
+  const bookLabels: Record<string, string> = {
+    "STUDENT BOOKS": t("materials.student_books"),
+    "WORK BOOKS": t("materials.work_books"),
+  };
   const [selectedLevel, setSelectedLevel] = useState(levels[0]);
   const [selectedBook, setSelectedBook] = useState(books[0]);
 
@@ -75,7 +86,7 @@ export default function PdfMaterialsLibrary() {
                     : "bg-white text-(--brand-dark)"
                     }`}
                 >
-                  {level}
+                  {levelLabels[level]}
                   <ArrowLongRightIcon
                     className={`ml-2 h-4 w-4 transition-transform ${isActive ? "rotate-90" : ""}`}
                   />
@@ -100,7 +111,7 @@ export default function PdfMaterialsLibrary() {
                     : "bg-white text-(--brand-dark)"
                     }`}
                 >
-                  {book}
+                  {bookLabels[book]}
                   <ArrowLongRightIcon
                     className={`ml-2 h-4 w-4 transition-transform ${isActive ? "rotate-90" : ""}`}
                   />
@@ -123,7 +134,7 @@ export default function PdfMaterialsLibrary() {
               <a
                 href={file}
                 download
-                aria-label={`${name} yuklab olish`}
+                aria-label={t("materials.download_item_aria", { name })}
                 className="grid h-7 w-7 shrink-0 place-items-center rounded-full text-white"
               >
                 <DownloadIcon className="h-7 w-7" />
@@ -135,4 +146,3 @@ export default function PdfMaterialsLibrary() {
     </section>
   );
 }
-

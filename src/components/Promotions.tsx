@@ -55,6 +55,6 @@ interface PromotionCardProps {
 
 function PromotionCard({ image }: PromotionCardProps) {
   return (
-    <Image src={image} alt="promo" width={300} height={650} className="w-56 sm:w-72 h-auto" />
+    <Image src={image} alt="" width={300} height={650} className="w-56 sm:w-72 h-auto" />
   );
 }

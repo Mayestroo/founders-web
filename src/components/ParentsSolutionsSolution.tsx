@@ -117,7 +117,7 @@ export default function ParentsSolutionsSolution() {
       <div className="mx-auto mt-8 flex w-full max-w-360 flex-col gap-5 rounded-[28px] border border-[#00192D] bg-white px-6 py-6 sm:mt-10 sm:flex-row sm:items-center sm:gap-8 sm:px-8 sm:py-7 lg:px-10">
         <div className="sm:basis-1/2">
           <p className="text-xl font-medium leading-[1.15] text-(--brand-dark) sm:text-2xl lg:text-[32px]">
-            Sizning ham farzandingizda shunday muammolar bormi?
+            {t("parents_solutions.question")}
           </p>
         </div>
 

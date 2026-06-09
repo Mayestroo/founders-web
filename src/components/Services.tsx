@@ -88,7 +88,7 @@ export default function Services() {
                         {service.title}
                         <Image
                           src="/free-dec.svg"
-                          alt="Service title highlight"
+                          alt=""
                           width={272}
                           height={23}
                           className="absolute left-0 top-full -mt-1 sm:-mt-2 h-auto w-full"
@@ -110,7 +110,7 @@ export default function Services() {
                   <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
                     <button
                       type="button"
-                      aria-label={`${service.title} kursi haqida batafsil`}
+                      aria-label={t("services.course_details_aria", { title: service.title })}
                       className="grid h-12 w-12 sm:h-14 sm:w-14 shrink-0 place-items-center rounded-full bg-(--brand-red) text-white transition-colors active:bg-red-600 hover:bg-red-600"
                     >
                       <svg
@@ -145,7 +145,7 @@ export default function Services() {
                 <div className="relative mx-auto h-48 w-full max-w-[280px] sm:h-52 sm:max-w-[320px] md:h-64 lg:mr-5 lg:h-62.5 lg:w-[28%] lg:max-w-none">
                   <Image
                     src={resolveServiceImage(service.image)}
-                    alt={`${service.title} illustration`}
+                    alt={t("services.service_image_alt", { title: service.title })}
                     fill
                     className="origin-bottom object-contain object-bottom scale-[1.2]"
                     sizes="(min-width: 1024px) 30vw, 85vw"

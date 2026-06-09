@@ -28,7 +28,7 @@ type TranslationContextType = {
   translations: Translations;
   locale: string;
   loading: boolean;
-  t: (key: string) => string;
+  t: (key: string, params?: Record<string, string | number>) => string;
   changeLanguage: (lng: string) => void;
 };
 
@@ -67,7 +67,7 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
   const translations = useMemo(() => locales[locale] || locales[DEFAULT_LOCALE], [locale]);
 
   const t = useCallback(
-    (key: string): string => {
+    (key: string, params?: Record<string, string | number>): string => {
       const normalizedKey = key.replace(/\[(\d+)\]/g, ".$1");
       const keys = normalizedKey.split(".").filter(Boolean);
       let value: any = translations;
@@ -81,7 +81,14 @@ export function TranslationProvider({ children }: { children: ReactNode }) {
       }
 
       if (typeof value === "string") {
-        return value;
+        if (!params) {
+          return value;
+        }
+
+        return Object.entries(params).reduce(
+          (text, [paramKey, paramValue]) => text.replaceAll(`{${paramKey}}`, String(paramValue)),
+          value,
+        );
       }
 
       if (typeof value === "number" || typeof value === "boolean") {

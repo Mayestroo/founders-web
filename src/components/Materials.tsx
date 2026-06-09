@@ -111,7 +111,7 @@ export default function Materials() {
             <div className="absolute -bottom-1 md:-bottom-2 left-0 w-full">
               <Image
                 src="/free-dec.svg"
-                alt="Decorative underline"
+                alt=""
                 width={272}
                 height={23}
                 className="h-auto w-full"
@@ -173,7 +173,7 @@ export default function Materials() {
                       )}
                       <button
                         type="button"
-                        aria-label={`${material.title} materialini ochish`}
+                        aria-label={t("materials.open_material_aria", { title: material.title })}
                         className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-(--brand-red) rounded-full flex items-center justify-center active:bg-red-600 hover:bg-red-600 transition-colors shrink-0"
                       >
                         <svg
@@ -201,7 +201,7 @@ export default function Materials() {
                           ? "/materials/headphones.webp"
                           : material.image
                       }
-                      alt={`${material.title} illustration`}
+                      alt={t("materials.material_image_alt", { title: material.title })}
                       fill
                       sizes="(min-width: 1024px) 32vw, (min-width: 768px) 38vw, 100vw"
                       onError={() =>
@@ -223,7 +223,7 @@ export default function Materials() {
             <button
               type="button"
               onClick={prevSlide}
-              aria-label="Oldingi material"
+              aria-label={t("materials.previous")}
               className="w-9 h-9 sm:w-10 sm:h-10 border-2 border-(--brand-red) rounded-full flex items-center justify-center active:bg-(--brand-red) hover:bg-(--brand-red) active:text-white hover:text-white transition-colors text-(--brand-red)"
             >
               <svg
@@ -246,7 +246,7 @@ export default function Materials() {
                   key={index}
                   type="button"
                   onClick={() => goToSlide(index)}
-                  aria-label={`${item.title} slaydiga o'tish`}
+                  aria-label={t("materials.go_to_slide_aria", { title: item.title })}
                   className="grid h-10 w-10 sm:h-12 sm:w-12 place-items-center"
                 >
                   <span
@@ -259,7 +259,7 @@ export default function Materials() {
             <button
               type="button"
               onClick={nextSlide}
-              aria-label="Keyingi material"
+              aria-label={t("materials.next")}
               className="w-9 h-9 sm:w-10 sm:h-10 border-2 border-(--brand-red) rounded-full flex items-center justify-center active:bg-(--brand-red) hover:bg-(--brand-red) active:text-white hover:text-white transition-colors text-(--brand-red)"
             >
               <svg
@@ -282,7 +282,7 @@ export default function Materials() {
           <button
             type="button"
             onClick={prevSlide}
-            aria-label="Oldingi material"
+            aria-label={t("materials.previous")}
             className="hidden md:flex absolute -left-16 top-[40%] -translate-y-1/2 z-10 w-12 h-12 border-2 border-(--brand-red) rounded-full items-center justify-center hover:bg-(--brand-red) hover:text-white transition-colors text-(--brand-red)"
           >
             <svg
@@ -302,7 +302,7 @@ export default function Materials() {
           <button
             type="button"
             onClick={nextSlide}
-            aria-label="Keyingi material"
+            aria-label={t("materials.next")}
             className="hidden md:flex absolute -right-16 top-[40%] -translate-y-1/2 z-10 w-12 h-12 border-2 border-(--brand-red) rounded-full items-center justify-center hover:bg-(--brand-red) hover:text-white transition-colors text-(--brand-red)"
           >
             <svg
@@ -327,7 +327,7 @@ export default function Materials() {
                 key={index}
                 type="button"
                 onClick={() => goToSlide(index)}
-                aria-label={`${item.title} slaydiga o'tish`}
+                aria-label={t("materials.go_to_slide_aria", { title: item.title })}
                 className="grid h-12 w-12 place-items-center"
               >
                 <span

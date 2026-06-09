@@ -13,7 +13,7 @@ type ChoiceQuestion = {
 };
 
 type Part = {
-  title: string;
+  titleKey: string;
   questions: ChoiceQuestion[];
 };
 
@@ -30,7 +30,7 @@ const imageSrcs = [
 
 const parts: Part[] = [
   {
-    title: "Part 1 - Identify the images",
+    titleKey: "tests.kids_level_part_1",
     questions: [
       { prompt: "Image 1", options: ["Track", "Machine", "Car"], answer: "Car" },
       { prompt: "Image 2", options: ["Water", "Swim", "Ocean"], answer: "Swim" },
@@ -41,7 +41,7 @@ const parts: Part[] = [
     ],
   },
   {
-    title: "Part 2 - Translate the words",
+    titleKey: "tests.kids_level_part_2",
     questions: [
       {
         prompt: "Sit",
@@ -76,7 +76,7 @@ const parts: Part[] = [
     ],
   },
   {
-    title: "Part 3 - Read and answer",
+    titleKey: "tests.kids_level_part_3",
     questions: [
       { prompt: "What's her name?", options: ["My name is Molly.", "I am Molly.", "Her name is Molly."], answer: "Her name is Molly." },
       { prompt: "How old is she?", options: ["She is fourteen.", "I'm fourteen.", "She is five."], answer: "She is fourteen." },
@@ -96,7 +96,7 @@ const parts: Part[] = [
     ],
   },
   {
-    title: "Part 4 - Rearrange sentence (choose correct)",
+    titleKey: "tests.kids_level_part_4",
     questions: [
       { prompt: "loudly / singing / she / is", options: ["She is singing loudly.", "Is she loudly singing.", "Singing loudly she is."], answer: "She is singing loudly." },
       { prompt: "bananas / I / like", options: ["Bananas I like.", "I like bananas.", "I bananas like."], answer: "I like bananas." },
@@ -116,12 +116,12 @@ const levelKidsStateKey = "levelKidsAnswersState";
 const createEmptyAnswers = () => parts.map((part) => Array(part.questions.length).fill(""));
 
 function getLevelFromScore(score: number) {
-  if (score >= 30) return "Level 06";
-  if (score >= 25) return "Level 05";
-  if (score >= 18) return "Level 04";
-  if (score >= 13) return "Level 03";
-  if (score >= 7) return "Level 02";
-  return "Level 01";
+  if (score >= 30) return "tests.level_06";
+  if (score >= 25) return "tests.level_05";
+  if (score >= 18) return "tests.level_04";
+  if (score >= 13) return "tests.level_03";
+  if (score >= 7) return "tests.level_02";
+  return "tests.level_01";
 }
 
 export default function LevelTestKids() {
@@ -232,7 +232,7 @@ export default function LevelTestKids() {
         style={{ boxShadow: "15px 15px 40px 0px #FF00004D" }}
       >
         <h1 className="text-center text-2xl font-bold text-gray-900">{t("common.level_test")} - {t("common.kids")}</h1>
-        <p className="mb-6 mt-2 text-center text-sm text-red-600">{currentPart.title}</p>
+        <p className="mb-6 mt-2 text-center text-sm text-red-600">{t(currentPart.titleKey)}</p>
 
         {step === 2 && (
           <div className="sticky top-0 z-10 mb-6 rounded-lg border border-gray-200 bg-gray-50 p-4 shadow-sm">

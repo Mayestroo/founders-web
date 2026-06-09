@@ -118,7 +118,7 @@ export default function AboutPage() {
           <div className="relative aspect-video w-full overflow-hidden rounded-[28px] border border-black/10 bg-black shadow-[0_24px_60px_-30px_rgba(0,0,0,0.6)] sm:rounded-[34px]">
             <iframe
               src="https://www.youtube.com/embed/nPrbQZTQ_LY?rel=0"
-              title="Founders English School video"
+              title={t("about.video_title")}
               className="h-full w-full"
               loading="lazy"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -245,12 +245,12 @@ export default function AboutPage() {
             onClick={(event) => event.stopPropagation()}
             role="dialog"
             aria-modal="true"
-            aria-label="Aloqa formasi"
+            aria-label={t("about.contact_form_aria")}
           >
             <button
               type="button"
               onClick={() => setIsContactModalOpen(false)}
-              aria-label="Yopish"
+              aria-label={t("common.close")}
               className="absolute right-5 top-5 z-10 text-(--brand-dark) transition-transform hover:scale-110 active:scale-95 md:text-white"
             >
               <CloseIcon className="h-8 w-8" />
@@ -259,8 +259,7 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-[1.45fr_1fr]">
               <div className="px-7 py-10 sm:px-10 sm:py-12 md:px-12">
                 <h3 className="max-w-3xl text-3xl font-extrabold leading-[1.05] text-(--brand-dark) sm:text-[34px] lg:text-[38px]">
-                  Siz bilan bog&apos;lanishimiz uchun ma&apos;lumotlaringizni
-                  qoldiring!
+                  {t("about.contact_prompt")}
                 </h3>
 
                 <form
@@ -277,7 +276,7 @@ export default function AboutPage() {
                   />
                   <input
                     type="text"
-                    placeholder="Ism Familiya"
+                    placeholder={t("about.full_name")}
                     className="h-12 w-full rounded-[9px] border border-[#9facbf] bg-transparent px-4 text-base text-(--brand-dark) outline-none transition-colors placeholder:text-[#8a97aa] focus:border-(--brand-red)"
                   />
 
@@ -285,7 +284,7 @@ export default function AboutPage() {
                     type="submit"
                     className="mt-2 h-13 w-full max-w-64 rounded-full bg-(--brand-red) text-2xl font-semibold text-white transition-all hover:scale-[1.02] active:scale-[0.98] sm:h-14 sm:text-3xl"
                   >
-                    Tayyor
+                    {t("about.submit")}
                   </button>
                 </form>
               </div>

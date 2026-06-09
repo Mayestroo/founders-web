@@ -16,11 +16,21 @@ const books = ["STUDENT BOOKS", "WORK BOOKS"];
 
 const photoItems = Array.from({ length: 8 }, (_, index) => ({
   id: index + 1,
-  title: `Photo ${index + 1}`,
 }));
 
 export default function PhotoMaterialsLibrary() {
   const { t } = useTranslation();
+  const levelLabels: Record<string, string> = {
+    BEGINNER: t("materials.beginner"),
+    ELEMENTARY: t("materials.elementary"),
+    INTERMEDIATE: t("materials.intermediate"),
+    "UPPER-INTERMEDIATE": t("materials.upper_intermediate"),
+    ADVANCED: t("materials.advanced"),
+  };
+  const bookLabels: Record<string, string> = {
+    "STUDENT BOOKS": t("materials.student_books"),
+    "WORK BOOKS": t("materials.work_books"),
+  };
   const [selectedLevel, setSelectedLevel] = useState(levels[1]);
   const [selectedBook, setSelectedBook] = useState(books[0]);
 
@@ -56,7 +66,7 @@ export default function PhotoMaterialsLibrary() {
                       : "bg-white text-(--brand-dark)"
                   }`}
                 >
-                  {level}
+                  {levelLabels[level]}
                   <span className="ml-2">→</span>
                 </button>
               );
@@ -80,7 +90,7 @@ export default function PhotoMaterialsLibrary() {
                       : "bg-white text-(--brand-dark)"
                   }`}
                 >
-                  {book}
+                  {bookLabels[book]}
                   <span className="ml-2">→</span>
                 </button>
               );
@@ -89,21 +99,25 @@ export default function PhotoMaterialsLibrary() {
         </div>
 
         <div className="mt-7 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-4">
-          {photoItems.map((item) => (
+          {photoItems.map((item) => {
+            const title = t("materials.photo_item_title", { number: item.id });
+
+            return (
             <article
               key={item.id}
               className="relative aspect-3/3.5 overflow-hidden rounded-xl bg-[#e8d8db]"
-              aria-label={item.title}
+              aria-label={title}
             >
               <button
                 type="button"
-                aria-label={`${item.title} yuklab olish`}
+                aria-label={t("materials.download_item_aria", { name: title })}
                 className="absolute bottom-2.5 right-2.5 grid h-7 w-7 place-items-center rounded-full bg-(--brand-dark) text-white sm:bottom-3 sm:right-3"
               >
                 <DownloadIcon className="h-3.5 w-3.5" />
               </button>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -66,6 +66,7 @@ export default function Header() {
                 isOpen={isLangOpen}
                 onToggle={() => setIsLangOpen(!isLangOpen)}
                 onSelect={handleLanguageChange}
+                selectedAriaLabel={t("header.language_selected_aria", { language: currentLang.name })}
               />
                <a
                 href="/choose-level"
@@ -302,6 +303,7 @@ type LanguageSwitcherProps = {
   isOpen: boolean;
   onToggle: () => void;
   onSelect: (lang: Language) => void;
+  selectedAriaLabel: string;
 };
 
 const LanguageSwitcher = ({
@@ -309,12 +311,13 @@ const LanguageSwitcher = ({
   isOpen,
   onToggle,
   onSelect,
+  selectedAriaLabel,
 }: LanguageSwitcherProps) => (
   <div className="relative">
     <button
       type="button"
       onClick={onToggle}
-      aria-label={`${currentLang.name} tili tanlangan`}
+      aria-label={selectedAriaLabel}
       className="flex items-center"
     >
       <div className="overflow-hidden rounded-md ">

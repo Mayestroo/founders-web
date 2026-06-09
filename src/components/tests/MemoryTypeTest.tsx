@@ -28,106 +28,105 @@ type MemoryTypeTestProps = {
   nextPath: string;
 };
 
-const memoryQuestions: MemoryQuestion[] = [
+const MEMORY_QUESTION_COUNT = 10;
+
+const buildMemoryQuestions = (t: (key: string) => string): MemoryQuestion[] => [
   {
-    question: "Biror ma'lumotni eslash uchun siz odatda:",
+    question: t("tests.memory_q1"),
     options: [
-      { key: "A", text: "U yozilgan daftarni yoki sahifani ko'z oldingizga keltirasiz." },
-      { key: "B", text: "O'sha paytda eshitilgan tovush yoki so'zlarni eslaysiz." },
-      { key: "C", text: "O'sha vaziyatda nima qilganingizni eslaysiz." },
+      { key: "A", text: t("tests.memory_q1_a") },
+      { key: "B", text: t("tests.memory_q1_b") },
+      { key: "C", text: t("tests.memory_q1_c") },
     ],
   },
   {
-    question: "Sizga yoqimli voqeani eslatadigan narsa:",
+    question: t("tests.memory_q2"),
     options: [
-      { key: "A", text: "Suratlar yoki videolar." },
-      { key: "B", text: "O'sha paytda chalinar edi deb eslaydigan qo'shiq." },
-      { key: "C", text: "O'sha his-tuyg'ularni yana bir bor boshdan kechirish." },
+      { key: "A", text: t("tests.memory_q2_a") },
+      { key: "B", text: t("tests.memory_q2_b") },
+      { key: "C", text: t("tests.memory_q2_c") },
     ],
   },
   {
-    question: "Film tomosha qilayotganda siz ko'proq e'tibor berasiz:",
+    question: t("tests.memory_q3"),
     options: [
-      { key: "A", text: "Tasvir sifati, chiroyli kadrlar." },
-      { key: "B", text: "Musiqa va ovozlar, tarjima sifati." },
-      { key: "C", text: "Aktyorlarning harakati va hissiyotiga." },
+      { key: "A", text: t("tests.memory_q3_a") },
+      { key: "B", text: t("tests.memory_q3_b") },
+      { key: "C", text: t("tests.memory_q3_c") },
     ],
   },
   {
-    question: "Siz uchun eng oson eslab qolish mumkin bo'lgan narsa:",
+    question: t("tests.memory_q4"),
     options: [
-      { key: "A", text: "Ovoz (kimningdir ovozi)." },
-      { key: "B", text: "Yuzlar (odamlarning qiyofasi)." },
-      { key: "C", text: "Sanalar yoki raqamlar." },
+      { key: "A", text: t("tests.memory_q4_a") },
+      { key: "B", text: t("tests.memory_q4_b") },
+      { key: "C", text: t("tests.memory_q4_c") },
     ],
   },
   {
-    question: "Maktabda siz ma'lumotni qanday eslab qolardingiz?",
+    question: t("tests.memory_q5"),
     options: [
-      { key: "A", text: "Shpargalka yozib." },
-      { key: "B", text: "Qayta-qayta ovoz chiqarib takrorlab." },
-      { key: "C", text: "O'qituvchini diqqat bilan tinglab." },
+      { key: "A", text: t("tests.memory_q5_a") },
+      { key: "B", text: t("tests.memory_q5_b") },
+      { key: "C", text: t("tests.memory_q5_c") },
     ],
   },
   {
-    question: "Kimnidir o'ylaganingizda, siz odatda:",
+    question: t("tests.memory_q6"),
     options: [
-      { key: "A", text: "Uning yuzini eslaysiz." },
-      { key: "B", text: "Uning ovozini eslaysiz." },
-      { key: "C", text: "Uning harakatlarini yoki yurish-turishini eslaysiz." },
+      { key: "A", text: t("tests.memory_q6_a") },
+      { key: "B", text: t("tests.memory_q6_b") },
+      { key: "C", text: t("tests.memory_q6_c") },
     ],
   },
   {
-    question: "Agar biror so'zni eslay olmasangiz, birinchi esingizga keladigan narsa:",
+    question: t("tests.memory_q7"),
     options: [
-      { key: "A", text: "So'zning ma'nosi." },
-      { key: "B", text: "Birinchi harfi." },
-      { key: "C", text: "So'z bilan bog'liq assotsiatsiya." },
+      { key: "A", text: t("tests.memory_q7_a") },
+      { key: "B", text: t("tests.memory_q7_b") },
+      { key: "C", text: t("tests.memory_q7_c") },
     ],
   },
   {
-    question: "Lug'atdan so'zni izlayotganda siz odatda:",
+    question: t("tests.memory_q8"),
     options: [
-      { key: "A", text: "Tezroq varaqlash uchun barmog'ingizni namlaysiz." },
-      { key: "B", text: "So'zni og'zingizda aytmasdan, harflariga qaraysiz." },
-      { key: "C", text: "So'zni baland ovozda talaffuz qilasiz." },
+      { key: "A", text: t("tests.memory_q8_a") },
+      { key: "B", text: t("tests.memory_q8_b") },
+      { key: "C", text: t("tests.memory_q8_c") },
     ],
   },
   {
-    question: "Ishlayotganingizda yoki o'qiyotganingizda atrofdagi shovqin sizga:",
+    question: t("tests.memory_q9"),
     options: [
-      { key: "A", text: "Umuman xalaqit bermaydi." },
-      { key: "B", text: "Hatto yordam beradi, agar u yumshoq va ritmik bo'lsa." },
-      { key: "C", text: "Juda halal beradi, e'tiborim chalg'iydi." },
+      { key: "A", text: t("tests.memory_q9_a") },
+      { key: "B", text: t("tests.memory_q9_b") },
+      { key: "C", text: t("tests.memory_q9_c") },
     ],
   },
   {
-    question: "Biror ma'lumotni (masalan, sana yoki qoida) eslash uchun siz:",
+    question: t("tests.memory_q10"),
     options: [
-      { key: "A", text: "Uni yodlayotgan paytda nima qilganingizni eslaysiz." },
-      { key: "B", text: "U yozilgan qog'ozni yoki joyni ko'z oldingizga keltirasiz." },
-      { key: "C", text: "Yodlayotgan paytda aytgan so'zlaringizni eslaysiz." },
+      { key: "A", text: t("tests.memory_q10_a") },
+      { key: "B", text: t("tests.memory_q10_b") },
+      { key: "C", text: t("tests.memory_q10_c") },
     ],
   },
 ];
 
-const memoryStyles: Record<MemoryOption, { title: string; description: string }> = {
+const buildMemoryStyles = (t: (key: string) => string): Record<MemoryOption, { title: string; description: string }> => ({
   A: {
-    title: "Vizual (ko'ruv orqali)",
-    description:
-      "Siz uchun rasm, yozuv, rang va shakl muhim. Ma'lumotni ko'rish orqali eslab qolasiz. Qog'oz, grafik, jadval va ranglar yordam beradi.",
+    title: t("tests.memory_style_visual_title"),
+    description: t("tests.memory_style_visual_description"),
   },
   B: {
-    title: "Audial (eshitish orqali)",
-    description:
-      "Siz uchun tovush, ohang, ritm va nutq muhim. Ma'lumotni eshitib, muhokama qilib yoki baland ovozda o'qib yodlaysiz.",
+    title: t("tests.memory_style_audial_title"),
+    description: t("tests.memory_style_audial_description"),
   },
   C: {
-    title: "Kinestetik (harakat va his orqali)",
-    description:
-      "Siz uchun tajriba, harakat va his-tuyg'u muhim. Biror narsani bajarganingizda, ushlaganingizda yoki his qilganingizda yaxshi eslab qolasiz.",
+    title: t("tests.memory_style_kinesthetic_title"),
+    description: t("tests.memory_style_kinesthetic_description"),
   },
-};
+});
 
 const createEmptyCounts = (): Record<MemoryOption, number> => ({
   A: 0,
@@ -159,10 +158,12 @@ export default function MemoryTypeTest({
   const { setMemoryResult } = useTestContext();
   const { t } = useTranslation();
 
-  const memoryTestTitle = t("common.memory_test") || "Axborotni qabul qilish uslubi testi";
-  const memoryTestInstruction = t("tests.memory_instruction") || "*Har bir savolda sizga eng yaqin javobni tanlang.";
+  const memoryTestTitle = t("common.memory_test");
+  const memoryTestInstruction = t("tests.memory_instruction");
+  const memoryQuestions = buildMemoryQuestions(t);
+  const memoryStyles = buildMemoryStyles(t);
 
-  const [answers, setAnswers] = useState<Array<MemoryOption | null>>(Array(memoryQuestions.length).fill(null));
+  const [answers, setAnswers] = useState<Array<MemoryOption | null>>(Array(MEMORY_QUESTION_COUNT).fill(null));
   const [warning, setWarning] = useState("");
   const questionRefs = useRef<Array<HTMLDivElement | null>>([]);
 
@@ -174,7 +175,7 @@ export default function MemoryTypeTest({
           answers?: Array<MemoryOption | null>;
         };
 
-        if (Array.isArray(parsed.answers) && parsed.answers.length === memoryQuestions.length) {
+        if (Array.isArray(parsed.answers) && parsed.answers.length === MEMORY_QUESTION_COUNT) {
           setAnswers(parsed.answers);
         }
       } catch {

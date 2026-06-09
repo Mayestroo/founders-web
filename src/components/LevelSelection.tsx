@@ -48,7 +48,7 @@ export default function LevelSelection() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-[#00192D] mb-6 leading-tight">
-          Darajangizni aniqlang
+          {t("common.darajangizni_aniqlang")}
         </h1>
       </div>
 

@@ -32,6 +32,17 @@ const books = ["STUDENT BOOKS", "WORK BOOKS"];
 
 export default function AudioMaterialsLibrary() {
   const { t } = useTranslation();
+  const levelLabels: Record<string, string> = {
+    BEGINNER: t("materials.beginner"),
+    ELEMENTARY: t("materials.elementary"),
+    "PRE-INTERMEDIATE": t("materials.pre_intermediate"),
+    INTERMEDIATE: t("materials.intermediate"),
+    "UPPER-INTERMEDIATE": t("materials.upper_intermediate"),
+  };
+  const bookLabels: Record<string, string> = {
+    "STUDENT BOOKS": t("materials.student_books"),
+    "WORK BOOKS": t("materials.work_books"),
+  };
   const [selectedLevel, setSelectedLevel] = useState(levels[0]);
   const [selectedBook, setSelectedBook] = useState(books[0]);
   const [audioData, setAudioData] = useState<AudioMaterialsData>({});
@@ -236,7 +247,7 @@ export default function AudioMaterialsLibrary() {
                     : "bg-white text-(--brand-dark)"
                     } ${isDisabled ? "cursor-not-allowed opacity-60" : ""}`}
                 >
-                  {level}
+                  {levelLabels[level]}
                   <ArrowLongRightIcon
                     className={`ml-2 h-4 w-4 transition-transform ${isActive ? "rotate-90" : ""}`}
                   />
@@ -263,7 +274,7 @@ export default function AudioMaterialsLibrary() {
                     : "bg-white text-(--brand-dark)"
                     } ${isDisabled ? "cursor-not-allowed opacity-60" : ""}`}
                 >
-                  {book}
+                  {bookLabels[book]}
                   <ArrowLongRightIcon
                     className={`ml-2 h-4 w-4 transition-transform ${isActive ? "rotate-90" : ""}`}
                   />

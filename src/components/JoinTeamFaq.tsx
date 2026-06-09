@@ -9,43 +9,13 @@ type FaqItem = {
   answer: string;
 };
 
-const faqItems: FaqItem[] = [
-  {
-    question: "Ish vaqti qanday?",
-    answer:
-      "Biz ikkita smenadagi ishga taklif qilamiz. 08:00 - 14:00 va 14:00 - 20:00.",
-  },
-  {
-    question: "Sinov muddati bormi?",
-    answer:
-      "Ha, albatta. Lavozimga qarab bu 1 haftadan 2 haftagacha, 1 oydan 2 oygacha bo'lishi mumkin.",
-  },
-  {
-    question: "Ish tajribasi bo'lmasa ham ishga qabul qilasizlarmi?",
-    answer:
-      "Afsuski, yo'q. Lavozimga qarab bu 6 oydan 2 yilgacha bo'lgan ish tajribasini talab qilinishi mumkin.",
-  },
-  {
-    question: "Ish davomida o'qitish, kurslar, treninglar tashkil etiladimi?",
-    answer:
-      "Ha, albatta. Bir yilda 4 marta jamoa ruhini ko'taruvchi treyninglar tashkil qilamiz. Top menejerlarga esa, malakasini oshiruvchi kurslarda o'qitamiz.",
-  },
-  {
-    question: "Mehnat ta'tili beriladimi?",
-    answer: "Mehnat ta'tilni bir yilda 20 kungacha berilishi mumkin.",
-  },
-  {
-    question: "Moslashuvchan ish jadvali mavjudmi?",
-    answer:
-      "Lavozimga qarab bu o'zgaruvchan. Marketing jamoada moslashuvchan grafiklar mavjud. Boshqa lavozimlarda esa belgilangan ish vaqtlari bo'ladi.",
-  },
-];
-
 export default function JoinTeamFaq() {
   const { t, translations } = useTranslation();
   const [openIndex, setOpenIndex] = useState(0);
   
-  const items = (translations?.join_team?.faq_items as Array<{question: string; answer: string}>) || faqItems;
+  const items: FaqItem[] = Array.isArray(translations?.join_team?.faq_items)
+    ? (translations.join_team.faq_items as FaqItem[])
+    : [];
 
   return (
     <section className="w-full bg-white px-5 pb-16 pt-6 sm:px-8 sm:pb-20 sm:pt-10 lg:pb-24">
@@ -55,7 +25,7 @@ export default function JoinTeamFaq() {
              <span className="relative z-1">{t("join_team.faq_title")}</span>
               <Image
                src="/team-2.svg"
-               alt="FAQ title highlight"
+               alt=""
                width={640}
                height={24}
                className="absolute left-0 top-full -mt-4 w-full"

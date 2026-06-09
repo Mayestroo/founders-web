@@ -31,7 +31,7 @@ export default function FAQ() {
             <div className="absolute -bottom-0.5 md:-bottom-1 left-0 w-full">
               <Image
                 src="/free-dec.svg"
-                alt="Decorative underline"
+                alt=""
                 width={272}
                 height={23}
                 className="h-full w-full scale-y-150"

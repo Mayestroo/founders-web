@@ -18,14 +18,12 @@ export default function JoinTeamVacancies() {
     <section className="w-full bg-white px-5 pb-14 pt-6 sm:px-8 sm:pb-20 sm:pt-8 lg:pb-24">
       <div className="mx-auto max-w-360 px-6 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
-           <h2 className="relative inline-block text-4xl font-bold text-(--brand-dark) md:text-5xl lg:text-5xl">
-             Founders School'dagi
-             <br />
-             <span className="relative inline-block">
-               <span className="relative z-1">bo'sh ish o'rinlari</span>
-                <Image
-                  src="/team-2.svg"
-                  alt="Job openings highlight"
+             <h2 className="relative inline-block text-4xl font-bold text-(--brand-dark) md:text-5xl lg:text-5xl">
+              <span className="relative inline-block">
+                <span className="relative z-1">{t("join_team.vacancies_title")}</span>
+                 <Image
+                   src="/team-2.svg"
+                   alt=""
                   width={620}
                   height={12}
                   className="absolute left-0 top-full -mt-4 w-full"

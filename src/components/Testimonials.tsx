@@ -25,7 +25,7 @@ export default function Testimonials() {
             <div className="absolute -bottom-1 sm:-bottom-1.5 md:-bottom-2 left-0 w-full">
               <Image
                 src="/free-dec.svg"
-                alt="Decorative underline"
+                alt=""
                 width={272}
                 height={23}
                 className="h-auto w-full"
@@ -49,7 +49,7 @@ export default function Testimonials() {
                   <div className="w-12 h-12 sm:w-13 sm:h-13 md:w-14 md:h-14 rounded-full bg-gray-200 overflow-hidden shrink-0">
                     {/* Placeholder avatar */}
                     <div className="w-full h-full bg-linear-to-br from-red-100 to-red-200 flex items-center justify-center text-(--brand-red) font-bold text-lg sm:text-xl">
-                      {testimonial?.author?.charAt(0) || "U"}
+                      {testimonial?.author?.charAt(0) || "?"}
                     </div>
                   </div>
                  <div>

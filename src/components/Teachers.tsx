@@ -25,7 +25,7 @@ export default function Teachers() {
       surname: "GAVKHARSHODBEGIM",
       ielts: "8.0",
       experience: "4+",
-      students: "300+ students/30+ IELTS",
+      students: `300+ ${t("teachers.students_label")}/30+ IELTS`,
       image: "/teachers/Photo-4.png",
     },
     {
@@ -41,7 +41,7 @@ export default function Teachers() {
       surname: "MUBINA",
       ielts: "7.5",
       experience: "2+",
-      students: "200+ students",
+      students: `200+ ${t("teachers.students_label")}`,
       image: "/teachers/Photo-8.png",
     },
     {
@@ -49,7 +49,7 @@ export default function Teachers() {
       surname: "SARVINOZ",
       ielts: "7.5",
       experience: "3+",
-      students: "250+ students",
+      students: `250+ ${t("teachers.students_label")}`,
       image: "/teachers/Photo-9.png",
     },
     {
@@ -73,7 +73,7 @@ export default function Teachers() {
       surname: "MUHAYYO",
       ielts: "7.5",
       experience: "3+",
-      students: "150+ students",
+      students: `150+ ${t("teachers.students_label")}`,
       image: "/teachers/Photo-12.png",
     },
     {
@@ -81,7 +81,7 @@ export default function Teachers() {
       surname: "ZEBOXON",
       ielts: "8.5",
       experience: "3+",
-      students: "100+ students/15+ IELTS",
+      students: `100+ ${t("teachers.students_label")}/15+ IELTS`,
       image: "/teachers/Photo-11.png",
     },
     {
@@ -105,7 +105,7 @@ export default function Teachers() {
       surname: "LEYLA",
       specialty: "TESOL",
       experience: "8+",
-      students: "500+ students",
+      students: `500+ ${t("teachers.students_label")}`,
       image: "/teachers/Photo-10.png",
     },
   ];

@@ -17,7 +17,7 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <Image
                 src="/logo.svg"
-                alt="Founders School"
+                alt={t("common.logo_alt")}
                 width={200}
                 height={48}
                 className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto"
@@ -65,7 +65,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`${social.name} sahifasiga o'tish`}
+                    aria-label={t("footer.social_link_aria", { name: social.name })}
                     className="w-9 h-9 sm:w-10 sm:h-10 bg-white rounded-lg flex items-center justify-center active:bg-white/90 hover:bg-white/90 transition-colors"
                   >
                     <svg
@@ -144,7 +144,7 @@ export default function Footer() {
                   href="https://yandex.uz/maps/10335/tashkent/category/foreign_language_courses/184106160/?utm_medium=mapframe&utm_source=maps"
                   style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "14px" }}
                 >
-                  Chet tillari kurslari Toshkentda
+                  {t("header.address")}
                 </a>
                 <iframe
                   src="https://yandex.uz/map-widget/v1/?ll=69.236178%2C41.306362&mode=search&oid=210947970587&ol=biz&z=16.54"
@@ -154,7 +154,7 @@ export default function Footer() {
                   frameBorder="0"
                   allowFullScreen={true}
                   style={{ position: "relative" }}
-                  title="Yandex Map"
+                  title={t("footer.map_title")}
                 ></iframe>
               </div>
             </div>

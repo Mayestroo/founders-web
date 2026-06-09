@@ -18,11 +18,11 @@ const heroImages = [
 const animationDurationMs = 700;
 
 // Memoized hero image component to prevent re-renders
-const HeroImage = memo(({ src, isActive, isPriority }: { src: string; isActive: boolean; isPriority: boolean }) => (
+const HeroImage = memo(({ src, alt, isActive, isPriority }: { src: string; alt: string; isActive: boolean; isPriority: boolean }) => (
   <div className={`absolute inset-0 transition-opacity duration-700 ${isActive ? 'opacity-100' : 'opacity-0'}`}>
     <Image
       src={src}
-      alt="Founders School"
+      alt={alt}
       fill
       priority={isPriority}
       fetchPriority={isPriority ? "high" : "auto"}
@@ -75,6 +75,7 @@ export default function Hero() {
             {/* Only render first image on initial load, others after hydration */}
             <HeroImage 
               src={heroImages[0]} 
+              alt={t("hero.image_alt")}
               isActive={currentIndex === 0} 
               isPriority={true}
             />
@@ -82,6 +83,7 @@ export default function Hero() {
               <HeroImage 
                 key={src}
                 src={src} 
+                alt={t("hero.image_alt")}
                 isActive={currentIndex === i + 1} 
                 isPriority={false}
               />
@@ -96,7 +98,7 @@ export default function Hero() {
                     type="button"
                     onClick={() => goToSlide(index)}
                     className="p-2 group"
-                    aria-label={`Go to slide ${index + 1}`}
+                    aria-label={t("hero.slide_aria", { number: index + 1 })}
                   >
                     <span className={`block h-2 w-2 rounded-full transition-all ${
                       index === currentIndex ? 'bg-white w-4' : 'bg-white/50 group-hover:bg-white/70'
@@ -110,9 +112,9 @@ export default function Hero() {
           {/* Text Content */}
           <div className="space-y-4 sm:space-y-6 lg:order-1">
             <h1 className="text-3xl font-bold leading-tight text-[#00192D] sm:text-4xl md:text-5xl">
-              <span>Kafolatlangan </span>
+              <span>{t("hero.title_before_ielts")}</span>
               <span className="relative inline-block">
-                <span className="relative z-1">IELTS</span>
+                <span className="relative z-1">{t("hero.title_ielts")}</span>
                 <Image
                   src="/ielts-dec.svg"
                   alt=""
@@ -122,9 +124,9 @@ export default function Hero() {
                   style={{ height: 'auto' }}
                 />
               </span>
-              <span> yoki </span>
+              <span>{t("hero.title_or")}</span>
               <span className="relative inline-block">
-                <span className="relative z-1">BEPUL</span>
+                <span className="relative z-1">{t("hero.title_free")}</span>
                 <Image
                   src="/ielts-dec.svg"
                   alt=""
@@ -134,7 +136,7 @@ export default function Hero() {
                   style={{ height: 'auto' }}
                 />
               </span>
-              <span> o'qing!</span>
+              <span>{t("hero.title_after_free")}</span>
             </h1>
             <div className="text-base sm:text-lg md:text-xl text-gray-700">
               <p>{t("hero.subtitle")}</p>

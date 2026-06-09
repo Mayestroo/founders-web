@@ -38,7 +38,7 @@ export default function FloatingContactWidget() {
         <section
           className="pointer-events-auto max-h-[calc(100dvh-7rem)] w-[min(310px,calc(100vw-2rem))] overflow-y-auto rounded-3xl border border-[#cfd5db] bg-[#e8e8e8] shadow-[0_25px_55px_-25px_rgba(0,0,0,0.7)]"
           role="dialog"
-          aria-label="Biz bilan bog'lanish"
+          aria-label={t("form.contact_dialog_label")}
         >
           <header className="flex items-center justify-between bg-(--brand-red) px-6 py-4 text-white">
             <h2 className="text-[18px] font-medium">
@@ -48,7 +48,7 @@ export default function FloatingContactWidget() {
               type="button"
               onClick={closeForm}
               className="rounded-full p-1 transition-transform hover:scale-110 active:scale-95"
-              aria-label="Yopish"
+              aria-label={t("common.close")}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -131,12 +131,12 @@ export default function FloatingContactWidget() {
         <button
           type="button"
           onClick={openForm}
-          aria-label="Bog'lanish oynasini ochish"
+          aria-label={t("form.open_contact_widget_aria")}
           className="pointer-events-auto grid h-16 w-16 place-items-center rounded-full bg-(--brand-red) shadow-[0_14px_24px_-14px_rgba(0,0,0,0.6)] transition-transform hover:scale-105 active:scale-95"
         >
           <Image
             src="/icons/mail.svg"
-            alt="Bog'lanish"
+            alt={t("form.contact_icon_alt")}
             width={36}
             height={36}
           />

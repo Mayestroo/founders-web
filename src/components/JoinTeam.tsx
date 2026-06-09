@@ -4,20 +4,11 @@ import { useTranslation } from "@/hooks/useTranslation";
 
 export default function JoinTeam() {
   const { t } = useTranslation();
-  const mainTitle = t("join_team.main_title");
-  const highlightText = "bo'lagiga aylaning!";
-  const highlightIndex = mainTitle.toLowerCase().indexOf(highlightText);
-  const titlePrefix =
-    highlightIndex >= 0 ? mainTitle.slice(0, highlightIndex) : mainTitle;
-  const titleHighlight =
-    highlightIndex >= 0
-      ? mainTitle.slice(highlightIndex, highlightIndex + highlightText.length)
-      : "";
   const teamMembers = [
-    { image: "/team/member1.webp", alt: "Team member 1" },
-    { image: "/team/member2.webp", alt: "Team member 2" },
-    { image: "/team/member3.webp", alt: "Team member 3" },
-    { image: "/team/member4.webp", alt: "Team member 4" },
+    { image: "/team/member1.webp" },
+    { image: "/team/member2.webp" },
+    { image: "/team/member3.webp" },
+    { image: "/team/member4.webp" },
   ];
 
   return (
@@ -26,20 +17,15 @@ export default function JoinTeam() {
         <div className="mx-auto flex flex-col items-center justify-between gap-12 lg:flex-row">
           {/* Left Content */}
           <div className="flex-1 max-w-xl">
-            <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-(--brand-dark) mb-6 leading-tight">
-              <span>{titlePrefix}</span>
-              {titleHighlight && (
-                <span className="relative inline-block">
-                  <span className="relative z-1">{titleHighlight}</span>
-                  <Image
-                    src="/team-1.svg"
-                    alt=""
-                    width={400}
-                    height={12}
-                    className="absolute left-0 top-full -mt-3 w-auto h-auto z-0"
-                  />
-                </span>
-              )}
+            <h2 className="relative mb-6 inline-block text-4xl font-bold leading-tight text-(--brand-dark) md:text-5xl lg:text-5xl">
+              <span className="relative z-1">{t("join_team.main_title")}</span>
+              <Image
+                src="/team-1.svg"
+                alt=""
+                width={400}
+                height={12}
+                className="absolute left-0 top-full -mt-3 h-auto w-auto z-0"
+              />
             </h2>
 
             <p className="text-gray-700 text-lg mb-8">
@@ -98,7 +84,7 @@ export default function JoinTeam() {
                   <div className="relative h-full w-full overflow-hidden rounded-full bg-[#ffc9c9]">
                     <Image
                       src={teamMembers[i].image}
-                      alt={`Team member ${i + 1}`}
+                      alt=""
                       fill
                       sizes="(min-width: 1024px) 270px, (min-width: 640px) 40vw, 44vw"
                       quality={70}

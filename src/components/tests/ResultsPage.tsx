@@ -62,10 +62,10 @@ export default function ResultsPage() {
   const levelResult = state.levelResult || persistedLevel;
 
   const temperamentLabels: Record<string, string> = {
-    choleric: t('temperament_types.choleric') || 'Choleric',
-    sanguine: t('temperament_types.sanguine') || 'Sanguine',
-    phlegmatic: t('temperament_types.phlegmatic') || 'Phlegmatic',
-    melancholic: t('temperament_types.melancholic') || 'Melancholic',
+    choleric: t('temperament_types.choleric'),
+    sanguine: t('temperament_types.sanguine'),
+    phlegmatic: t('temperament_types.phlegmatic'),
+    melancholic: t('temperament_types.melancholic'),
   };
 
   const handleFinish = () => {
@@ -111,7 +111,7 @@ export default function ResultsPage() {
       {isLoading ? (
         <div className="flex items-center justify-center min-h-screen">
           <div className="text-center">
-            <p className="text-gray-600 text-lg">{t('common.loading') || 'Loading...'}</p>
+            <p className="text-gray-600 text-lg">{t('common.loading')}</p>
           </div>
         </div>
       ) : (
@@ -121,31 +121,31 @@ export default function ResultsPage() {
           <div className="max-w-4xl mx-auto">
         {/* Header */}
          <div className="text-center mb-12">
-           <h1 className="text-4xl font-bold text-gray-800 mb-2">{t('results.congratulations') || 'Congratulations!'}</h1>
-           <p className="text-gray-600 text-lg">{t('results.tests_completed') || 'You have successfully completed all tests!'}</p>
+            <h1 className="text-4xl font-bold text-gray-800 mb-2">{t('results.congratulations')}</h1>
+            <p className="text-gray-600 text-lg">{t('results.tests_completed')}</p>
           </div>
 
          <div
             className="bg-white rounded-2xl shadow-lg border-2 border-[#EC0000] p-8 mb-8"
             style={{ boxShadow: '15px 15px 40px 0px #FF00004D' }}
           >
-            <h2 className="text-2xl font-bold text-gray-800 text-center">{t('results.results_summary') || 'Your Test Results'}</h2>
+            <h2 className="text-2xl font-bold text-gray-800 text-center">{t('results.results_summary')}</h2>
 
             {/* Level Test Results */}
             {levelResult && (
               <div className="mt-8 mb-8 pb-8 border-b-2 border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-700 mb-4">
-                  {t('results.english_level_results') || 'English Level Test Results'}
+                  {t('results.english_level_results')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-orange-50 rounded-lg p-4">
-                    <p className="text-gray-600 text-sm mb-1">{t('results.score') || 'Score'}</p>
+                    <p className="text-gray-600 text-sm mb-1">{t('results.score')}</p>
                     <p className="text-3xl font-bold text-orange-600">
                       {levelResult.score}/{levelResult.total}
                     </p>
                   </div>
                   <div className="bg-red-50 rounded-lg p-4 md:col-span-2">
-                    <p className="text-gray-600 text-sm mb-1">{t('results.level') || 'Level'}</p>
+                    <p className="text-gray-600 text-sm mb-1">{t('results.level')}</p>
                     <p className="text-2xl font-bold text-red-600">{t(levelResult.level) || levelResult.level}</p>
                   </div>
                 </div>
@@ -156,10 +156,10 @@ export default function ResultsPage() {
             {temperamentResult && (
               <div className="mt-8 mb-8 pb-8 border-b-2 border-gray-200">
                 <h3 className="text-lg font-semibold text-gray-700 mb-4">
-                  {t('results.temperament_result_title') || 'Temperament Test Results'}
+                  {t('results.temperament_result_title')}
                 </h3>
                 <div className="bg-gray-50 rounded-lg p-4 mb-4">
-                  <p className="text-gray-600 text-sm mb-2">{t('results.dominant_type') || 'Dominant Type'}:</p>
+                  <p className="text-gray-600 text-sm mb-2">{t('results.dominant_type')}:</p>
                   <p className="text-2xl font-bold text-red-600">
                     {temperamentLabels[temperamentResult.dominant] || temperamentResult.dominant}
                   </p>
@@ -188,16 +188,16 @@ export default function ResultsPage() {
             {/* Memory Type Test Results */}
             {memoryResult && (
               <div className="mb-8 pb-8 border-b-2 border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('results.memory_test_results') || 'Memory Type Test Results'}</h3>
+                <h3 className="text-lg font-semibold text-gray-700 mb-4">{t('results.memory_test_results')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-blue-50 rounded-lg p-4">
-                    <p className="text-gray-600 text-sm mb-1">{t('results.score') || 'Score'}</p>
+                    <p className="text-gray-600 text-sm mb-1">{t('results.score')}</p>
                     <p className="text-3xl font-bold text-blue-600">
                       {memoryResult.score}/{memoryResult.total}
                     </p>
                   </div>
                   <div className="bg-green-50 rounded-lg p-4 md:col-span-2">
-                    <p className="text-gray-600 text-sm mb-1">{t('results.level') || 'Level'}</p>
+                    <p className="text-gray-600 text-sm mb-1">{t('results.level')}</p>
                     <p className="text-2xl font-bold text-green-600">{t(memoryResult.level) || memoryResult.level}</p>
                   </div>
                 </div>
@@ -211,7 +211,7 @@ export default function ResultsPage() {
               onClick={handleFinish}
               className="px-8 py-3 rounded-lg font-semibold text-white transition-all bg-[#EC0000] hover:bg-red-600 transform hover:scale-105"
             >
-              {t('results.go_home') || 'Go Home'}
+              {t('results.go_home')}
             </button>
            </div>
         </div>

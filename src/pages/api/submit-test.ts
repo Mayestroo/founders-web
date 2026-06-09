@@ -74,6 +74,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         'tests.level_intermediate': 'Intermediate',
         'tests.level_upper_intermediate': 'Upper-Intermediate',
         'tests.level_advanced': 'Advanced',
+        'tests.level_01': 'Level 01',
+        'tests.level_02': 'Level 02',
+        'tests.level_03': 'Level 03',
+        'tests.level_04': 'Level 04',
+        'tests.level_05': 'Level 05',
+        'tests.level_06': 'Level 06',
       };
       return map[level] || level;
     };
