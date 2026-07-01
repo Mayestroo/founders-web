@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export default function About() {
@@ -23,7 +21,14 @@ export default function About() {
         {/* Video Placeholder */}
         <div className="relative aspect-video w-full overflow-hidden rounded-2xl sm:rounded-3xl bg-linear-to-br from-gray-800 to-gray-900 shadow-xl">
           <div className="flex h-full items-center justify-center">
-           
+            <iframe
+              className="h-full aspect-9/16 border-0"
+              src="https://www.youtube.com/embed/pYUODvHxBZQ"
+              title="☀️Founders Schoolda Yozgi Qabul Ochiq!  #rek"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>

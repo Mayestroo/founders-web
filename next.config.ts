@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: typeof __dirname !== "undefined" ? __dirname : process.cwd(),
+  },
   // Image optimization - disabled for Vercel static hosting
   images: {
     unoptimized: true, // Disable Next.js image optimization for static export
@@ -65,7 +68,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src 'self' https://yandex.uz;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; frame-src 'self' https://yandex.uz https://www.youtube.com https://youtube.com;",
           },
         ],
       },
